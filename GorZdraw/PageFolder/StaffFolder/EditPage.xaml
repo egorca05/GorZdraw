@@ -1,0 +1,60 @@
+﻿<Page x:Class="GorZdraw.PageFolder.StaffFolder.EditPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:GorZdraw.PageFolder.StaffFolder"
+      mc:Ignorable="d" 
+      d:DesignHeight="650" d:DesignWidth="1000"
+      Title="Пересчет">
+
+    <Grid>
+        <Border
+            CornerRadius="20"
+            Width="1000"
+            Height="650"
+            Background="{StaticResource DeepYellowGreen}">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="50"/>
+            </Border.Effect>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="300"/>
+                </Grid.ColumnDefinitions>
+
+                <Button x:Name="BackBtn" Content="Назад"
+                        HorizontalAlignment="Left" Click="BackBtn_Click"/>
+                <Button x:Name="SaveBtn" Content="Сохранить"
+                        HorizontalAlignment="Right" Click="SaveBtn_Click"
+                        Grid.Column="1" Background="{DynamicResource Blue}"/>
+
+                <DataGrid x:Name="ProductDG" AutoGenerateColumns="False" 
+                      IsReadOnly="True" Grid.Row="1">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="№" 
+                                            Binding="{Binding IdProduct}" 
+                                            Width="50"/>
+                        <DataGridTextColumn Header="Название" 
+                                            Binding="{Binding NameProduct}" 
+                                            Width="*"/>
+                        <DataGridTextColumn Header="Категория" 
+                                            Binding="{Binding Сategory.NameСategory}" 
+                                            Width="*"/>
+                        <DataGridTextColumn Header="Производитель" 
+                                            Binding="{Binding Manufacturer.NameManufacturer}" 
+                                            Width="*"/>
+                        <DataGridTextColumn Header="Наличие" 
+                                            Binding="{Binding Quantity}" 
+                                            Width="95"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+
+        </Border>
+    </Grid>
+</Page>

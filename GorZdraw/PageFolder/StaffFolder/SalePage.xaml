@@ -1,0 +1,72 @@
+﻿<Page x:Class="GorZdraw.PageFolder.StaffFolder.SalePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:GorZdraw.PageFolder.StaffFolder"
+      mc:Ignorable="d" 
+      d:DesignHeight="650" d:DesignWidth="1010"
+      Title="Режим продажи">
+
+    <Grid>
+        <Border
+            CornerRadius="20"
+            Width="1000"
+            Height="650"
+            Background="{StaticResource DeepYellowGreen}">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="50"/>
+            </Border.Effect>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="80"/>
+                </Grid.RowDefinitions>
+
+                <Button x:Name="BackBtn" Content="Назад"
+                        HorizontalAlignment="Left" Click="BackBtn_Click"/>
+          
+                <DataGrid x:Name="ProductDG" AutoGenerateColumns="False" 
+                      IsReadOnly="True" Grid.Row="1">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="№" 
+                                            Binding="{Binding IdProduct}" 
+                                            Width="50"/>
+                        <DataGridTextColumn Header="Название" 
+                                            Binding="{Binding NameProduct}" 
+                                            Width="*"/>
+                        <DataGridTextColumn Header="Категория" 
+                                            Binding="{Binding Сategory.NameСategory}" 
+                                            Width="*"/>
+                        <DataGridTextColumn Header="Рецепт" 
+                                            Binding="{Binding Recipe.NeedRecipe}" 
+                                            Width="*"/>
+                        <DataGridTextColumn Header="Наличие" 
+                                            Binding="{Binding Quantity}" 
+                                            Width="*"/>
+                        <DataGridTextColumn Header="Цена" 
+                                            Binding="{Binding Price}" 
+                                            Width="*"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+                <StackPanel Grid.Row="2" Orientation="Horizontal" 
+                            HorizontalAlignment="Right">
+                    <Label Content="Количество:" 
+                           Style="{StaticResource NormalLabel}"/>
+                    <TextBox x:Name="QuantityTb" Grid.Row="2" Width="150"/>
+
+                    <Label Content="Итого:" 
+                           Style="{StaticResource NormalLabel}"/>
+                    <TextBox x:Name="AllPriceTb" Grid.Row="2" Width="150" 
+                             IsEnabled="False"/>
+
+                    <Button x:Name="SellBtn" Content="Оптата"
+                        Grid.Row="2"
+                        Background="#2E5FB7" Click="StorageBtn_Click"/>
+                    </StackPanel>
+            </Grid>
+
+        </Border>
+    </Grid>
+</Page>
