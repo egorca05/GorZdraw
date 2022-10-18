@@ -33,7 +33,7 @@
     <!--Border-->
     <Style TargetType="Border" x:Key="BaseBorder">
         <Setter Property="BorderBrush" Value="{StaticResource Blue}"/>
-        <Setter Property="Margin" Value="10"/>
+        <Setter Property="Margin" Value="20"/>
         <Setter Property="Background" 
                 Value="{StaticResource MediumDarkGreen}"/>
         <Setter Property="CornerRadius" Value="20"/>
@@ -70,6 +70,7 @@
         <!--Button-->
     <Style TargetType="Button" BasedOn="{StaticResource BaseControl}">
         <Setter Property="Width" Value="200"/>
+        <Setter Property="Margin" Value="15"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
@@ -91,7 +92,8 @@
     </Style>
 
     <Style TargetType="Button" x:Key="MenuBtn" BasedOn="{StaticResource BaseControl}">
-        <Setter Property="Width" Value="150"/>
+        <Setter Property="Width" Value="140"/>
+        <Setter Property="Margin" Value="15"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
@@ -115,6 +117,7 @@
         <!--Дата грид-->
     <Style TargetType="DataGrid" BasedOn="{StaticResource BaseControl}">
         <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="Margin" Value="20"/>
         <Setter Property="AlternatingRowBackground"
                 Value="{StaticResource MediumDarkGreen}"/>
         <Setter Property="RowBackground" Value="{StaticResource SeaGreen}"/>
@@ -153,6 +156,16 @@
     <Style x:Key="MenuImg" TargetType="Image">
         <Setter Property="Stretch" Value="Fill"/>
         <Setter Property="Margin" Value="10"/>
+    </Style>
+    
+    <!--Стиль для ComboBox-->
+    <Style TargetType="ComboBox" BasedOn="{StaticResource BaseControl}">
+        
+    </Style>
+
+    <!--Стиль для DatePicker-->
+    <Style TargetType="DatePicker" BasedOn="{StaticResource BaseControl}">
+        <Setter Property="Foreground" Value="Black"/>
     </Style>
 
 </ResourceDictionary>

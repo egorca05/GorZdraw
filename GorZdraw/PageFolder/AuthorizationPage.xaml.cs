@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GorZdraw.WindowFolder;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,6 +28,8 @@ namespace GorZdraw.PageFolder
 
         private void InBtn_Click(object sender, RoutedEventArgs e)
         {
+            //AdminWindow adminWindow = new AdminWindow();
+            //adminWindow.Show();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
             this.NavigationService.Navigate(new MainMenu());
         }
     }

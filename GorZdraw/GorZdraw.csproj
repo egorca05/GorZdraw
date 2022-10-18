@@ -60,11 +60,17 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="ClassFolder\MBClass.cs" />
+    <Compile Include="PageFolder\AdminFolder\MenuProductPage.xaml.cs">
+      <DependentUpon>MenuProductPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PageFolder\AuthorizationPage.xaml.cs">
       <DependentUpon>AuthorizationPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="PageFolder\MainMenu.xaml.cs">
       <DependentUpon>MainMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageFolder\StaffFolder\AddOrderPage.xaml.cs">
+      <DependentUpon>AddOrderPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="PageFolder\StaffFolder\EditPage.xaml.cs">
       <DependentUpon>EditPage.xaml</DependentUpon>
@@ -110,11 +116,19 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Page Include="PageFolder\AdminFolder\MenuProductPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PageFolder\AuthorizationPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PageFolder\MainMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageFolder\StaffFolder\AddOrderPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

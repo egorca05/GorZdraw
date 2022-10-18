@@ -39,7 +39,7 @@ namespace GorZdraw.WindowFolder
 
         private void RollUpIm_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            MainFrame.Navigate(new PageFolder.AuthorizationPage());
+            AdminFrame.Navigate(new PageFolder.AuthorizationPage());
         }
 
         private void CloseIm_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)

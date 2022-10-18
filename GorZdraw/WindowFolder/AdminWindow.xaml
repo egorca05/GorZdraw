@@ -63,7 +63,7 @@
                            MouseLeftButtonDown="CloseIm_MouseLeftButtonDown"
                            Style="{StaticResource MenuImg}"/>
                 </StackPanel>
-                <Frame Grid.Row="2" Grid.Column="2" x:Name="MainFrame" 
+                <Frame Grid.Row="2" Grid.Column="2" x:Name="AdminFrame" 
                        Margin="10" NavigationUIVisibility="Hidden"/>
 
                 <Border
