@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -57,7 +58,9 @@ namespace GorZdraw.PageFolder.StaffFolder
 
         private void MoreInfo_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new InfoProductPage());
+            Product product = ProductDG.SelectedItem as Product;
+            VariableClass.IdProduct = product.IdProduct;
+            new InfoProductPage(ProductDG.SelectedItem as Match).Navigate();
         }
     }
 }
