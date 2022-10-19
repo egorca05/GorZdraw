@@ -1,0 +1,1296 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище DBModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="IdСategory" />
+          </Key>
+          <Property Name="IdСategory" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameСategory" Type="nvarchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="City">
+          <Key>
+            <PropertyRef Name="IdCity" />
+          </Key>
+          <Property Name="IdCity" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameCity" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Country">
+          <Key>
+            <PropertyRef Name="IdCountry" />
+          </Key>
+          <Property Name="IdCountry" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameCountry" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LegalAddressMAQC">
+          <Key>
+            <PropertyRef Name="IdLegalAddressMAQC" />
+          </Key>
+          <Property Name="IdLegalAddressMAQC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdCity" Type="int" Nullable="false" />
+          <Property Name="IdStreet" Type="int" Nullable="false" />
+          <Property Name="HouseNumber" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="Building" Type="nvarchar" MaxLength="5" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LegalAddressOAC">
+          <Key>
+            <PropertyRef Name="IdLegalAddressOAC" />
+          </Key>
+          <Property Name="IdLegalAddressOAC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdCity" Type="int" Nullable="false" />
+          <Property Name="IdStreet" Type="int" Nullable="false" />
+          <Property Name="HouseNumber" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="Building" Type="nvarchar" MaxLength="5" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LegalAddressPacker">
+          <Key>
+            <PropertyRef Name="IdLegalAddressPacker" />
+          </Key>
+          <Property Name="IdLegalAddressPacker" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdCity" Type="int" Nullable="false" />
+          <Property Name="IdStreet" Type="int" Nullable="false" />
+          <Property Name="HouseNumber" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="Building" Type="nvarchar" MaxLength="5" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Manufacturer">
+          <Key>
+            <PropertyRef Name="IdManufacturer" />
+          </Key>
+          <Property Name="IdManufacturer" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdManufacturerAndQualityControl" Type="int" Nullable="false" />
+          <Property Name="IdPacker" Type="int" Nullable="false" />
+          <Property Name="IdOrganizationAcceptingClaims" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ManufacturerAndQualityControl">
+          <Key>
+            <PropertyRef Name="IdManufacturerAndQualityControl" />
+          </Key>
+          <Property Name="IdManufacturerAndQualityControl" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameMAQC" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="IdCountry" Type="int" Nullable="false" />
+          <Property Name="IdLegalAddressMAQC" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="IdOrder" />
+          </Key>
+          <Property Name="IdOrder" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdProduct" Type="int" Nullable="false" />
+          <Property Name="DateOrder" Type="date" Nullable="false" />
+          <Property Name="QuantityOrder" Type="int" Nullable="false" />
+          <Property Name="Price" Type="decimal" Precision="7" Scale="2" Nullable="false" />
+          <Property Name="Priceall" Type="decimal" Precision="18" Scale="2" StoreGeneratedPattern="Computed" />
+          <Property Name="IdSuppliers" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OrganizationAcceptingClaims">
+          <Key>
+            <PropertyRef Name="IdOrganizationAcceptingClaims" />
+          </Key>
+          <Property Name="IdOrganizationAcceptingClaims" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameOAC" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="IdCountry" Type="int" Nullable="false" />
+          <Property Name="IdLegalAddressOAC" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Packer">
+          <Key>
+            <PropertyRef Name="IdPacker" />
+          </Key>
+          <Property Name="IdPacker" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NamePacker" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="IdCountry" Type="int" Nullable="false" />
+          <Property Name="IdLegalAddressPacker" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="IdProduct" />
+          </Key>
+          <Property Name="IdProduct" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameProduct" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="Composition" Type="nvarchar" MaxLength="1000" Nullable="false" />
+          <Property Name="IdСategory" Type="int" Nullable="false" />
+          <Property Name="ReleaseForm" Type="nvarchar" MaxLength="1000" Nullable="false" />
+          <Property Name="IdManufacturer" Type="int" Nullable="false" />
+          <Property Name="IdSuppliers" Type="int" Nullable="false" />
+          <Property Name="DosageForm" Type="nvarchar" MaxLength="1000" Nullable="false" />
+          <Property Name="Indications" Type="nvarchar" MaxLength="1000" Nullable="false" />
+          <Property Name="Contraindications" Type="nvarchar" MaxLength="1000" Nullable="false" />
+          <Property Name="MethodOfAdministrationAndDosage" Type="nvarchar" MaxLength="1000" Nullable="false" />
+          <Property Name="SideEffects" Type="nvarchar" MaxLength="1000" Nullable="false" />
+          <Property Name="Overdose" Type="nvarchar" MaxLength="1000" Nullable="false" />
+          <Property Name="DrugInteraction" Type="nvarchar" MaxLength="1000" Nullable="false" />
+          <Property Name="SpecialInstructions" Type="nvarchar" MaxLength="1000" Nullable="false" />
+          <Property Name="StorageConditions" Type="nvarchar" MaxLength="1000" Nullable="false" />
+          <Property Name="ReleaseDate" Type="date" Nullable="false" />
+          <Property Name="ExpirationDate" Type="date" Nullable="false" />
+          <Property Name="IdRecipe" Type="int" Nullable="false" />
+          <Property Name="Quantity" Type="int" Nullable="false" />
+          <Property Name="Price" Type="decimal" Precision="7" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Recipe">
+          <Key>
+            <PropertyRef Name="IdRecipe" />
+          </Key>
+          <Property Name="IdRecipe" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NeedRecipe" Type="nvarchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="IdRole" />
+          </Key>
+          <Property Name="IdRole" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameRole" Type="nvarchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Street">
+          <Key>
+            <PropertyRef Name="IdStreet" />
+          </Key>
+          <Property Name="IdStreet" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameStreet" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Suppliers">
+          <Key>
+            <PropertyRef Name="IdSuppliers" />
+          </Key>
+          <Property Name="IdSuppliers" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameSuppliers" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="IdUser" />
+          </Key>
+          <Property Name="IdUser" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LoginUser" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="IdRole" Type="int" Nullable="false" />
+          <Property Name="PasswordUser" Type="nvarchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_LegalAddressMAQC_City">
+          <End Role="City" Type="Self.City" Multiplicity="1" />
+          <End Role="LegalAddressMAQC" Type="Self.LegalAddressMAQC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="IdCity" />
+            </Principal>
+            <Dependent Role="LegalAddressMAQC">
+              <PropertyRef Name="IdCity" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LegalAddressMAQC_Street">
+          <End Role="Street" Type="Self.Street" Multiplicity="1" />
+          <End Role="LegalAddressMAQC" Type="Self.LegalAddressMAQC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Street">
+              <PropertyRef Name="IdStreet" />
+            </Principal>
+            <Dependent Role="LegalAddressMAQC">
+              <PropertyRef Name="IdStreet" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LegalAddressPacker_City">
+          <End Role="City" Type="Self.City" Multiplicity="1" />
+          <End Role="LegalAddressPacker" Type="Self.LegalAddressPacker" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="IdCity" />
+            </Principal>
+            <Dependent Role="LegalAddressPacker">
+              <PropertyRef Name="IdCity" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LegalAddressPacker_Street">
+          <End Role="Street" Type="Self.Street" Multiplicity="1" />
+          <End Role="LegalAddressPacker" Type="Self.LegalAddressPacker" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Street">
+              <PropertyRef Name="IdStreet" />
+            </Principal>
+            <Dependent Role="LegalAddressPacker">
+              <PropertyRef Name="IdStreet" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Manufacturer_ManufacturerAndQualityControl">
+          <End Role="ManufacturerAndQualityControl" Type="Self.ManufacturerAndQualityControl" Multiplicity="1" />
+          <End Role="Manufacturer" Type="Self.Manufacturer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ManufacturerAndQualityControl">
+              <PropertyRef Name="IdManufacturerAndQualityControl" />
+            </Principal>
+            <Dependent Role="Manufacturer">
+              <PropertyRef Name="IdManufacturerAndQualityControl" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Manufacturer_OrganizationAcceptingClaims">
+          <End Role="OrganizationAcceptingClaims" Type="Self.OrganizationAcceptingClaims" Multiplicity="1" />
+          <End Role="Manufacturer" Type="Self.Manufacturer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrganizationAcceptingClaims">
+              <PropertyRef Name="IdOrganizationAcceptingClaims" />
+            </Principal>
+            <Dependent Role="Manufacturer">
+              <PropertyRef Name="IdOrganizationAcceptingClaims" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Manufacturer_Packer">
+          <End Role="Packer" Type="Self.Packer" Multiplicity="1" />
+          <End Role="Manufacturer" Type="Self.Manufacturer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Packer">
+              <PropertyRef Name="IdPacker" />
+            </Principal>
+            <Dependent Role="Manufacturer">
+              <PropertyRef Name="IdPacker" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ManufacturerAndQualityControl_Country">
+          <End Role="Country" Type="Self.Country" Multiplicity="1" />
+          <End Role="ManufacturerAndQualityControl" Type="Self.ManufacturerAndQualityControl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="IdCountry" />
+            </Principal>
+            <Dependent Role="ManufacturerAndQualityControl">
+              <PropertyRef Name="IdCountry" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ManufacturerAndQualityControl_LegalAddressMAQC">
+          <End Role="LegalAddressMAQC" Type="Self.LegalAddressMAQC" Multiplicity="1" />
+          <End Role="ManufacturerAndQualityControl" Type="Self.ManufacturerAndQualityControl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LegalAddressMAQC">
+              <PropertyRef Name="IdLegalAddressMAQC" />
+            </Principal>
+            <Dependent Role="ManufacturerAndQualityControl">
+              <PropertyRef Name="IdLegalAddressMAQC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="IdProduct" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="IdProduct" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_Suppliers">
+          <End Role="Suppliers" Type="Self.Suppliers" Multiplicity="1" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Suppliers">
+              <PropertyRef Name="IdSuppliers" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="IdSuppliers" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrganizationAcceptingClaims_Country">
+          <End Role="Country" Type="Self.Country" Multiplicity="1" />
+          <End Role="OrganizationAcceptingClaims" Type="Self.OrganizationAcceptingClaims" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="IdCountry" />
+            </Principal>
+            <Dependent Role="OrganizationAcceptingClaims">
+              <PropertyRef Name="IdCountry" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrganizationAcceptingClaims_LegalAddressOAC">
+          <End Role="LegalAddressOAC" Type="Self.LegalAddressOAC" Multiplicity="1" />
+          <End Role="OrganizationAcceptingClaims" Type="Self.OrganizationAcceptingClaims" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LegalAddressOAC">
+              <PropertyRef Name="IdLegalAddressOAC" />
+            </Principal>
+            <Dependent Role="OrganizationAcceptingClaims">
+              <PropertyRef Name="IdLegalAddressOAC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Packer_Country">
+          <End Role="Country" Type="Self.Country" Multiplicity="1" />
+          <End Role="Packer" Type="Self.Packer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="IdCountry" />
+            </Principal>
+            <Dependent Role="Packer">
+              <PropertyRef Name="IdCountry" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Packer_LegalAddressPacker">
+          <End Role="LegalAddressPacker" Type="Self.LegalAddressPacker" Multiplicity="1" />
+          <End Role="Packer" Type="Self.Packer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LegalAddressPacker">
+              <PropertyRef Name="IdLegalAddressPacker" />
+            </Principal>
+            <Dependent Role="Packer">
+              <PropertyRef Name="IdLegalAddressPacker" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_Category">
+          <End Role="Category" Type="Self.Category" Multiplicity="1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="IdСategory" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="IdСategory" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_Manufacturer">
+          <End Role="Manufacturer" Type="Self.Manufacturer" Multiplicity="1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Manufacturer">
+              <PropertyRef Name="IdManufacturer" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="IdManufacturer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_Recipe">
+          <End Role="Recipe" Type="Self.Recipe" Multiplicity="1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Recipe">
+              <PropertyRef Name="IdRecipe" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="IdRecipe" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_Suppliers">
+          <End Role="Suppliers" Type="Self.Suppliers" Multiplicity="1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Suppliers">
+              <PropertyRef Name="IdSuppliers" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="IdSuppliers" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Role">
+          <End Role="Role" Type="Self.Role" Multiplicity="1" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="IdRole" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="IdRole" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище DBModelContainer">
+          <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="City" EntityType="Self.City" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Country" EntityType="Self.Country" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LegalAddressMAQC" EntityType="Self.LegalAddressMAQC" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LegalAddressOAC" EntityType="Self.LegalAddressOAC" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LegalAddressPacker" EntityType="Self.LegalAddressPacker" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Manufacturer" EntityType="Self.Manufacturer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ManufacturerAndQualityControl" EntityType="Self.ManufacturerAndQualityControl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OrganizationAcceptingClaims" EntityType="Self.OrganizationAcceptingClaims" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Packer" EntityType="Self.Packer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Recipe" EntityType="Self.Recipe" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Street" EntityType="Self.Street" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Suppliers" EntityType="Self.Suppliers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_LegalAddressMAQC_City" Association="Self.FK_LegalAddressMAQC_City">
+            <End Role="City" EntitySet="City" />
+            <End Role="LegalAddressMAQC" EntitySet="LegalAddressMAQC" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LegalAddressMAQC_Street" Association="Self.FK_LegalAddressMAQC_Street">
+            <End Role="Street" EntitySet="Street" />
+            <End Role="LegalAddressMAQC" EntitySet="LegalAddressMAQC" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LegalAddressPacker_City" Association="Self.FK_LegalAddressPacker_City">
+            <End Role="City" EntitySet="City" />
+            <End Role="LegalAddressPacker" EntitySet="LegalAddressPacker" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LegalAddressPacker_Street" Association="Self.FK_LegalAddressPacker_Street">
+            <End Role="Street" EntitySet="Street" />
+            <End Role="LegalAddressPacker" EntitySet="LegalAddressPacker" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Manufacturer_ManufacturerAndQualityControl" Association="Self.FK_Manufacturer_ManufacturerAndQualityControl">
+            <End Role="ManufacturerAndQualityControl" EntitySet="ManufacturerAndQualityControl" />
+            <End Role="Manufacturer" EntitySet="Manufacturer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Manufacturer_OrganizationAcceptingClaims" Association="Self.FK_Manufacturer_OrganizationAcceptingClaims">
+            <End Role="OrganizationAcceptingClaims" EntitySet="OrganizationAcceptingClaims" />
+            <End Role="Manufacturer" EntitySet="Manufacturer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Manufacturer_Packer" Association="Self.FK_Manufacturer_Packer">
+            <End Role="Packer" EntitySet="Packer" />
+            <End Role="Manufacturer" EntitySet="Manufacturer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ManufacturerAndQualityControl_Country" Association="Self.FK_ManufacturerAndQualityControl_Country">
+            <End Role="Country" EntitySet="Country" />
+            <End Role="ManufacturerAndQualityControl" EntitySet="ManufacturerAndQualityControl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ManufacturerAndQualityControl_LegalAddressMAQC" Association="Self.FK_ManufacturerAndQualityControl_LegalAddressMAQC">
+            <End Role="LegalAddressMAQC" EntitySet="LegalAddressMAQC" />
+            <End Role="ManufacturerAndQualityControl" EntitySet="ManufacturerAndQualityControl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_Product" Association="Self.FK_Order_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_Suppliers" Association="Self.FK_Order_Suppliers">
+            <End Role="Suppliers" EntitySet="Suppliers" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrganizationAcceptingClaims_Country" Association="Self.FK_OrganizationAcceptingClaims_Country">
+            <End Role="Country" EntitySet="Country" />
+            <End Role="OrganizationAcceptingClaims" EntitySet="OrganizationAcceptingClaims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrganizationAcceptingClaims_LegalAddressOAC" Association="Self.FK_OrganizationAcceptingClaims_LegalAddressOAC">
+            <End Role="LegalAddressOAC" EntitySet="LegalAddressOAC" />
+            <End Role="OrganizationAcceptingClaims" EntitySet="OrganizationAcceptingClaims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Packer_Country" Association="Self.FK_Packer_Country">
+            <End Role="Country" EntitySet="Country" />
+            <End Role="Packer" EntitySet="Packer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Packer_LegalAddressPacker" Association="Self.FK_Packer_LegalAddressPacker">
+            <End Role="LegalAddressPacker" EntitySet="LegalAddressPacker" />
+            <End Role="Packer" EntitySet="Packer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_Category" Association="Self.FK_Product_Category">
+            <End Role="Category" EntitySet="Category" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_Manufacturer" Association="Self.FK_Product_Manufacturer">
+            <End Role="Manufacturer" EntitySet="Manufacturer" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_Recipe" Association="Self.FK_Product_Recipe">
+            <End Role="Recipe" EntitySet="Recipe" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_Suppliers" Association="Self.FK_Product_Suppliers">
+            <End Role="Suppliers" EntitySet="Suppliers" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Role" Association="Self.FK_User_Role">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="IdСategory" />
+          </Key>
+          <Property Name="IdСategory" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameСategory" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Product" Relationship="Self.FK_Product_Category" FromRole="Category" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="City">
+          <Key>
+            <PropertyRef Name="IdCity" />
+          </Key>
+          <Property Name="IdCity" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameCity" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="LegalAddressMAQC" Relationship="Self.FK_LegalAddressMAQC_City" FromRole="City" ToRole="LegalAddressMAQC" />
+          <NavigationProperty Name="LegalAddressPacker" Relationship="Self.FK_LegalAddressPacker_City" FromRole="City" ToRole="LegalAddressPacker" />
+        </EntityType>
+        <EntityType Name="Country">
+          <Key>
+            <PropertyRef Name="IdCountry" />
+          </Key>
+          <Property Name="IdCountry" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameCountry" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="ManufacturerAndQualityControl" Relationship="Self.FK_ManufacturerAndQualityControl_Country" FromRole="Country" ToRole="ManufacturerAndQualityControl" />
+          <NavigationProperty Name="OrganizationAcceptingClaims" Relationship="Self.FK_OrganizationAcceptingClaims_Country" FromRole="Country" ToRole="OrganizationAcceptingClaims" />
+          <NavigationProperty Name="Packer" Relationship="Self.FK_Packer_Country" FromRole="Country" ToRole="Packer" />
+        </EntityType>
+        <EntityType Name="LegalAddressMAQC">
+          <Key>
+            <PropertyRef Name="IdLegalAddressMAQC" />
+          </Key>
+          <Property Name="IdLegalAddressMAQC" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdCity" Type="Int32" Nullable="false" />
+          <Property Name="IdStreet" Type="Int32" Nullable="false" />
+          <Property Name="HouseNumber" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Building" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="City" Relationship="Self.FK_LegalAddressMAQC_City" FromRole="LegalAddressMAQC" ToRole="City" />
+          <NavigationProperty Name="Street" Relationship="Self.FK_LegalAddressMAQC_Street" FromRole="LegalAddressMAQC" ToRole="Street" />
+          <NavigationProperty Name="ManufacturerAndQualityControl" Relationship="Self.FK_ManufacturerAndQualityControl_LegalAddressMAQC" FromRole="LegalAddressMAQC" ToRole="ManufacturerAndQualityControl" />
+        </EntityType>
+        <EntityType Name="LegalAddressOAC">
+          <Key>
+            <PropertyRef Name="IdLegalAddressOAC" />
+          </Key>
+          <Property Name="IdLegalAddressOAC" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdCity" Type="Int32" Nullable="false" />
+          <Property Name="IdStreet" Type="Int32" Nullable="false" />
+          <Property Name="HouseNumber" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Building" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="OrganizationAcceptingClaims" Relationship="Self.FK_OrganizationAcceptingClaims_LegalAddressOAC" FromRole="LegalAddressOAC" ToRole="OrganizationAcceptingClaims" />
+        </EntityType>
+        <EntityType Name="LegalAddressPacker">
+          <Key>
+            <PropertyRef Name="IdLegalAddressPacker" />
+          </Key>
+          <Property Name="IdLegalAddressPacker" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdCity" Type="Int32" Nullable="false" />
+          <Property Name="IdStreet" Type="Int32" Nullable="false" />
+          <Property Name="HouseNumber" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Building" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="City" Relationship="Self.FK_LegalAddressPacker_City" FromRole="LegalAddressPacker" ToRole="City" />
+          <NavigationProperty Name="Street" Relationship="Self.FK_LegalAddressPacker_Street" FromRole="LegalAddressPacker" ToRole="Street" />
+          <NavigationProperty Name="Packer" Relationship="Self.FK_Packer_LegalAddressPacker" FromRole="LegalAddressPacker" ToRole="Packer" />
+        </EntityType>
+        <EntityType Name="Manufacturer">
+          <Key>
+            <PropertyRef Name="IdManufacturer" />
+          </Key>
+          <Property Name="IdManufacturer" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdManufacturerAndQualityControl" Type="Int32" Nullable="false" />
+          <Property Name="IdPacker" Type="Int32" Nullable="false" />
+          <Property Name="IdOrganizationAcceptingClaims" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ManufacturerAndQualityControl" Relationship="Self.FK_Manufacturer_ManufacturerAndQualityControl" FromRole="Manufacturer" ToRole="ManufacturerAndQualityControl" />
+          <NavigationProperty Name="OrganizationAcceptingClaims" Relationship="Self.FK_Manufacturer_OrganizationAcceptingClaims" FromRole="Manufacturer" ToRole="OrganizationAcceptingClaims" />
+          <NavigationProperty Name="Packer" Relationship="Self.FK_Manufacturer_Packer" FromRole="Manufacturer" ToRole="Packer" />
+          <NavigationProperty Name="Product" Relationship="Self.FK_Product_Manufacturer" FromRole="Manufacturer" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="ManufacturerAndQualityControl">
+          <Key>
+            <PropertyRef Name="IdManufacturerAndQualityControl" />
+          </Key>
+          <Property Name="IdManufacturerAndQualityControl" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameMAQC" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IdCountry" Type="Int32" Nullable="false" />
+          <Property Name="IdLegalAddressMAQC" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Country" Relationship="Self.FK_ManufacturerAndQualityControl_Country" FromRole="ManufacturerAndQualityControl" ToRole="Country" />
+          <NavigationProperty Name="LegalAddressMAQC" Relationship="Self.FK_ManufacturerAndQualityControl_LegalAddressMAQC" FromRole="ManufacturerAndQualityControl" ToRole="LegalAddressMAQC" />
+          <NavigationProperty Name="Manufacturer" Relationship="Self.FK_Manufacturer_ManufacturerAndQualityControl" FromRole="ManufacturerAndQualityControl" ToRole="Manufacturer" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="IdOrder" />
+          </Key>
+          <Property Name="IdOrder" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdProduct" Type="Int32" Nullable="false" />
+          <Property Name="DateOrder" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="QuantityOrder" Type="Int32" Nullable="false" />
+          <Property Name="Price" Type="Decimal" Precision="7" Scale="2" Nullable="false" />
+          <Property Name="Priceall" Type="Decimal" Precision="18" Scale="2" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="IdSuppliers" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Product" Relationship="Self.FK_Order_Product" FromRole="Order" ToRole="Product" />
+          <NavigationProperty Name="Suppliers" Relationship="Self.FK_Order_Suppliers" FromRole="Order" ToRole="Suppliers" />
+        </EntityType>
+        <EntityType Name="OrganizationAcceptingClaims">
+          <Key>
+            <PropertyRef Name="IdOrganizationAcceptingClaims" />
+          </Key>
+          <Property Name="IdOrganizationAcceptingClaims" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameOAC" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="IdCountry" Type="Int32" Nullable="false" />
+          <Property Name="IdLegalAddressOAC" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Country" Relationship="Self.FK_OrganizationAcceptingClaims_Country" FromRole="OrganizationAcceptingClaims" ToRole="Country" />
+          <NavigationProperty Name="LegalAddressOAC" Relationship="Self.FK_OrganizationAcceptingClaims_LegalAddressOAC" FromRole="OrganizationAcceptingClaims" ToRole="LegalAddressOAC" />
+          <NavigationProperty Name="Manufacturer" Relationship="Self.FK_Manufacturer_OrganizationAcceptingClaims" FromRole="OrganizationAcceptingClaims" ToRole="Manufacturer" />
+        </EntityType>
+        <EntityType Name="Packer">
+          <Key>
+            <PropertyRef Name="IdPacker" />
+          </Key>
+          <Property Name="IdPacker" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NamePacker" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IdCountry" Type="Int32" Nullable="false" />
+          <Property Name="IdLegalAddressPacker" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Country" Relationship="Self.FK_Packer_Country" FromRole="Packer" ToRole="Country" />
+          <NavigationProperty Name="LegalAddressPacker" Relationship="Self.FK_Packer_LegalAddressPacker" FromRole="Packer" ToRole="LegalAddressPacker" />
+          <NavigationProperty Name="Manufacturer" Relationship="Self.FK_Manufacturer_Packer" FromRole="Packer" ToRole="Manufacturer" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="IdProduct" />
+          </Key>
+          <Property Name="IdProduct" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameProduct" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Composition" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IdСategory" Type="Int32" Nullable="false" />
+          <Property Name="ReleaseForm" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IdManufacturer" Type="Int32" Nullable="false" />
+          <Property Name="IdSuppliers" Type="Int32" Nullable="false" />
+          <Property Name="DosageForm" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Indications" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Contraindications" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MethodOfAdministrationAndDosage" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SideEffects" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Overdose" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DrugInteraction" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SpecialInstructions" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="StorageConditions" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ReleaseDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ExpirationDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="IdRecipe" Type="Int32" Nullable="false" />
+          <Property Name="Quantity" Type="Int32" Nullable="false" />
+          <Property Name="Price" Type="Decimal" Precision="7" Scale="2" Nullable="false" />
+          <NavigationProperty Name="Category" Relationship="Self.FK_Product_Category" FromRole="Product" ToRole="Category" />
+          <NavigationProperty Name="Manufacturer" Relationship="Self.FK_Product_Manufacturer" FromRole="Product" ToRole="Manufacturer" />
+          <NavigationProperty Name="Order" Relationship="Self.FK_Order_Product" FromRole="Product" ToRole="Order" />
+          <NavigationProperty Name="Recipe" Relationship="Self.FK_Product_Recipe" FromRole="Product" ToRole="Recipe" />
+          <NavigationProperty Name="Suppliers" Relationship="Self.FK_Product_Suppliers" FromRole="Product" ToRole="Suppliers" />
+        </EntityType>
+        <EntityType Name="Recipe">
+          <Key>
+            <PropertyRef Name="IdRecipe" />
+          </Key>
+          <Property Name="IdRecipe" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NeedRecipe" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Product" Relationship="Self.FK_Product_Recipe" FromRole="Recipe" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="IdRole" />
+          </Key>
+          <Property Name="IdRole" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameRole" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="Self.FK_User_Role" FromRole="Role" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Street">
+          <Key>
+            <PropertyRef Name="IdStreet" />
+          </Key>
+          <Property Name="IdStreet" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameStreet" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="LegalAddressMAQC" Relationship="Self.FK_LegalAddressMAQC_Street" FromRole="Street" ToRole="LegalAddressMAQC" />
+          <NavigationProperty Name="LegalAddressPacker" Relationship="Self.FK_LegalAddressPacker_Street" FromRole="Street" ToRole="LegalAddressPacker" />
+        </EntityType>
+        <EntityType Name="Suppliers">
+          <Key>
+            <PropertyRef Name="IdSuppliers" />
+          </Key>
+          <Property Name="IdSuppliers" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameSuppliers" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Order" Relationship="Self.FK_Order_Suppliers" FromRole="Suppliers" ToRole="Order" />
+          <NavigationProperty Name="Product" Relationship="Self.FK_Product_Suppliers" FromRole="Suppliers" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="IdUser" />
+          </Key>
+          <Property Name="IdUser" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LoginUser" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IdRole" Type="Int32" Nullable="false" />
+          <Property Name="PasswordUser" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Role" Relationship="Self.FK_User_Role" FromRole="User" ToRole="Role" />
+        </EntityType>
+        <Association Name="FK_Product_Category">
+          <End Role="Category" Type="Self.Category" Multiplicity="1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="IdСategory" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="IdСategory" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LegalAddressMAQC_City">
+          <End Role="City" Type="Self.City" Multiplicity="1" />
+          <End Role="LegalAddressMAQC" Type="Self.LegalAddressMAQC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="IdCity" />
+            </Principal>
+            <Dependent Role="LegalAddressMAQC">
+              <PropertyRef Name="IdCity" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LegalAddressPacker_City">
+          <End Role="City" Type="Self.City" Multiplicity="1" />
+          <End Role="LegalAddressPacker" Type="Self.LegalAddressPacker" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="IdCity" />
+            </Principal>
+            <Dependent Role="LegalAddressPacker">
+              <PropertyRef Name="IdCity" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ManufacturerAndQualityControl_Country">
+          <End Role="Country" Type="Self.Country" Multiplicity="1" />
+          <End Role="ManufacturerAndQualityControl" Type="Self.ManufacturerAndQualityControl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="IdCountry" />
+            </Principal>
+            <Dependent Role="ManufacturerAndQualityControl">
+              <PropertyRef Name="IdCountry" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrganizationAcceptingClaims_Country">
+          <End Role="Country" Type="Self.Country" Multiplicity="1" />
+          <End Role="OrganizationAcceptingClaims" Type="Self.OrganizationAcceptingClaims" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="IdCountry" />
+            </Principal>
+            <Dependent Role="OrganizationAcceptingClaims">
+              <PropertyRef Name="IdCountry" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Packer_Country">
+          <End Role="Country" Type="Self.Country" Multiplicity="1" />
+          <End Role="Packer" Type="Self.Packer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="IdCountry" />
+            </Principal>
+            <Dependent Role="Packer">
+              <PropertyRef Name="IdCountry" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LegalAddressMAQC_Street">
+          <End Role="Street" Type="Self.Street" Multiplicity="1" />
+          <End Role="LegalAddressMAQC" Type="Self.LegalAddressMAQC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Street">
+              <PropertyRef Name="IdStreet" />
+            </Principal>
+            <Dependent Role="LegalAddressMAQC">
+              <PropertyRef Name="IdStreet" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ManufacturerAndQualityControl_LegalAddressMAQC">
+          <End Role="LegalAddressMAQC" Type="Self.LegalAddressMAQC" Multiplicity="1" />
+          <End Role="ManufacturerAndQualityControl" Type="Self.ManufacturerAndQualityControl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LegalAddressMAQC">
+              <PropertyRef Name="IdLegalAddressMAQC" />
+            </Principal>
+            <Dependent Role="ManufacturerAndQualityControl">
+              <PropertyRef Name="IdLegalAddressMAQC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrganizationAcceptingClaims_LegalAddressOAC">
+          <End Role="LegalAddressOAC" Type="Self.LegalAddressOAC" Multiplicity="1" />
+          <End Role="OrganizationAcceptingClaims" Type="Self.OrganizationAcceptingClaims" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LegalAddressOAC">
+              <PropertyRef Name="IdLegalAddressOAC" />
+            </Principal>
+            <Dependent Role="OrganizationAcceptingClaims">
+              <PropertyRef Name="IdLegalAddressOAC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LegalAddressPacker_Street">
+          <End Role="Street" Type="Self.Street" Multiplicity="1" />
+          <End Role="LegalAddressPacker" Type="Self.LegalAddressPacker" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Street">
+              <PropertyRef Name="IdStreet" />
+            </Principal>
+            <Dependent Role="LegalAddressPacker">
+              <PropertyRef Name="IdStreet" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Packer_LegalAddressPacker">
+          <End Role="LegalAddressPacker" Type="Self.LegalAddressPacker" Multiplicity="1" />
+          <End Role="Packer" Type="Self.Packer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LegalAddressPacker">
+              <PropertyRef Name="IdLegalAddressPacker" />
+            </Principal>
+            <Dependent Role="Packer">
+              <PropertyRef Name="IdLegalAddressPacker" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Manufacturer_ManufacturerAndQualityControl">
+          <End Role="ManufacturerAndQualityControl" Type="Self.ManufacturerAndQualityControl" Multiplicity="1" />
+          <End Role="Manufacturer" Type="Self.Manufacturer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ManufacturerAndQualityControl">
+              <PropertyRef Name="IdManufacturerAndQualityControl" />
+            </Principal>
+            <Dependent Role="Manufacturer">
+              <PropertyRef Name="IdManufacturerAndQualityControl" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Manufacturer_OrganizationAcceptingClaims">
+          <End Role="OrganizationAcceptingClaims" Type="Self.OrganizationAcceptingClaims" Multiplicity="1" />
+          <End Role="Manufacturer" Type="Self.Manufacturer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrganizationAcceptingClaims">
+              <PropertyRef Name="IdOrganizationAcceptingClaims" />
+            </Principal>
+            <Dependent Role="Manufacturer">
+              <PropertyRef Name="IdOrganizationAcceptingClaims" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Manufacturer_Packer">
+          <End Role="Packer" Type="Self.Packer" Multiplicity="1" />
+          <End Role="Manufacturer" Type="Self.Manufacturer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Packer">
+              <PropertyRef Name="IdPacker" />
+            </Principal>
+            <Dependent Role="Manufacturer">
+              <PropertyRef Name="IdPacker" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_Manufacturer">
+          <End Role="Manufacturer" Type="Self.Manufacturer" Multiplicity="1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Manufacturer">
+              <PropertyRef Name="IdManufacturer" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="IdManufacturer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="IdProduct" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="IdProduct" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_Suppliers">
+          <End Role="Suppliers" Type="Self.Suppliers" Multiplicity="1" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Suppliers">
+              <PropertyRef Name="IdSuppliers" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="IdSuppliers" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_Recipe">
+          <End Role="Recipe" Type="Self.Recipe" Multiplicity="1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Recipe">
+              <PropertyRef Name="IdRecipe" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="IdRecipe" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_Suppliers">
+          <End Role="Suppliers" Type="Self.Suppliers" Multiplicity="1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Suppliers">
+              <PropertyRef Name="IdSuppliers" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="IdSuppliers" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Role">
+          <End Role="Role" Type="Self.Role" Multiplicity="1" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="IdRole" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="IdRole" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Category" EntityType="Self.Category" />
+          <EntitySet Name="City" EntityType="Self.City" />
+          <EntitySet Name="Country" EntityType="Self.Country" />
+          <EntitySet Name="LegalAddressMAQC" EntityType="Self.LegalAddressMAQC" />
+          <EntitySet Name="LegalAddressOAC" EntityType="Self.LegalAddressOAC" />
+          <EntitySet Name="LegalAddressPacker" EntityType="Self.LegalAddressPacker" />
+          <EntitySet Name="Manufacturer" EntityType="Self.Manufacturer" />
+          <EntitySet Name="ManufacturerAndQualityControl" EntityType="Self.ManufacturerAndQualityControl" />
+          <EntitySet Name="Order" EntityType="Self.Order" />
+          <EntitySet Name="OrganizationAcceptingClaims" EntityType="Self.OrganizationAcceptingClaims" />
+          <EntitySet Name="Packer" EntityType="Self.Packer" />
+          <EntitySet Name="Product" EntityType="Self.Product" />
+          <EntitySet Name="Recipe" EntityType="Self.Recipe" />
+          <EntitySet Name="Role" EntityType="Self.Role" />
+          <EntitySet Name="Street" EntityType="Self.Street" />
+          <EntitySet Name="Suppliers" EntityType="Self.Suppliers" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="User" EntityType="Self.User" />
+          <AssociationSet Name="FK_Product_Category" Association="Self.FK_Product_Category">
+            <End Role="Category" EntitySet="Category" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LegalAddressMAQC_City" Association="Self.FK_LegalAddressMAQC_City">
+            <End Role="City" EntitySet="City" />
+            <End Role="LegalAddressMAQC" EntitySet="LegalAddressMAQC" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LegalAddressPacker_City" Association="Self.FK_LegalAddressPacker_City">
+            <End Role="City" EntitySet="City" />
+            <End Role="LegalAddressPacker" EntitySet="LegalAddressPacker" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ManufacturerAndQualityControl_Country" Association="Self.FK_ManufacturerAndQualityControl_Country">
+            <End Role="Country" EntitySet="Country" />
+            <End Role="ManufacturerAndQualityControl" EntitySet="ManufacturerAndQualityControl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrganizationAcceptingClaims_Country" Association="Self.FK_OrganizationAcceptingClaims_Country">
+            <End Role="Country" EntitySet="Country" />
+            <End Role="OrganizationAcceptingClaims" EntitySet="OrganizationAcceptingClaims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Packer_Country" Association="Self.FK_Packer_Country">
+            <End Role="Country" EntitySet="Country" />
+            <End Role="Packer" EntitySet="Packer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LegalAddressMAQC_Street" Association="Self.FK_LegalAddressMAQC_Street">
+            <End Role="Street" EntitySet="Street" />
+            <End Role="LegalAddressMAQC" EntitySet="LegalAddressMAQC" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ManufacturerAndQualityControl_LegalAddressMAQC" Association="Self.FK_ManufacturerAndQualityControl_LegalAddressMAQC">
+            <End Role="LegalAddressMAQC" EntitySet="LegalAddressMAQC" />
+            <End Role="ManufacturerAndQualityControl" EntitySet="ManufacturerAndQualityControl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrganizationAcceptingClaims_LegalAddressOAC" Association="Self.FK_OrganizationAcceptingClaims_LegalAddressOAC">
+            <End Role="LegalAddressOAC" EntitySet="LegalAddressOAC" />
+            <End Role="OrganizationAcceptingClaims" EntitySet="OrganizationAcceptingClaims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LegalAddressPacker_Street" Association="Self.FK_LegalAddressPacker_Street">
+            <End Role="Street" EntitySet="Street" />
+            <End Role="LegalAddressPacker" EntitySet="LegalAddressPacker" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Packer_LegalAddressPacker" Association="Self.FK_Packer_LegalAddressPacker">
+            <End Role="LegalAddressPacker" EntitySet="LegalAddressPacker" />
+            <End Role="Packer" EntitySet="Packer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Manufacturer_ManufacturerAndQualityControl" Association="Self.FK_Manufacturer_ManufacturerAndQualityControl">
+            <End Role="ManufacturerAndQualityControl" EntitySet="ManufacturerAndQualityControl" />
+            <End Role="Manufacturer" EntitySet="Manufacturer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Manufacturer_OrganizationAcceptingClaims" Association="Self.FK_Manufacturer_OrganizationAcceptingClaims">
+            <End Role="OrganizationAcceptingClaims" EntitySet="OrganizationAcceptingClaims" />
+            <End Role="Manufacturer" EntitySet="Manufacturer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Manufacturer_Packer" Association="Self.FK_Manufacturer_Packer">
+            <End Role="Packer" EntitySet="Packer" />
+            <End Role="Manufacturer" EntitySet="Manufacturer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_Manufacturer" Association="Self.FK_Product_Manufacturer">
+            <End Role="Manufacturer" EntitySet="Manufacturer" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_Product" Association="Self.FK_Order_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_Suppliers" Association="Self.FK_Order_Suppliers">
+            <End Role="Suppliers" EntitySet="Suppliers" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_Recipe" Association="Self.FK_Product_Recipe">
+            <End Role="Recipe" EntitySet="Recipe" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_Suppliers" Association="Self.FK_Product_Suppliers">
+            <End Role="Suppliers" EntitySet="Suppliers" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Role" Association="Self.FK_User_Role">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище DBModelContainer" CdmEntityContainer="DBEntities">
+          <EntitySetMapping Name="Category">
+            <EntityTypeMapping TypeName="DBModel.Category">
+              <MappingFragment StoreEntitySet="Category">
+                <ScalarProperty Name="IdСategory" ColumnName="IdСategory" />
+                <ScalarProperty Name="NameСategory" ColumnName="NameСategory" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="City">
+            <EntityTypeMapping TypeName="DBModel.City">
+              <MappingFragment StoreEntitySet="City">
+                <ScalarProperty Name="IdCity" ColumnName="IdCity" />
+                <ScalarProperty Name="NameCity" ColumnName="NameCity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Country">
+            <EntityTypeMapping TypeName="DBModel.Country">
+              <MappingFragment StoreEntitySet="Country">
+                <ScalarProperty Name="IdCountry" ColumnName="IdCountry" />
+                <ScalarProperty Name="NameCountry" ColumnName="NameCountry" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LegalAddressMAQC">
+            <EntityTypeMapping TypeName="DBModel.LegalAddressMAQC">
+              <MappingFragment StoreEntitySet="LegalAddressMAQC">
+                <ScalarProperty Name="IdLegalAddressMAQC" ColumnName="IdLegalAddressMAQC" />
+                <ScalarProperty Name="IdCity" ColumnName="IdCity" />
+                <ScalarProperty Name="IdStreet" ColumnName="IdStreet" />
+                <ScalarProperty Name="HouseNumber" ColumnName="HouseNumber" />
+                <ScalarProperty Name="Building" ColumnName="Building" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LegalAddressOAC">
+            <EntityTypeMapping TypeName="DBModel.LegalAddressOAC">
+              <MappingFragment StoreEntitySet="LegalAddressOAC">
+                <ScalarProperty Name="IdLegalAddressOAC" ColumnName="IdLegalAddressOAC" />
+                <ScalarProperty Name="IdCity" ColumnName="IdCity" />
+                <ScalarProperty Name="IdStreet" ColumnName="IdStreet" />
+                <ScalarProperty Name="HouseNumber" ColumnName="HouseNumber" />
+                <ScalarProperty Name="Building" ColumnName="Building" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LegalAddressPacker">
+            <EntityTypeMapping TypeName="DBModel.LegalAddressPacker">
+              <MappingFragment StoreEntitySet="LegalAddressPacker">
+                <ScalarProperty Name="IdLegalAddressPacker" ColumnName="IdLegalAddressPacker" />
+                <ScalarProperty Name="IdCity" ColumnName="IdCity" />
+                <ScalarProperty Name="IdStreet" ColumnName="IdStreet" />
+                <ScalarProperty Name="HouseNumber" ColumnName="HouseNumber" />
+                <ScalarProperty Name="Building" ColumnName="Building" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Manufacturer">
+            <EntityTypeMapping TypeName="DBModel.Manufacturer">
+              <MappingFragment StoreEntitySet="Manufacturer">
+                <ScalarProperty Name="IdManufacturer" ColumnName="IdManufacturer" />
+                <ScalarProperty Name="IdManufacturerAndQualityControl" ColumnName="IdManufacturerAndQualityControl" />
+                <ScalarProperty Name="IdPacker" ColumnName="IdPacker" />
+                <ScalarProperty Name="IdOrganizationAcceptingClaims" ColumnName="IdOrganizationAcceptingClaims" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ManufacturerAndQualityControl">
+            <EntityTypeMapping TypeName="DBModel.ManufacturerAndQualityControl">
+              <MappingFragment StoreEntitySet="ManufacturerAndQualityControl">
+                <ScalarProperty Name="IdManufacturerAndQualityControl" ColumnName="IdManufacturerAndQualityControl" />
+                <ScalarProperty Name="NameMAQC" ColumnName="NameMAQC" />
+                <ScalarProperty Name="IdCountry" ColumnName="IdCountry" />
+                <ScalarProperty Name="IdLegalAddressMAQC" ColumnName="IdLegalAddressMAQC" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Order">
+            <EntityTypeMapping TypeName="DBModel.Order">
+              <MappingFragment StoreEntitySet="Order">
+                <ScalarProperty Name="IdOrder" ColumnName="IdOrder" />
+                <ScalarProperty Name="IdProduct" ColumnName="IdProduct" />
+                <ScalarProperty Name="DateOrder" ColumnName="DateOrder" />
+                <ScalarProperty Name="QuantityOrder" ColumnName="QuantityOrder" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Priceall" ColumnName="Priceall" />
+                <ScalarProperty Name="IdSuppliers" ColumnName="IdSuppliers" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrganizationAcceptingClaims">
+            <EntityTypeMapping TypeName="DBModel.OrganizationAcceptingClaims">
+              <MappingFragment StoreEntitySet="OrganizationAcceptingClaims">
+                <ScalarProperty Name="IdOrganizationAcceptingClaims" ColumnName="IdOrganizationAcceptingClaims" />
+                <ScalarProperty Name="NameOAC" ColumnName="NameOAC" />
+                <ScalarProperty Name="IdCountry" ColumnName="IdCountry" />
+                <ScalarProperty Name="IdLegalAddressOAC" ColumnName="IdLegalAddressOAC" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Packer">
+            <EntityTypeMapping TypeName="DBModel.Packer">
+              <MappingFragment StoreEntitySet="Packer">
+                <ScalarProperty Name="IdPacker" ColumnName="IdPacker" />
+                <ScalarProperty Name="NamePacker" ColumnName="NamePacker" />
+                <ScalarProperty Name="IdCountry" ColumnName="IdCountry" />
+                <ScalarProperty Name="IdLegalAddressPacker" ColumnName="IdLegalAddressPacker" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Product">
+            <EntityTypeMapping TypeName="DBModel.Product">
+              <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="IdProduct" ColumnName="IdProduct" />
+                <ScalarProperty Name="NameProduct" ColumnName="NameProduct" />
+                <ScalarProperty Name="Composition" ColumnName="Composition" />
+                <ScalarProperty Name="IdСategory" ColumnName="IdСategory" />
+                <ScalarProperty Name="ReleaseForm" ColumnName="ReleaseForm" />
+                <ScalarProperty Name="IdManufacturer" ColumnName="IdManufacturer" />
+                <ScalarProperty Name="IdSuppliers" ColumnName="IdSuppliers" />
+                <ScalarProperty Name="DosageForm" ColumnName="DosageForm" />
+                <ScalarProperty Name="Indications" ColumnName="Indications" />
+                <ScalarProperty Name="Contraindications" ColumnName="Contraindications" />
+                <ScalarProperty Name="MethodOfAdministrationAndDosage" ColumnName="MethodOfAdministrationAndDosage" />
+                <ScalarProperty Name="SideEffects" ColumnName="SideEffects" />
+                <ScalarProperty Name="Overdose" ColumnName="Overdose" />
+                <ScalarProperty Name="DrugInteraction" ColumnName="DrugInteraction" />
+                <ScalarProperty Name="SpecialInstructions" ColumnName="SpecialInstructions" />
+                <ScalarProperty Name="StorageConditions" ColumnName="StorageConditions" />
+                <ScalarProperty Name="ReleaseDate" ColumnName="ReleaseDate" />
+                <ScalarProperty Name="ExpirationDate" ColumnName="ExpirationDate" />
+                <ScalarProperty Name="IdRecipe" ColumnName="IdRecipe" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Recipe">
+            <EntityTypeMapping TypeName="DBModel.Recipe">
+              <MappingFragment StoreEntitySet="Recipe">
+                <ScalarProperty Name="IdRecipe" ColumnName="IdRecipe" />
+                <ScalarProperty Name="NeedRecipe" ColumnName="NeedRecipe" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Role">
+            <EntityTypeMapping TypeName="DBModel.Role">
+              <MappingFragment StoreEntitySet="Role">
+                <ScalarProperty Name="IdRole" ColumnName="IdRole" />
+                <ScalarProperty Name="NameRole" ColumnName="NameRole" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Street">
+            <EntityTypeMapping TypeName="DBModel.Street">
+              <MappingFragment StoreEntitySet="Street">
+                <ScalarProperty Name="IdStreet" ColumnName="IdStreet" />
+                <ScalarProperty Name="NameStreet" ColumnName="NameStreet" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Suppliers">
+            <EntityTypeMapping TypeName="DBModel.Suppliers">
+              <MappingFragment StoreEntitySet="Suppliers">
+                <ScalarProperty Name="IdSuppliers" ColumnName="IdSuppliers" />
+                <ScalarProperty Name="NameSuppliers" ColumnName="NameSuppliers" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="DBModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User">
+            <EntityTypeMapping TypeName="DBModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+                <ScalarProperty Name="LoginUser" ColumnName="LoginUser" />
+                <ScalarProperty Name="IdRole" ColumnName="IdRole" />
+                <ScalarProperty Name="PasswordUser" ColumnName="PasswordUser" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

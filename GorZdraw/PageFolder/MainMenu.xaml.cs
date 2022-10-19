@@ -31,11 +31,6 @@ namespace GorZdraw.PageFolder
             this.NavigationService.Navigate(new SalePage());
         }
 
-        private void StorageBtn_Click(object sender, RoutedEventArgs e)
-        {
-            this.NavigationService.Navigate(new NomenclaturePage());
-        }
-
         private void EditBtn_Click(object sender, RoutedEventArgs e)
         {
             this.NavigationService.Navigate(new EditPage());

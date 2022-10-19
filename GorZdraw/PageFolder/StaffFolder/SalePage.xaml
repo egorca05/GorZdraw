@@ -37,7 +37,7 @@
                                             Binding="{Binding NameProduct}" 
                                             Width="*"/>
                         <DataGridTextColumn Header="Категория" 
-                                            Binding="{Binding Сategory.NameСategory}" 
+                                            Binding="{Binding Category.NameСategory}" 
                                             Width="*"/>
                         <DataGridTextColumn Header="Рецепт" 
                                             Binding="{Binding Recipe.NeedRecipe}" 
@@ -52,18 +52,15 @@
                 </DataGrid>
                 <StackPanel Grid.Row="2" Orientation="Horizontal" 
                             HorizontalAlignment="Right">
+                    <Button x:Name="MoreInfo" Content="Подробнее"
+                            Click="MoreInfo_Click"/>
                     <Label Content="Количество:" 
                            Style="{StaticResource NormalLabel}"/>
                     <TextBox x:Name="QuantityTb" Grid.Row="2" Width="150"/>
 
-                    <Label Content="Итого:" 
-                           Style="{StaticResource NormalLabel}"/>
-                    <TextBox x:Name="AllPriceTb" Grid.Row="2" Width="150" 
-                             IsEnabled="False"/>
-
                     <Button x:Name="SellBtn" Content="Оптата"
                         Grid.Row="2"
-                        Background="#2E5FB7" Click="StorageBtn_Click"/>
+                        Background="#2E5FB7" Click="SellBtn_Click"/>
                     </StackPanel>
             </Grid>
 

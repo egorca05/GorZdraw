@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GorZdraw.ClassFolder;
+using GorZdraw.DataFolder;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +25,8 @@ namespace GorZdraw.PageFolder.StaffFolder
         public SalePage()
         {
             InitializeComponent();
+            ProductDG.ItemsSource = DBEntities.Getcontext().Product.ToList().
+                OrderBy(c => c.IdProduct);
         }
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)
@@ -30,9 +34,30 @@ namespace GorZdraw.PageFolder.StaffFolder
             this.NavigationService.GoBack();
         }
 
-        private void StorageBtn_Click(object sender, RoutedEventArgs e)
+        private void SellBtn_Click(object sender, RoutedEventArgs e)
         {
+            if (string.IsNullOrEmpty(QuantityTb.Text))
+            {
+                MBClass.ErrorMB("Введите количество");
+                QuantityTb.Focus();
+            }
+            else
+            {
+                Product product = ProductDG.SelectedItem as Product;
+                product.Quantity -= Convert.ToInt16(QuantityTb.Text);
+                DBEntities.Getcontext().SaveChanges();
+                Ref();
+            }
+        }
+        private void Ref() 
+        {
+            ProductDG.ItemsSource = DBEntities.Getcontext().Product.ToList().
+                   OrderBy(c => c.IdProduct);   
+        }
 
+        private void MoreInfo_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new InfoProductPage());
         }
     }
 }

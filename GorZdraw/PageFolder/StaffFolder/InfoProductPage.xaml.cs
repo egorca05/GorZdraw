@@ -16,21 +16,16 @@ using System.Windows.Shapes;
 namespace GorZdraw.PageFolder.StaffFolder
 {
     /// <summary>
-    /// Логика взаимодействия для NomenclaturePage.xaml
+    /// Логика взаимодействия для InfoProductPage.xaml
     /// </summary>
-    public partial class NomenclaturePage : Page
+    public partial class InfoProductPage : Page
     {
-        public NomenclaturePage()
+        public InfoProductPage()
         {
             InitializeComponent();
         }
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)
-        {
-            this.NavigationService.GoBack();
-        }
-
-        private void SaveBtn_Click(object sender, RoutedEventArgs e)
         {
 
         }

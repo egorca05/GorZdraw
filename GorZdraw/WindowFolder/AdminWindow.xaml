@@ -13,7 +13,7 @@
         Background="{x:Null}">
     <Grid>
         <Border Style="{DynamicResource BaseBorder}"
-                Background="#E5E5E5"
+                Background="#CCCCCC"
                 Margin="0"
                 MouseDown="Border_MouseDown">
             <Grid>
@@ -78,20 +78,26 @@
                             <RowDefinition/>
                             <RowDefinition/>
                             <RowDefinition/>
+                            <RowDefinition/>
                         </Grid.RowDefinitions>
 
-                        <Button x:Name="ProductBtn" Content="Препараты" 
+                        <Button x:Name="ProductBtn" Content="Препараты"
+                                Click="ProductBtn_Click"
                                 Style="{DynamicResource MenuBtn}"/>
                         <Button x:Name="СategoryBtn" Content="Категории"
                                 Grid.Row="1" 
                                 Style="{DynamicResource MenuBtn}"/>
                         <Button x:Name="ManufacturerBtn" 
-                                Content="Производитель"
+                                Content="Производители"
                                 Grid.Row="2"
                                 Style="{DynamicResource MenuBtn}"/>
                         <Button x:Name="SuppliersrBtn" 
                                 Content="Поставщики"
                                 Grid.Row="3"
+                                Style="{DynamicResource MenuBtn}"/>
+                        <Button x:Name="StafffBtn" 
+                                Content="Сотрудники"
+                                Grid.Row="4"
                                 Style="{DynamicResource MenuBtn}"/>
                     </Grid>
 

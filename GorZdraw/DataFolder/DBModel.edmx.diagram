@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="298bca07924a40859e4d4d133aeca438" Name="Diagram1">
+        <EntityTypeShape EntityType="DBModel.Category" Width="1.5" PointX="8.25" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.City" Width="1.5" PointX="1.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Country" Width="1.5" PointX="0.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.LegalAddressMAQC" Width="1.5" PointX="0.75" PointY="14.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.LegalAddressOAC" Width="1.5" PointX="3.75" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.LegalAddressPacker" Width="1.5" PointX="0.75" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Manufacturer" Width="1.5" PointX="8.25" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.ManufacturerAndQualityControl" Width="1.5" PointX="3" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Order" Width="1.5" PointX="12.75" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.OrganizationAcceptingClaims" Width="1.5" PointX="6" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Packer" Width="1.5" PointX="3" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Product" Width="1.5" PointX="10.5" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Recipe" Width="1.5" PointX="8.25" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Role" Width="1.5" PointX="10.75" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Street" Width="1.5" PointX="1.5" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Suppliers" Width="1.5" PointX="8.25" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.sysdiagrams" Width="1.5" PointX="12.75" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.User" Width="1.5" PointX="13" PointY="11.25" IsExpanded="true" />
+        <AssociationConnector Association="DBModel.FK_Product_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_LegalAddressMAQC_City" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_LegalAddressPacker_City" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_ManufacturerAndQualityControl_Country" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_OrganizationAcceptingClaims_Country" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_Packer_Country" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_LegalAddressMAQC_Street" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_ManufacturerAndQualityControl_LegalAddressMAQC" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_OrganizationAcceptingClaims_LegalAddressOAC" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_LegalAddressPacker_Street" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_Packer_LegalAddressPacker" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_Manufacturer_ManufacturerAndQualityControl" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_Manufacturer_OrganizationAcceptingClaims" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_Manufacturer_Packer" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_Product_Manufacturer" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_Order_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_Order_Suppliers" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_Product_Recipe" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_Product_Suppliers" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_User_Role" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -31,8 +31,6 @@
                         Click="SellBtn_Click"/>
                 <Button x:Name="OrderBtn" Content="Создать заказ" Grid.Column="1" 
                         Click="OrderBtn_Click"/>
-                <Button x:Name="StorageBtn" Content="Список номенклатур"
-                        Grid.Row="1" Click="StorageBtn_Click"/>
                 <Button x:Name="EditBtn" Content="Пересчет продукции"
                         Grid.Row="1" Grid.Column="1" Click="EditBtn_Click"/>
             </Grid>

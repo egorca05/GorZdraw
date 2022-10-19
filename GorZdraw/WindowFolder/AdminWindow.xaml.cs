@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GorZdraw.PageFolder.AdminFolder;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -45,6 +46,11 @@ namespace GorZdraw.WindowFolder
         private void CloseIm_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             ClassFolder.MBClass.ExitMB();
+        }
+
+        private void ProductBtn_Click(object sender, RoutedEventArgs e)
+        {
+            AdminFrame.Navigate(new MenuProductPage());
         }
     }
 }

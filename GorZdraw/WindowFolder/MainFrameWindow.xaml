@@ -13,7 +13,7 @@
         Background="{x:Null}">
     <Grid>
         <Border Style="{DynamicResource BaseBorder}"
-                Background="#E5E5E5"
+                Background="#CCCCCC"
                 Margin="0"
                 MouseDown="Border_MouseDown">
             <Grid>
