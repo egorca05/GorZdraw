@@ -5,13 +5,13 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:GorZdraw.PageFolder.StaffFolder"
       mc:Ignorable="d" 
-      d:DesignHeight="650" d:DesignWidth="1010"
+      d:DesignHeight="650" d:DesignWidth="1150"
       Title="Режим продажи">
 
     <Grid>
         <Border
             CornerRadius="20"
-            Width="1000"
+            Width="1100"
             Height="650"
             Background="{StaticResource DeepYellowGreen}">
             <Border.Effect>
@@ -26,8 +26,12 @@
 
                 <Button x:Name="BackBtn" Content="Назад"
                         HorizontalAlignment="Left" Click="BackBtn_Click"/>
-          
-                <DataGrid x:Name="ProductDG" AutoGenerateColumns="False" 
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Image Source="/ResourcesFolder/ÍmageFolder/Search.png" Height="40"/>
+                        <TextBox x:Name="SearchTb" Width="300" TextChanged="SearchTb_TextChanged"/>
+                </StackPanel>
+
+                    <DataGrid x:Name="ProductDG" AutoGenerateColumns="False" 
                       IsReadOnly="True" Grid.Row="1">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="№" 

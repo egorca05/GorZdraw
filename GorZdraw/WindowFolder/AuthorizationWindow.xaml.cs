@@ -1,6 +1,6 @@
 ﻿using GorZdraw.ClassFolder;
 using GorZdraw.DataFolder;
-using GorZdraw.WindowFolder;
+using GorZdraw.PageFolder;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,17 +13,16 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace GorZdraw.PageFolder
+namespace GorZdraw.WindowFolder
 {
     /// <summary>
-    /// Логика взаимодействия для AuthorizationPage.xaml
+    /// Логика взаимодействия для AuthorizationWindow.xaml
     /// </summary>
-    public partial class AuthorizationPage : Page
+    public partial class AuthorizationWindow : Window
     {
-        public AuthorizationPage()
+        public AuthorizationWindow()
         {
             InitializeComponent();
         }
@@ -63,11 +62,15 @@ namespace GorZdraw.PageFolder
                         switch (user.IdRole)
                         {
                             case 3:
-                                this.NavigationService.Navigate(new MainMenu());
+                                MainFrameWindow mainFrameWindow 
+                                    = new MainFrameWindow();
+                                mainFrameWindow.Show();
+                                this.Close();
                                 break;
                             case 2:
                                 AdminWindow adminWindow = new AdminWindow();
                                 adminWindow.Show();
+                                this.Close();
                                 break;
                         }
                     }
@@ -77,10 +80,24 @@ namespace GorZdraw.PageFolder
                     MBClass.ErrorMB(ex);
                 }
             }
+        }
 
+        private void Border_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                DragMove();
+            }
+        }
 
-            //AdminWindow adminWindow = new AdminWindow();
-            //adminWindow.Show();
+        private void RollUpIm_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            Application.Current.MainWindow.WindowState = WindowState.Minimized;
+        }
+
+        private void CloseIm_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            ClassFolder.MBClass.ExitMB();
         }
     }
 }

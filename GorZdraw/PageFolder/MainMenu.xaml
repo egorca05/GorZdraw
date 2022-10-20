@@ -11,7 +11,7 @@
     <Grid>
         <Border
             CornerRadius="20"
-            Width="500"
+            Width="800"
             Height="250"
             Background="{StaticResource DeepYellowGreen}">
             <Border.Effect>
@@ -21,18 +21,22 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
+                    <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
+                    <RowDefinition Height="15"/>
                     <RowDefinition/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
 
                 <Button x:Name="SellBtn" Content="Режим продажи" 
-                        Click="SellBtn_Click"/>
-                <Button x:Name="OrderBtn" Content="Создать заказ" Grid.Column="1" 
-                        Click="OrderBtn_Click"/>
-                <Button x:Name="EditBtn" Content="Пересчет продукции"
-                        Grid.Row="1" Grid.Column="1" Click="EditBtn_Click"/>
+                        Click="SellBtn_Click" Grid.RowSpan="2" Height="100"
+                        Grid.Row="1"/>
+                <Button x:Name="OrderBtn" Content="Создать заказ" 
+                        Grid.Column="2" Grid.Row="1"
+                        Click="OrderBtn_Click" Grid.RowSpan="2" Height="100"/>
+                <Image Source="/ResourcesFolder/ÍmageFolder/Staff.png" 
+                       Grid.Column="1" Grid.Row="1" Grid.RowSpan="2"/>
             </Grid>
 
         </Border>

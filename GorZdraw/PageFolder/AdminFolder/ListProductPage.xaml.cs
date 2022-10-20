@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace GorZdraw.PageFolder.AdminFolder
 {
     /// <summary>
-    /// Логика взаимодействия для MenuProductPage.xaml
+    /// Логика взаимодействия для ListProductPage.xaml
     /// </summary>
-    public partial class MenuProductPage : Page
+    public partial class ListProductPage : Page
     {
-        public MenuProductPage()
+        public ListProductPage()
         {
             InitializeComponent();
         }

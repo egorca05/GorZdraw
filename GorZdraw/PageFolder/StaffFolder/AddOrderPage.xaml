@@ -11,7 +11,7 @@
     <Grid>
         <Border
             CornerRadius="20"
-            Width="500"
+            Width="900"
             Height="650"
             Background="{StaticResource DeepYellowGreen}">
             <Border.Effect>
@@ -24,11 +24,11 @@
                     <RowDefinition/>
                     <RowDefinition/>
                     <RowDefinition/>
+                    <RowDefinition Height="50"/>
                     <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition Height="90"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
@@ -38,11 +38,11 @@
 
                 <Label Content="Препарат:" Grid.Row="1" 
                        Style="{StaticResource NormalLabel}"/>
-                <Label Content="Количество:" Grid.Row="3" 
+                <Label Content="Количество:" Grid.Row="2" 
                        Style="{StaticResource NormalLabel}"/>
-                <Label Content="Цена за единицу:" Grid.Row="4" 
+                <Label Content="Цена за единицу:" Grid.Row="3" 
                        Style="{StaticResource NormalLabel}"/>
-                <Label Content="Поставщик:" Grid.Row="5" 
+                <Label Content="Поставщик:" Grid.Row="4" 
                        Style="{StaticResource NormalLabel}"/>
 
                 <ComboBox x:Name="ProductCb" Grid.Column="1"
@@ -51,11 +51,11 @@
                           DisplayMemberPath="NameProduct"
                           SelectedValuePath="IdProduct"/>
                 <TextBox x:Name="quantityTb" Grid.Column="1"
-                          Grid.Row="3"/>
+                          Grid.Row="2"/>
                 <TextBox x:Name="PriceTb" Grid.Column="1"
-                          Grid.Row="4"/>
+                          Grid.Row="3"/>
                 <ComboBox x:Name="SuppliersCb" Grid.Column="1"
-                          Grid.Row="5"
+                          Grid.Row="4"
                           SelectedItem="{Binding Suppliers}" 
                           DisplayMemberPath="NameSuppliers"
                           SelectedValuePath="IdSuppliers"/>
@@ -63,7 +63,11 @@
                 <Button x:Name="SaveBtn" Content="Сохранить"
                         HorizontalAlignment="Center" Click="SaveBtn_Click"
                         Background="{DynamicResource Blue}"
-                        Grid.Row="8" Grid.ColumnSpan="2"/>
+                        Grid.Row="6" Grid.Column="1"/>
+                
+                <Image Source="/ResourcesFolder/ÍmageFolder/man.png" Grid.Column="2" Grid.RowSpan="7"
+                       Margin="30"/>
+
             </Grid>
 
         </Border>
