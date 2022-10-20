@@ -60,7 +60,7 @@ namespace GorZdraw.PageFolder.StaffFolder
         {
             Product product = ProductDG.SelectedItem as Product;
             VariableClass.IdProduct = product.IdProduct;
-            //new InfoProductPage(ProductDG.SelectedItem as Match).Navigate();
+            this.NavigationService.Navigate(new InfoProductPage(ProductDG.SelectedItem as Product));
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GorZdraw.DataFolder;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,14 +21,15 @@ namespace GorZdraw.PageFolder.StaffFolder
     /// </summary>
     public partial class InfoProductPage : Page
     {
-        public InfoProductPage()
+        public InfoProductPage(Product Product)
         {
             InitializeComponent();
+            DataContext = Product;
         }
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.GoBack();
         }
     }
 }

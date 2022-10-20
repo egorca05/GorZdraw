@@ -45,6 +45,12 @@
                         <DataGridTextColumn Header="Наличие" 
                                             Binding="{Binding Quantity}" 
                                             Width="*"/>
+                        <DataGridTextColumn Header="Произведенно" 
+                                            Binding="{Binding ReleaseDate}" 
+                                            Width="*"/>
+                        <DataGridTextColumn Header="Срок годности" 
+                                            Binding="{Binding ExpirationDate}" 
+                                            Width="*"/>
                         <DataGridTextColumn Header="Цена" 
                                             Binding="{Binding Price}" 
                                             Width="*"/>
