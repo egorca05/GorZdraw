@@ -41,12 +41,7 @@ namespace GorZdraw.PageFolder.StaffFolder
             if (SuppliersCb.SelectedItem == null)
             {
                 MBClass.ErrorMB("Выберите поставщика");
-                SuppliersCb.Focus();
-            }
-            if (string.IsNullOrEmpty(PriceTb.Text))
-            {
-                MBClass.ErrorMB("Выберите сумму");
-                PriceTb.Focus();
+                SuppliersCb.Focus();            
             }
             if (string.IsNullOrEmpty(quantityTb.Text))
             {
@@ -69,7 +64,6 @@ namespace GorZdraw.PageFolder.StaffFolder
                 IdProduct = Int32.Parse(ProductCb.SelectedValue.ToString()),
                 DateOrder = DateTime.Now,
                 QuantityOrder = Int32.Parse(quantityTb.Text.ToString()),
-                Price = Int32.Parse(PriceTb.Text.ToString()),
                 IdSuppliers = Int32.Parse(SuppliersCb.SelectedValue.ToString())
             });
             DBEntities.Getcontext().SaveChanges();

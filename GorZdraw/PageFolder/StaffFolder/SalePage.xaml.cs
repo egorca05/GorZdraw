@@ -61,6 +61,7 @@ namespace GorZdraw.PageFolder.StaffFolder
             Product product = ProductDG.SelectedItem as Product;
             VariableClass.IdProduct = product.IdProduct;
             this.NavigationService.Navigate(new InfoProductPage(ProductDG.SelectedItem as Product));
+            Ref();
         }
 
         private void SearchTb_TextChanged(object sender, TextChangedEventArgs e)

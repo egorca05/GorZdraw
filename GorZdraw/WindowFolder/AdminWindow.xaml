@@ -30,11 +30,11 @@
                     <RowDefinition Height="10"/>
                 </Grid.RowDefinitions>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left"
-                            Grid.Row="1" Grid.Column="1">
+                            Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2">
                     <Image Height="100"
                            HorizontalAlignment="Left"
                            Source="/ResourcesFolder/ÍmageFolder/Black.png"/>
-                    <Label Content="{Binding ElementName=MainFrame, Path=Content.Title}"
+                    <Label Content="{Binding ElementName=AdminFrame, Path=Content.Title}"
                            HorizontalAlignment="Left"
                            Style="{DynamicResource LogoLabel}"/>
                 </StackPanel>
@@ -84,7 +84,7 @@
                         <Button x:Name="ProductBtn" Content="Препараты"
                                 Click="ProductBtn_Click"
                                 Style="{DynamicResource MenuBtn}"/>
-                        <Button x:Name="СategoryBtn" Content="Категории"
+                        <Button x:Name="OrderBtn" Content="Заказы"
                                 Grid.Row="1" 
                                 Style="{DynamicResource MenuBtn}"/>
                         <Button x:Name="ManufacturerBtn" 

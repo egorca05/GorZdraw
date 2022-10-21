@@ -1,5 +1,4 @@
-﻿using GorZdraw.DataFolder;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,20 +16,13 @@ using System.Windows.Shapes;
 namespace GorZdraw.PageFolder.AdminFolder
 {
     /// <summary>
-    /// Логика взаимодействия для ListProductPage.xaml
+    /// Логика взаимодействия для AddProductPage.xaml
     /// </summary>
-    public partial class ListProductPage : Page
+    public partial class AddProductPage : Page
     {
-        public ListProductPage()
+        public AddProductPage()
         {
             InitializeComponent();
-            ProductDG.ItemsSource = DBEntities.Getcontext().Product.ToList()
-                .OrderBy(c => c.IdProduct);
-        }
-
-        private void CategoryBtn_Click(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(new CategoryPage());
         }
     }
 }

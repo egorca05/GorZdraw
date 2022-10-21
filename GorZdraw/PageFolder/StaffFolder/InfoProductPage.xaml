@@ -1,9 +1,8 @@
 ﻿<Page x:Class="GorZdraw.PageFolder.StaffFolder.InfoProductPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:GorZdraw.PageFolder.StaffFolder"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       mc:Ignorable="d" 
       d:DesignHeight="650" d:DesignWidth="1000"
       Title="Создание заказа">
@@ -80,65 +79,65 @@
 
 
                 <TextBox x:Name="NameATb" Grid.Column="1"
-                          Grid.Row="1" IsEnabled="False"
+                          Grid.Row="1"
                          Text="{Binding NameProduct}"
                          Style="{StaticResource InfoTb}"/>
                 <TextBox x:Name="CompositionTb" Grid.Column="1"
-                          Grid.Row="2" IsEnabled="False"
+                          Grid.Row="2" 
                          Text="{Binding Composition}"
                          Style="{StaticResource InfoTb}"/>
                 <TextBox x:Name="ReleaseFormTb" Grid.Column="1"
-                          Grid.Row="3" IsEnabled="False"
+                          Grid.Row="3" 
                          Text="{Binding ReleaseForm}"
                          Style="{StaticResource InfoTb}"/>
                 <TextBox x:Name="СategoryTb" Grid.Column="1"
-                          Grid.Row="4" IsEnabled="False"
+                          Grid.Row="4" 
                          Text="{Binding Category.NameСategory}"
                          Style="{StaticResource InfoTb}"/>
                 <TextBox x:Name="ManufacturerTb" Grid.Column="1"
-                          Grid.Row="5" IsEnabled="False"
-                         Text="{Binding Manufacturer.IdManufacturerAndQualityControl}"
+                          Grid.Row="5" 
+                         Text="{Binding Manufacturer.ManufacturerAndQualityControl.NameMAQC}"
                          Style="{StaticResource InfoTb}"/>
                 <TextBox x:Name="SuppliersTb" Grid.Column="1"
-                          Grid.Row="6" IsEnabled="False"
+                          Grid.Row="6" 
                          Text="{Binding Suppliers.NameSuppliers}"
                          Style="{StaticResource InfoTb}"/>
                 <TextBox x:Name="DosageFormTb" Grid.Column="1"
-                          Grid.Row="7" IsEnabled="False"
+                          Grid.Row="7" 
                          Text="{Binding DosageForm}"
                          Style="{StaticResource InfoTb}"/>
 
                 <TextBox x:Name="IndicationsTb" Grid.Column="3"
-                          Grid.Row="0" IsEnabled="False"
+                          Grid.Row="0" 
                          Text="{Binding Indications}"
                          Style="{StaticResource InfoTb}"/>
                 <TextBox x:Name="ContraindicationsTb" Grid.Column="3"
-                          Grid.Row="1" IsEnabled="False"
+                          Grid.Row="1" 
                          Text="{Binding Contraindications}"
                          Style="{StaticResource InfoTb}"/>
                 <TextBox x:Name="MethodOfAdministrationAndDosageTb" 
                          Grid.Column="3"
-                          Grid.Row="2" IsEnabled="False"
+                          Grid.Row="2" 
                          Text="{Binding MethodOfAdministrationAndDosage}"
                          Style="{StaticResource InfoTb}"/>
                 <TextBox x:Name="SideEffectsTb" Grid.Column="3"
-                          Grid.Row="3" IsEnabled="False"
+                          Grid.Row="3" 
                          Text="{Binding SideEffects}"
                          Style="{StaticResource InfoTb}"/>
                 <TextBox x:Name="OverdoseTb" Grid.Column="3"
-                          Grid.Row="4" IsEnabled="False"
+                          Grid.Row="4" 
                          Text="{Binding Overdose}"
                          Style="{StaticResource InfoTb}"/>
                 <TextBox x:Name="DrugInteractionTb" Grid.Column="3"
-                          Grid.Row="5" IsEnabled="False"
+                          Grid.Row="5" 
                          Text="{Binding DrugInteraction}"
                          Style="{StaticResource InfoTb}"/>
                 <TextBox x:Name="SpecialInstructionsTb" Grid.Column="3"
-                          Grid.Row="6" IsEnabled="False"
+                          Grid.Row="6" 
                          Text="{Binding SpecialInstructions}"
                          Style="{StaticResource InfoTb}"/>
                 <TextBox x:Name="StorageConditionsTb" Grid.Column="3"
-                          Grid.Row="7" IsEnabled="False"
+                          Grid.Row="7" 
                          Text="{Binding StorageConditions}"
                          Style="{StaticResource InfoTb}"/>
 

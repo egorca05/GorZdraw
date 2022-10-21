@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:GorZdraw.PageFolder.AdminFolder"
       mc:Ignorable="d" 
       d:DesignHeight="650" d:DesignWidth="1000"
-      Title="Номенклатуры">
+      Title="Список препаратов">
 
     <Grid>
         <Border
@@ -24,10 +24,9 @@
                     <RowDefinition Height="80"/>
                 </Grid.RowDefinitions>
 
-                <Button x:Name="BackBtn" Content="Назад"
-                        HorizontalAlignment="Left" Click="BackBtn_Click"/>
                 <Button x:Name="CategoryBtn" Content="Категории"
-                        HorizontalAlignment="Right"/>
+                        HorizontalAlignment="Right"
+                        Click="CategoryBtn_Click"/>
 
                 <DataGrid x:Name="ProductDG" AutoGenerateColumns="False" 
                       IsReadOnly="True" Grid.Row="1">
@@ -39,23 +38,23 @@
                                             Binding="{Binding NameProduct}" 
                                             Width="*"/>
                         <DataGridTextColumn Header="Категория" 
-                                            Binding="{Binding Сategory.NameСategory}" 
-                                            Width="*"/>
-                        <DataGridTextColumn Header="Производитель" 
-                                            Binding="{Binding Manufacturer.NameManufacturer}" 
-                                            Width="*"/>
-                        <DataGridTextColumn Header="Поставщик" 
-                                            Binding="{Binding Supplier.NameSupplier}" 
+                                            Binding="{Binding Category.NameСategory}" 
                                             Width="*"/>
                         <DataGridTextColumn Header="Рецепт" 
                                             Binding="{Binding Recipe.NeedRecipe}" 
-                                            Width="80"/>
+                                            Width="*"/>
                         <DataGridTextColumn Header="Наличие" 
                                             Binding="{Binding Quantity}" 
-                                            Width="95"/>
+                                            Width="*"/>
+                        <DataGridTextColumn Header="Произведенно" 
+                                            Binding="{Binding ReleaseDate}" 
+                                            Width="*"/>
+                        <DataGridTextColumn Header="Срок годности" 
+                                            Binding="{Binding ExpirationDate}" 
+                                            Width="*"/>
                         <DataGridTextColumn Header="Цена" 
                                             Binding="{Binding Price}" 
-                                            Width="80"/>
+                                            Width="*"/>
                     </DataGrid.Columns>
                 </DataGrid>
 

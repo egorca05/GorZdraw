@@ -69,8 +69,8 @@
                     </Border.Effect>
                     <Grid VerticalAlignment="Center">
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="60"/>
-                            <RowDefinition Height="60"/>
+                            <RowDefinition Height="70"/>
+                            <RowDefinition Height="70"/>
                             <RowDefinition Height="75"/>
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>

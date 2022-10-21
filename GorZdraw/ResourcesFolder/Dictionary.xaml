@@ -17,6 +17,7 @@
         <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="HorizontalContentAlignment" Value="Center"/>
         <Setter Property="Margin" Value="10"/>
+        <Setter Property="Padding" Value="10"/>
     </Style>
 
     <!--PasswodBox-->
@@ -73,6 +74,7 @@
         <Setter Property="HorizontalContentAlignment" Value="Left"/>
         <Setter Property="TextWrapping" Value="Wrap"/>
         <Setter Property="FontSize" Value="15"/>
+        <Setter Property="VerticalScrollBarVisibility" Value="Auto"/>
         <Style.Resources>
             <Style TargetType="Border">
                 <Setter Property="CornerRadius" Value="10"/>
@@ -133,6 +135,7 @@
         <Setter Property="Margin" Value="10"/>
         <Setter Property="AlternatingRowBackground"
                 Value="{StaticResource MediumDarkGreen}"/>
+        <Setter Property="Padding" Value="0"/>
         <Setter Property="RowBackground" Value="{StaticResource SeaGreen}"/>
         <Style.Resources>
             <Style TargetType="Border">
