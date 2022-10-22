@@ -31,6 +31,13 @@ namespace GorZdraw.PageFolder.AdminFolder
         private void CategoryBtn_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new CategoryPage());
+            Ref();
+        }
+
+        private void Ref()
+        {
+            ProductDG.ItemsSource = DBEntities.Getcontext().Product.ToList()
+                .OrderBy(c => c.IdProduct);
         }
     }
 }

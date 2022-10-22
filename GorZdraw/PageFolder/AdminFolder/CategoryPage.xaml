@@ -32,7 +32,7 @@
                         HorizontalAlignment="Left"
                         Click="BacBtn_Click"/>
 
-                <DataGrid x:Name="ProductDG" AutoGenerateColumns="False" 
+                <DataGrid x:Name="CategoryDG" AutoGenerateColumns="False" 
                       IsReadOnly="True" Grid.Row="1">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="№" 

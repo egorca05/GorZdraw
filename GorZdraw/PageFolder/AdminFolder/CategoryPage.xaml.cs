@@ -1,4 +1,5 @@
-﻿using GorZdraw.DataFolder;
+﻿using GorZdraw.ClassFolder;
+using GorZdraw.DataFolder;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,7 +25,7 @@ namespace GorZdraw.PageFolder.AdminFolder
         public CategoryPage()
         {
             InitializeComponent();
-            ProductDG.ItemsSource = DBEntities.Getcontext().Category.ToList().
+            CategoryDG.ItemsSource = DBEntities.Getcontext().Category.ToList().
                 OrderBy(c => c.IdСategory);
         }
 
@@ -35,12 +36,33 @@ namespace GorZdraw.PageFolder.AdminFolder
 
         private void DelBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            if (CategoryDG.SelectedItem == null)
+            {
+                MBClass.ErrorMB("Выберите пользователя для удаления");
+            }
+            else
+            {
+                try
+                {
+                    Category category = CategoryDG.SelectedItem as Category;
+                    if (MBClass.QestionMB($"Удалить выбранную категорию?"))
+                    {
+                        DBEntities.Getcontext().Category.Remove(category);
+                        DBEntities.Getcontext().SaveChanges();
+                        Ref();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MBClass.ErrorMB(ex);
+                }
+            }
         }
 
         private void EditBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new EditCategoryPage());
+            Ref();
         }
 
         private void AddBtn_Click(object sender, RoutedEventArgs e)
@@ -50,8 +72,8 @@ namespace GorZdraw.PageFolder.AdminFolder
         }
         private void Ref()
         {
-            ProductDG.ItemsSource = DBEntities.Getcontext().Category.ToList().
-                   OrderBy(c => c.IdСategory);
+        CategoryDG.ItemsSource = DBEntities.Getcontext().Category.ToList().
+            OrderBy(c => c.IdСategory);
         }
     }
 }
