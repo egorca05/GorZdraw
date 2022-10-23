@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GorZdraw.WindowFolder"
         mc:Ignorable="d"
-        Title="Администратор" Height="800" Width="1200"
+        Title="Администратор" Height="1000" Width="1300"
         WindowStyle="None"
         AllowsTransparency="True"
         WindowStartupLocation="CenterScreen"
@@ -20,7 +20,7 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="10"/>
                     <ColumnDefinition/>
-                    <ColumnDefinition Width="1000"/>
+                    <ColumnDefinition Width="1100"/>
                     <ColumnDefinition Width="10"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>

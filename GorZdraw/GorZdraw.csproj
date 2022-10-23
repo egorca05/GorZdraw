@@ -127,6 +127,9 @@
     <Compile Include="DataFolder\Role.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DataFolder\Sell.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="DataFolder\Street.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
@@ -150,6 +153,9 @@
     </Compile>
     <Compile Include="PageFolder\AdminFolder\EditCategoryPage.xaml.cs">
       <DependentUpon>EditCategoryPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageFolder\AdminFolder\EditProductPage.xaml.cs">
+      <DependentUpon>EditProductPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="PageFolder\AdminFolder\ListProductPage.xaml.cs">
       <DependentUpon>ListProductPage.xaml</DependentUpon>
@@ -227,6 +233,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PageFolder\AdminFolder\EditProductPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PageFolder\AdminFolder\ListProductPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -276,6 +286,11 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="ResourcesFolder\ÍmageFolder\man.png" />
+    <Resource Include="ResourcesFolder\ÍmageFolder\Search.png" />
+    <Resource Include="ResourcesFolder\ÍmageFolder\Staff.png" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="DataFolder\DBModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>DBModel.edmx</DependentUpon>
@@ -286,9 +301,6 @@
       <DependentUpon>DBModel.edmx</DependentUpon>
       <LastGenOutput>DBModel.cs</LastGenOutput>
     </Content>
-    <Resource Include="ResourcesFolder\ÍmageFolder\man.png" />
-    <Resource Include="ResourcesFolder\ÍmageFolder\Search.png" />
-    <Resource Include="ResourcesFolder\ÍmageFolder\Staff.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

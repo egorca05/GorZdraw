@@ -8,7 +8,7 @@
 
     <!--Единый-->
     <Style TargetType="Control" x:Key="BaseControl">
-        <Setter Property="FontFamily" Value="Garamond"/>
+        <Setter Property="FontFamily" Value="Roboto"/>
         <Setter Property="FontSize" Value="20"/>
         <Setter Property="Foreground" Value="White"/>
         <Setter Property="BorderBrush" Value="{StaticResource Blue}"/>
@@ -71,6 +71,7 @@
     <!--textbox-->
     <Style TargetType="TextBox" x:Key="InfoTb"
            BasedOn="{StaticResource BaseControl}">
+        <Setter Property="Padding" Value="5"/>
         <Setter Property="HorizontalContentAlignment" Value="Left"/>
         <Setter Property="TextWrapping" Value="Wrap"/>
         <Setter Property="FontSize" Value="15"/>

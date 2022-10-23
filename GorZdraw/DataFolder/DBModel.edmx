@@ -82,8 +82,6 @@
           <Property Name="IdProduct" Type="int" Nullable="false" />
           <Property Name="DateOrder" Type="date" Nullable="false" />
           <Property Name="QuantityOrder" Type="int" Nullable="false" />
-          <Property Name="Price" Type="decimal" Precision="7" Scale="2" Nullable="false" />
-          <Property Name="Priceall" Type="decimal" Precision="18" Scale="2" StoreGeneratedPattern="Computed" />
           <Property Name="IdSuppliers" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="OrganizationAcceptingClaims">
@@ -143,6 +141,14 @@
           </Key>
           <Property Name="IdRole" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="NameRole" Type="nvarchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sell">
+          <Key>
+            <PropertyRef Name="IdSell" />
+          </Key>
+          <Property Name="IdSell" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdProductSell" Type="int" Nullable="false" />
+          <Property Name="QuantitySell" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Street">
           <Key>
@@ -405,6 +411,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Sell_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="Sell" Type="Self.Sell" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="IdProduct" />
+            </Principal>
+            <Dependent Role="Sell">
+              <PropertyRef Name="IdProductSell" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_User_Role">
           <End Role="Role" Type="Self.Role" Multiplicity="1" />
           <End Role="User" Type="Self.User" Multiplicity="*" />
@@ -432,6 +450,7 @@
           <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Recipe" EntityType="Self.Recipe" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sell" EntityType="Self.Sell" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Street" EntityType="Self.Street" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Suppliers" EntityType="Self.Suppliers" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
@@ -511,6 +530,10 @@
           <AssociationSet Name="FK_Product_Suppliers" Association="Self.FK_Product_Suppliers">
             <End Role="Suppliers" EntitySet="Suppliers" />
             <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sell_Product" Association="Self.FK_Sell_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="Sell" EntitySet="Sell" />
           </AssociationSet>
           <AssociationSet Name="FK_User_Role" Association="Self.FK_User_Role">
             <End Role="Role" EntitySet="Role" />
@@ -619,8 +642,6 @@
           <Property Name="IdProduct" Type="Int32" Nullable="false" />
           <Property Name="DateOrder" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="QuantityOrder" Type="Int32" Nullable="false" />
-          <Property Name="Price" Type="Decimal" Precision="7" Scale="2" Nullable="false" />
-          <Property Name="Priceall" Type="Decimal" Precision="18" Scale="2" annotation:StoreGeneratedPattern="Computed" />
           <Property Name="IdSuppliers" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Product" Relationship="Self.FK_Order_Product" FromRole="Order" ToRole="Product" />
           <NavigationProperty Name="Suppliers" Relationship="Self.FK_Order_Suppliers" FromRole="Order" ToRole="Suppliers" />
@@ -679,6 +700,7 @@
           <NavigationProperty Name="Order" Relationship="Self.FK_Order_Product" FromRole="Product" ToRole="Order" />
           <NavigationProperty Name="Recipe" Relationship="Self.FK_Product_Recipe" FromRole="Product" ToRole="Recipe" />
           <NavigationProperty Name="Suppliers" Relationship="Self.FK_Product_Suppliers" FromRole="Product" ToRole="Suppliers" />
+          <NavigationProperty Name="Sell" Relationship="Self.FK_Sell_Product" FromRole="Product" ToRole="Sell" />
         </EntityType>
         <EntityType Name="Recipe">
           <Key>
@@ -695,6 +717,15 @@
           <Property Name="IdRole" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="NameRole" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="User" Relationship="Self.FK_User_Role" FromRole="Role" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Sell">
+          <Key>
+            <PropertyRef Name="IdSell" />
+          </Key>
+          <Property Name="IdSell" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdProductSell" Type="Int32" Nullable="false" />
+          <Property Name="QuantitySell" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Product" Relationship="Self.FK_Sell_Product" FromRole="Sell" ToRole="Product" />
         </EntityType>
         <EntityType Name="Street">
           <Key>
@@ -962,6 +993,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Sell_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="Sell" Type="Self.Sell" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="IdProduct" />
+            </Principal>
+            <Dependent Role="Sell">
+              <PropertyRef Name="IdProductSell" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_User_Role">
           <End Role="Role" Type="Self.Role" Multiplicity="1" />
           <End Role="User" Type="Self.User" Multiplicity="*" />
@@ -989,6 +1032,7 @@
           <EntitySet Name="Product" EntityType="Self.Product" />
           <EntitySet Name="Recipe" EntityType="Self.Recipe" />
           <EntitySet Name="Role" EntityType="Self.Role" />
+          <EntitySet Name="Sell" EntityType="Self.Sell" />
           <EntitySet Name="Street" EntityType="Self.Street" />
           <EntitySet Name="Suppliers" EntityType="Self.Suppliers" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
@@ -1068,6 +1112,10 @@
           <AssociationSet Name="FK_Product_Suppliers" Association="Self.FK_Product_Suppliers">
             <End Role="Suppliers" EntitySet="Suppliers" />
             <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sell_Product" Association="Self.FK_Sell_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="Sell" EntitySet="Sell" />
           </AssociationSet>
           <AssociationSet Name="FK_User_Role" Association="Self.FK_User_Role">
             <End Role="Role" EntitySet="Role" />
@@ -1164,8 +1212,6 @@
                 <ScalarProperty Name="IdProduct" ColumnName="IdProduct" />
                 <ScalarProperty Name="DateOrder" ColumnName="DateOrder" />
                 <ScalarProperty Name="QuantityOrder" ColumnName="QuantityOrder" />
-                <ScalarProperty Name="Price" ColumnName="Price" />
-                <ScalarProperty Name="Priceall" ColumnName="Priceall" />
                 <ScalarProperty Name="IdSuppliers" ColumnName="IdSuppliers" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -1230,6 +1276,15 @@
               <MappingFragment StoreEntitySet="Role">
                 <ScalarProperty Name="IdRole" ColumnName="IdRole" />
                 <ScalarProperty Name="NameRole" ColumnName="NameRole" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sell">
+            <EntityTypeMapping TypeName="DBModel.Sell">
+              <MappingFragment StoreEntitySet="Sell">
+                <ScalarProperty Name="IdSell" ColumnName="IdSell" />
+                <ScalarProperty Name="IdProductSell" ColumnName="IdProductSell" />
+                <ScalarProperty Name="QuantitySell" ColumnName="QuantitySell" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

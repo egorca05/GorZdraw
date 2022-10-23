@@ -59,9 +59,12 @@
                 </DataGrid>
 
                 <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Center">
-                    <Button x:Name="DelBtn" Content="Удалить"/>
-                    <Button x:Name="EditBtn" Content="Редактировать"/>
-                    <Button x:Name="AddBtn" Content="Создать"/>
+                    <Button x:Name="DelBtn" Content="Удалить" 
+                            Click="DelBtn_Click"/>
+                    <Button x:Name="EditBtn" Content="Редактировать"
+                            Click="EditBtn_Click"/>
+                    <Button x:Name="AddBtn" Content="Создать"
+                            Click="AddBtn_Click"/>
                 </StackPanel>
             </Grid>
 

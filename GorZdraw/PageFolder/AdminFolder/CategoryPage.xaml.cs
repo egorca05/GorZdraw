@@ -1,5 +1,6 @@
 ﻿using GorZdraw.ClassFolder;
 using GorZdraw.DataFolder;
+using GorZdraw.PageFolder.StaffFolder;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -38,7 +39,7 @@ namespace GorZdraw.PageFolder.AdminFolder
         {
             if (CategoryDG.SelectedItem == null)
             {
-                MBClass.ErrorMB("Выберите пользователя для удаления");
+                MBClass.ErrorMB("Выберите категорию для удаления");
             }
             else
             {
@@ -61,7 +62,9 @@ namespace GorZdraw.PageFolder.AdminFolder
 
         private void EditBtn_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new EditCategoryPage());
+            Category category = CategoryDG.SelectedItem as Category;
+            VariableClass.IdCategory = category.IdСategory;
+            this.NavigationService.Navigate(new EditCategoryPage(CategoryDG.SelectedItem as Category));
             Ref();
         }
 

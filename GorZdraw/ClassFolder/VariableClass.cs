@@ -9,5 +9,6 @@ namespace GorZdraw.ClassFolder
     internal class VariableClass
     {
         public static int IdProduct { get; set; }
+        public static int IdCategory { get; set; }
     }
 }

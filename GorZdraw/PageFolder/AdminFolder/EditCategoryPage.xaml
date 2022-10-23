@@ -36,7 +36,7 @@
                        Style="{StaticResource NormalLabel}"/>
 
                 <TextBox x:Name="CategotyTb" Grid.Column="1"
-                          Grid.Row="1"/>
+                          Grid.Row="1" Text="{Binding NameСategory}"/>
 
                 <Button x:Name="SaveBtn" Content="Сохранить"
                         HorizontalAlignment="Center" Click="SaveBtn_Click"

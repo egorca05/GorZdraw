@@ -18,6 +18,7 @@ namespace GorZdraw.DataFolder
         public Product()
         {
             this.Order = new HashSet<Order>();
+            this.Sell = new HashSet<Sell>();
         }
     
         public int IdProduct { get; set; }
@@ -48,5 +49,7 @@ namespace GorZdraw.DataFolder
         public virtual ICollection<Order> Order { get; set; }
         public virtual Recipe Recipe { get; set; }
         public virtual Suppliers Suppliers { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Sell> Sell { get; set; }
     }
 }

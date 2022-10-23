@@ -23,14 +23,15 @@ namespace GorZdraw.PageFolder.AdminFolder
     /// </summary>
     public partial class EditCategoryPage : Page
     {
-        public EditCategoryPage()
+        public EditCategoryPage(Category Category)
         {
             InitializeComponent();
+            DataContext = Category;
         }
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.GoBack();
         }
 
         private void SaveBtn_Click(object sender, RoutedEventArgs e)
@@ -43,10 +44,12 @@ namespace GorZdraw.PageFolder.AdminFolder
             else
             {
                 Category category = DBEntities.Getcontext().Category
-                 .FirstOrDefault(s => s.IdСategory == VariableClass.IdProduct);
+                 .FirstOrDefault(s => s.IdСategory == VariableClass.IdCategory);
                 category.NameСategory = CategotyTb.Text;
                 DBEntities.Getcontext().SaveChanges();
 
+                MBClass.InformationMB("Успешно");
+                NavigationService.GoBack();
             }
         }
     }
