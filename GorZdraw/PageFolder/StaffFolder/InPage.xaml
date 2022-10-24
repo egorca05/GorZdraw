@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:GorZdraw.PageFolder.StaffFolder"
       mc:Ignorable="d" 
       d:DesignHeight="650" d:DesignWidth="1150"
-      Title="Режим продажи">
+      Title="Поставка">
 
     <Grid>
         <Border

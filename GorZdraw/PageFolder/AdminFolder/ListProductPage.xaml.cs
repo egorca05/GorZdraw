@@ -52,7 +52,7 @@ namespace GorZdraw.PageFolder.AdminFolder
                 try
                 {
                     Product product = ProductDG.SelectedItem as Product;
-                    if (MBClass.QestionMB($"Удалить выбранную категорию?"))
+                    if (MBClass.QestionMB($"Удалить выбранный препарат?"))
                     {
                         DBEntities.Getcontext().Product.Remove(product);
                         DBEntities.Getcontext().SaveChanges();
