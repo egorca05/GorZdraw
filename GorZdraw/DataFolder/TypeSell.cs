@@ -12,23 +12,18 @@ namespace GorZdraw.DataFolder
     using System;
     using System.Collections.Generic;
     
-    public partial class Manufacturer
+    public partial class TypeSell
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Manufacturer()
+        public TypeSell()
         {
-            this.Product = new HashSet<Product>();
+            this.Sell = new HashSet<Sell>();
         }
     
-        public int IdManufacturer { get; set; }
-        public int IdManufacturerAndQualityControl { get; set; }
-        public int IdPacker { get; set; }
-        public int IdOrganizationAcceptingClaims { get; set; }
+        public int IdType { get; set; }
+        public string NameType { get; set; }
     
-        public virtual ManufacturerAndQualityControl ManufacturerAndQualityControl { get; set; }
-        public virtual OrganizationAcceptingClaims OrganizationAcceptingClaims { get; set; }
-        public virtual Packer Packer { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Product> Product { get; set; }
+        public virtual ICollection<Sell> Sell { get; set; }
     }
 }

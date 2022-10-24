@@ -26,6 +26,7 @@ namespace GorZdraw.DataFolder
                 context = new DBEntities();
             return context;
         }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
@@ -49,6 +50,7 @@ namespace GorZdraw.DataFolder
         public virtual DbSet<Street> Street { get; set; }
         public virtual DbSet<Suppliers> Suppliers { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
+        public virtual DbSet<TypeSell> TypeSell { get; set; }
         public virtual DbSet<User> User { get; set; }
     }
 }

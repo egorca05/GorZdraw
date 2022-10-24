@@ -139,6 +139,9 @@
     <Compile Include="DataFolder\sysdiagrams.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DataFolder\TypeSell.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="DataFolder\User.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>

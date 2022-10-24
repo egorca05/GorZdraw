@@ -16,8 +16,10 @@ namespace GorZdraw.DataFolder
     {
         public int IdSell { get; set; }
         public int IdProductSell { get; set; }
+        public int IdTypesell { get; set; }
         public int QuantitySell { get; set; }
     
         public virtual Product Product { get; set; }
+        public virtual TypeSell TypeSell { get; set; }
     }
 }

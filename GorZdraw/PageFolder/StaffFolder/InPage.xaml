@@ -5,56 +5,62 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:GorZdraw.PageFolder.StaffFolder"
       mc:Ignorable="d" 
-      d:DesignHeight="650" d:DesignWidth="1000"
-      Title="Создание заказа">
+      d:DesignHeight="650" d:DesignWidth="1150"
+      Title="Режим продажи">
 
     <Grid>
         <Border
             CornerRadius="20"
-            Width="900"
-            Height="350"
+            Width="1100"
+            Height="650"
             Background="{StaticResource DeepYellowGreen}">
             <Border.Effect>
                 <DropShadowEffect BlurRadius="50"/>
             </Border.Effect>
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="90"/>
+                    <RowDefinition Height="80"/>
                     <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-
+                    <RowDefinition Height="80"/>
                 </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
 
                 <Button x:Name="BackBtn" Content="Назад"
                         HorizontalAlignment="Left" Click="BackBtn_Click"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Image Source="/ResourcesFolder/ÍmageFolder/Search.png" Height="40"/>
+                    <TextBox x:Name="SearchTb" Width="300" TextChanged="SearchTb_TextChanged"/>
+                </StackPanel>
 
-                <Label Content="Препарат:" Grid.Row="1" 
-                       Style="{StaticResource NormalLabel}"/>
-                <Label Content="Количество:" Grid.Row="2" 
-                       Style="{StaticResource NormalLabel}"/>
+                <DataGrid x:Name="ProductDG" AutoGenerateColumns="False" 
+                      IsReadOnly="True" Grid.Row="1">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="№" 
+                                            Binding="{Binding IdProduct}" 
+                                            Width="50"/>
+                        <DataGridTextColumn Header="Название" 
+                                            Binding="{Binding NameProduct}" 
+                                            Width="*"/>
+                        <DataGridTextColumn Header="Категория" 
+                                            Binding="{Binding Category.NameСategory}" 
+                                            Width="*"/>
+                        <DataGridTextColumn Header="Наличие" 
+                                            Binding="{Binding Quantity}" 
+                                            Width="*"/>
+                        <DataGridTextColumn Header="Произведенно" 
+                                            Binding="{Binding ReleaseDate}" 
+                                            Width="*"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+                <StackPanel Grid.Row="2" Orientation="Horizontal" 
+                            HorizontalAlignment="Right">
+                    <Label Content="Количество:" 
+                           Style="{StaticResource NormalLabel}"/>
+                    <TextBox x:Name="QuantityTb" Grid.Row="2" Width="150"/>
 
-                <ComboBox x:Name="ProductCb" Grid.Column="1"
-                          Grid.Row="1"
-                          SelectedItem="{Binding Product}" 
-                          DisplayMemberPath="NameProduct"
-                          SelectedValuePath="IdProduct"/>
-                <TextBox x:Name="quantityTb" Grid.Column="1"
-                          Grid.Row="2"/>
-
-                <Button x:Name="SaveBtn" Content="Сохранить"
-                        HorizontalAlignment="Center" Click="SaveBtn_Click"
-                        Background="{DynamicResource Blue}"
-                        Grid.Row="5" Grid.Column="1"/>
-
-                <Image Source="/ResourcesFolder/ÍmageFolder/man.png" Grid.Column="2" Grid.RowSpan="7"
-                       Margin="30"/>
-
+                    <Button x:Name="SaveBtn" Content="Сохранить"
+                        Grid.Row="2"
+                        Background="#2E5FB7" Click="SaveBtn_Click"/>
+                </StackPanel>
             </Grid>
 
         </Border>

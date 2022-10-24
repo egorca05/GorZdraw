@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище GorZdravModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="Хранилище DBModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Category">
           <Key>
             <PropertyRef Name="IdСategory" />
@@ -62,7 +62,7 @@
           </Key>
           <Property Name="IdManufacturer" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="IdManufacturerAndQualityControl" Type="int" Nullable="false" />
-          <Property Name="IdPacker" Type="int" />
+          <Property Name="IdPacker" Type="int" Nullable="false" />
           <Property Name="IdOrganizationAcceptingClaims" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="ManufacturerAndQualityControl">
@@ -107,26 +107,26 @@
             <PropertyRef Name="IdProduct" />
           </Key>
           <Property Name="IdProduct" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="NameProduct" Type="nvarchar" MaxLength="40" />
-          <Property Name="Composition" Type="nvarchar" MaxLength="1000" />
-          <Property Name="IdСategory" Type="int" />
-          <Property Name="ReleaseForm" Type="nvarchar" MaxLength="1000" />
-          <Property Name="IdManufacturer" Type="int" />
-          <Property Name="IdSuppliers" Type="int" />
-          <Property Name="DosageForm" Type="nvarchar" MaxLength="1000" />
-          <Property Name="Indications" Type="nvarchar" MaxLength="1000" />
-          <Property Name="Contraindications" Type="nvarchar" MaxLength="1000" />
-          <Property Name="MethodOfAdministrationAndDosage" Type="nvarchar" MaxLength="1000" />
-          <Property Name="SideEffects" Type="nvarchar" MaxLength="1000" />
-          <Property Name="Overdose" Type="nvarchar" MaxLength="1000" />
-          <Property Name="DrugInteraction" Type="nvarchar" MaxLength="1000" />
-          <Property Name="SpecialInstructions" Type="nvarchar" MaxLength="1000" />
-          <Property Name="StorageConditions" Type="nvarchar" MaxLength="1000" />
-          <Property Name="ReleaseDate" Type="date" />
-          <Property Name="ExpirationDate" Type="date" />
-          <Property Name="IdRecipe" Type="int" />
-          <Property Name="Quantity" Type="int" />
-          <Property Name="Price" Type="decimal" Precision="7" Scale="2" />
+          <Property Name="NameProduct" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="Composition" Type="nvarchar" MaxLength="1000" Nullable="false" />
+          <Property Name="IdСategory" Type="int" Nullable="false" />
+          <Property Name="ReleaseForm" Type="nvarchar" MaxLength="1000" Nullable="false" />
+          <Property Name="IdManufacturer" Type="int" Nullable="false" />
+          <Property Name="IdSuppliers" Type="int" Nullable="false" />
+          <Property Name="DosageForm" Type="nvarchar" MaxLength="1000" Nullable="false" />
+          <Property Name="Indications" Type="nvarchar" MaxLength="1000" Nullable="false" />
+          <Property Name="Contraindications" Type="nvarchar" MaxLength="1000" Nullable="false" />
+          <Property Name="MethodOfAdministrationAndDosage" Type="nvarchar" MaxLength="1000" Nullable="false" />
+          <Property Name="SideEffects" Type="nvarchar" MaxLength="1000" Nullable="false" />
+          <Property Name="Overdose" Type="nvarchar" MaxLength="1000" Nullable="false" />
+          <Property Name="DrugInteraction" Type="nvarchar" MaxLength="1000" Nullable="false" />
+          <Property Name="SpecialInstructions" Type="nvarchar" MaxLength="1000" Nullable="false" />
+          <Property Name="StorageConditions" Type="nvarchar" MaxLength="1000" Nullable="false" />
+          <Property Name="ReleaseDate" Type="date" Nullable="false" />
+          <Property Name="ExpirationDate" Type="date" Nullable="false" />
+          <Property Name="IdRecipe" Type="int" Nullable="false" />
+          <Property Name="Quantity" Type="int" Nullable="false" />
+          <Property Name="Price" Type="decimal" Precision="7" Scale="2" Nullable="false" />
         </EntityType>
         <EntityType Name="Recipe">
           <Key>
@@ -148,6 +148,7 @@
           </Key>
           <Property Name="IdSell" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="IdProductSell" Type="int" Nullable="false" />
+          <Property Name="IdTypesell" Type="int" Nullable="false" />
           <Property Name="QuantitySell" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Street">
@@ -173,6 +174,13 @@
           <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="TypeSell">
+          <Key>
+            <PropertyRef Name="IdType" />
+          </Key>
+          <Property Name="IdType" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameType" Type="nvarchar" MaxLength="20" Nullable="false" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -256,7 +264,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Manufacturer_Packer">
-          <End Role="Packer" Type="Self.Packer" Multiplicity="0..1" />
+          <End Role="Packer" Type="Self.Packer" Multiplicity="1" />
           <End Role="Manufacturer" Type="Self.Manufacturer" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Packer">
@@ -364,7 +372,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Product_Category">
-          <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
+          <End Role="Category" Type="Self.Category" Multiplicity="1" />
           <End Role="Product" Type="Self.Product" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Category">
@@ -376,7 +384,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Product_Manufacturer">
-          <End Role="Manufacturer" Type="Self.Manufacturer" Multiplicity="0..1" />
+          <End Role="Manufacturer" Type="Self.Manufacturer" Multiplicity="1" />
           <End Role="Product" Type="Self.Product" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Manufacturer">
@@ -388,7 +396,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Product_Recipe">
-          <End Role="Recipe" Type="Self.Recipe" Multiplicity="0..1" />
+          <End Role="Recipe" Type="Self.Recipe" Multiplicity="1" />
           <End Role="Product" Type="Self.Product" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Recipe">
@@ -400,7 +408,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Product_Suppliers">
-          <End Role="Suppliers" Type="Self.Suppliers" Multiplicity="0..1" />
+          <End Role="Suppliers" Type="Self.Suppliers" Multiplicity="1" />
           <End Role="Product" Type="Self.Product" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Suppliers">
@@ -423,6 +431,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Sell_TypeSell">
+          <End Role="TypeSell" Type="Self.TypeSell" Multiplicity="1" />
+          <End Role="Sell" Type="Self.Sell" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeSell">
+              <PropertyRef Name="IdType" />
+            </Principal>
+            <Dependent Role="Sell">
+              <PropertyRef Name="IdTypesell" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_User_Role">
           <End Role="Role" Type="Self.Role" Multiplicity="1" />
           <End Role="User" Type="Self.User" Multiplicity="*" />
@@ -435,7 +455,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="Хранилище GorZdravModelContainer">
+        <EntityContainer Name="Хранилище DBModelContainer">
           <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="City" EntityType="Self.City" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Country" EntityType="Self.Country" Schema="dbo" store:Type="Tables" />
@@ -454,6 +474,7 @@
           <EntitySet Name="Street" EntityType="Self.Street" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Suppliers" EntityType="Self.Suppliers" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TypeSell" EntityType="Self.TypeSell" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_LegalAddressMAQC_City" Association="Self.FK_LegalAddressMAQC_City">
             <End Role="City" EntitySet="City" />
@@ -535,6 +556,10 @@
             <End Role="Product" EntitySet="Product" />
             <End Role="Sell" EntitySet="Sell" />
           </AssociationSet>
+          <AssociationSet Name="FK_Sell_TypeSell" Association="Self.FK_Sell_TypeSell">
+            <End Role="TypeSell" EntitySet="TypeSell" />
+            <End Role="Sell" EntitySet="Sell" />
+          </AssociationSet>
           <AssociationSet Name="FK_User_Role" Association="Self.FK_User_Role">
             <End Role="Role" EntitySet="Role" />
             <End Role="User" EntitySet="User" />
@@ -544,7 +569,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="GorZdravModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Category">
           <Key>
             <PropertyRef Name="IdСategory" />
@@ -615,7 +640,7 @@
           </Key>
           <Property Name="IdManufacturer" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="IdManufacturerAndQualityControl" Type="Int32" Nullable="false" />
-          <Property Name="IdPacker" Type="Int32" />
+          <Property Name="IdPacker" Type="Int32" Nullable="false" />
           <Property Name="IdOrganizationAcceptingClaims" Type="Int32" Nullable="false" />
           <NavigationProperty Name="ManufacturerAndQualityControl" Relationship="Self.FK_Manufacturer_ManufacturerAndQualityControl" FromRole="Manufacturer" ToRole="ManufacturerAndQualityControl" />
           <NavigationProperty Name="OrganizationAcceptingClaims" Relationship="Self.FK_Manufacturer_OrganizationAcceptingClaims" FromRole="Manufacturer" ToRole="OrganizationAcceptingClaims" />
@@ -675,26 +700,26 @@
             <PropertyRef Name="IdProduct" />
           </Key>
           <Property Name="IdProduct" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="NameProduct" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
-          <Property Name="Composition" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
-          <Property Name="IdСategory" Type="Int32" />
-          <Property Name="ReleaseForm" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
-          <Property Name="IdManufacturer" Type="Int32" />
-          <Property Name="IdSuppliers" Type="Int32" />
-          <Property Name="DosageForm" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
-          <Property Name="Indications" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
-          <Property Name="Contraindications" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
-          <Property Name="MethodOfAdministrationAndDosage" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
-          <Property Name="SideEffects" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
-          <Property Name="Overdose" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
-          <Property Name="DrugInteraction" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
-          <Property Name="SpecialInstructions" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
-          <Property Name="StorageConditions" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
-          <Property Name="ReleaseDate" Type="DateTime" Precision="0" />
-          <Property Name="ExpirationDate" Type="DateTime" Precision="0" />
-          <Property Name="IdRecipe" Type="Int32" />
-          <Property Name="Quantity" Type="Int32" />
-          <Property Name="Price" Type="Decimal" Precision="7" Scale="2" />
+          <Property Name="NameProduct" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Composition" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IdСategory" Type="Int32" Nullable="false" />
+          <Property Name="ReleaseForm" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IdManufacturer" Type="Int32" Nullable="false" />
+          <Property Name="IdSuppliers" Type="Int32" Nullable="false" />
+          <Property Name="DosageForm" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Indications" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Contraindications" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MethodOfAdministrationAndDosage" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SideEffects" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Overdose" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DrugInteraction" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SpecialInstructions" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="StorageConditions" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ReleaseDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ExpirationDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="IdRecipe" Type="Int32" Nullable="false" />
+          <Property Name="Quantity" Type="Int32" Nullable="false" />
+          <Property Name="Price" Type="Decimal" Precision="7" Scale="2" Nullable="false" />
           <NavigationProperty Name="Category" Relationship="Self.FK_Product_Category" FromRole="Product" ToRole="Category" />
           <NavigationProperty Name="Manufacturer" Relationship="Self.FK_Product_Manufacturer" FromRole="Product" ToRole="Manufacturer" />
           <NavigationProperty Name="Order" Relationship="Self.FK_Order_Product" FromRole="Product" ToRole="Order" />
@@ -724,8 +749,10 @@
           </Key>
           <Property Name="IdSell" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="IdProductSell" Type="Int32" Nullable="false" />
+          <Property Name="IdTypesell" Type="Int32" Nullable="false" />
           <Property Name="QuantitySell" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Product" Relationship="Self.FK_Sell_Product" FromRole="Sell" ToRole="Product" />
+          <NavigationProperty Name="TypeSell" Relationship="Self.FK_Sell_TypeSell" FromRole="Sell" ToRole="TypeSell" />
         </EntityType>
         <EntityType Name="Street">
           <Key>
@@ -755,6 +782,14 @@
           <Property Name="version" Type="Int32" />
           <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
+        <EntityType Name="TypeSell">
+          <Key>
+            <PropertyRef Name="IdType" />
+          </Key>
+          <Property Name="IdType" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameType" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Sell" Relationship="Self.FK_Sell_TypeSell" FromRole="TypeSell" ToRole="Sell" />
+        </EntityType>
         <EntityType Name="User">
           <Key>
             <PropertyRef Name="IdUser" />
@@ -766,7 +801,7 @@
           <NavigationProperty Name="Role" Relationship="Self.FK_User_Role" FromRole="User" ToRole="Role" />
         </EntityType>
         <Association Name="FK_Product_Category">
-          <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
+          <End Role="Category" Type="Self.Category" Multiplicity="1" />
           <End Role="Product" Type="Self.Product" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Category">
@@ -922,7 +957,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Manufacturer_Packer">
-          <End Role="Packer" Type="Self.Packer" Multiplicity="0..1" />
+          <End Role="Packer" Type="Self.Packer" Multiplicity="1" />
           <End Role="Manufacturer" Type="Self.Manufacturer" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Packer">
@@ -934,7 +969,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Product_Manufacturer">
-          <End Role="Manufacturer" Type="Self.Manufacturer" Multiplicity="0..1" />
+          <End Role="Manufacturer" Type="Self.Manufacturer" Multiplicity="1" />
           <End Role="Product" Type="Self.Product" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Manufacturer">
@@ -970,7 +1005,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Product_Recipe">
-          <End Role="Recipe" Type="Self.Recipe" Multiplicity="0..1" />
+          <End Role="Recipe" Type="Self.Recipe" Multiplicity="1" />
           <End Role="Product" Type="Self.Product" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Recipe">
@@ -982,7 +1017,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Product_Suppliers">
-          <End Role="Suppliers" Type="Self.Suppliers" Multiplicity="0..1" />
+          <End Role="Suppliers" Type="Self.Suppliers" Multiplicity="1" />
           <End Role="Product" Type="Self.Product" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Suppliers">
@@ -1017,6 +1052,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Sell_TypeSell">
+          <End Role="TypeSell" Type="Self.TypeSell" Multiplicity="1" />
+          <End Role="Sell" Type="Self.Sell" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeSell">
+              <PropertyRef Name="IdType" />
+            </Principal>
+            <Dependent Role="Sell">
+              <PropertyRef Name="IdTypesell" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="DBEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Category" EntityType="Self.Category" />
           <EntitySet Name="City" EntityType="Self.City" />
@@ -1036,6 +1083,7 @@
           <EntitySet Name="Street" EntityType="Self.Street" />
           <EntitySet Name="Suppliers" EntityType="Self.Suppliers" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="TypeSell" EntityType="Self.TypeSell" />
           <EntitySet Name="User" EntityType="Self.User" />
           <AssociationSet Name="FK_Product_Category" Association="Self.FK_Product_Category">
             <End Role="Category" EntitySet="Category" />
@@ -1121,15 +1169,19 @@
             <End Role="Role" EntitySet="Role" />
             <End Role="User" EntitySet="User" />
           </AssociationSet>
+          <AssociationSet Name="FK_Sell_TypeSell" Association="Self.FK_Sell_TypeSell">
+            <End Role="TypeSell" EntitySet="TypeSell" />
+            <End Role="Sell" EntitySet="Sell" />
+          </AssociationSet>
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище GorZdravModelContainer" CdmEntityContainer="DBEntities">
+        <EntityContainerMapping StorageEntityContainer="Хранилище DBModelContainer" CdmEntityContainer="DBEntities">
           <EntitySetMapping Name="Category">
-            <EntityTypeMapping TypeName="GorZdravModel.Category">
+            <EntityTypeMapping TypeName="DBModel.Category">
               <MappingFragment StoreEntitySet="Category">
                 <ScalarProperty Name="IdСategory" ColumnName="IdСategory" />
                 <ScalarProperty Name="NameСategory" ColumnName="NameСategory" />
@@ -1137,7 +1189,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="City">
-            <EntityTypeMapping TypeName="GorZdravModel.City">
+            <EntityTypeMapping TypeName="DBModel.City">
               <MappingFragment StoreEntitySet="City">
                 <ScalarProperty Name="IdCity" ColumnName="IdCity" />
                 <ScalarProperty Name="NameCity" ColumnName="NameCity" />
@@ -1145,7 +1197,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Country">
-            <EntityTypeMapping TypeName="GorZdravModel.Country">
+            <EntityTypeMapping TypeName="DBModel.Country">
               <MappingFragment StoreEntitySet="Country">
                 <ScalarProperty Name="IdCountry" ColumnName="IdCountry" />
                 <ScalarProperty Name="NameCountry" ColumnName="NameCountry" />
@@ -1153,7 +1205,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="LegalAddressMAQC">
-            <EntityTypeMapping TypeName="GorZdravModel.LegalAddressMAQC">
+            <EntityTypeMapping TypeName="DBModel.LegalAddressMAQC">
               <MappingFragment StoreEntitySet="LegalAddressMAQC">
                 <ScalarProperty Name="IdLegalAddressMAQC" ColumnName="IdLegalAddressMAQC" />
                 <ScalarProperty Name="IdCity" ColumnName="IdCity" />
@@ -1164,7 +1216,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="LegalAddressOAC">
-            <EntityTypeMapping TypeName="GorZdravModel.LegalAddressOAC">
+            <EntityTypeMapping TypeName="DBModel.LegalAddressOAC">
               <MappingFragment StoreEntitySet="LegalAddressOAC">
                 <ScalarProperty Name="IdLegalAddressOAC" ColumnName="IdLegalAddressOAC" />
                 <ScalarProperty Name="IdCity" ColumnName="IdCity" />
@@ -1175,7 +1227,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="LegalAddressPacker">
-            <EntityTypeMapping TypeName="GorZdravModel.LegalAddressPacker">
+            <EntityTypeMapping TypeName="DBModel.LegalAddressPacker">
               <MappingFragment StoreEntitySet="LegalAddressPacker">
                 <ScalarProperty Name="IdLegalAddressPacker" ColumnName="IdLegalAddressPacker" />
                 <ScalarProperty Name="IdCity" ColumnName="IdCity" />
@@ -1186,7 +1238,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Manufacturer">
-            <EntityTypeMapping TypeName="GorZdravModel.Manufacturer">
+            <EntityTypeMapping TypeName="DBModel.Manufacturer">
               <MappingFragment StoreEntitySet="Manufacturer">
                 <ScalarProperty Name="IdManufacturer" ColumnName="IdManufacturer" />
                 <ScalarProperty Name="IdManufacturerAndQualityControl" ColumnName="IdManufacturerAndQualityControl" />
@@ -1196,7 +1248,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ManufacturerAndQualityControl">
-            <EntityTypeMapping TypeName="GorZdravModel.ManufacturerAndQualityControl">
+            <EntityTypeMapping TypeName="DBModel.ManufacturerAndQualityControl">
               <MappingFragment StoreEntitySet="ManufacturerAndQualityControl">
                 <ScalarProperty Name="IdManufacturerAndQualityControl" ColumnName="IdManufacturerAndQualityControl" />
                 <ScalarProperty Name="NameMAQC" ColumnName="NameMAQC" />
@@ -1206,7 +1258,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Order">
-            <EntityTypeMapping TypeName="GorZdravModel.Order">
+            <EntityTypeMapping TypeName="DBModel.Order">
               <MappingFragment StoreEntitySet="Order">
                 <ScalarProperty Name="IdOrder" ColumnName="IdOrder" />
                 <ScalarProperty Name="IdProduct" ColumnName="IdProduct" />
@@ -1217,7 +1269,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="OrganizationAcceptingClaims">
-            <EntityTypeMapping TypeName="GorZdravModel.OrganizationAcceptingClaims">
+            <EntityTypeMapping TypeName="DBModel.OrganizationAcceptingClaims">
               <MappingFragment StoreEntitySet="OrganizationAcceptingClaims">
                 <ScalarProperty Name="IdOrganizationAcceptingClaims" ColumnName="IdOrganizationAcceptingClaims" />
                 <ScalarProperty Name="NameOAC" ColumnName="NameOAC" />
@@ -1227,7 +1279,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Packer">
-            <EntityTypeMapping TypeName="GorZdravModel.Packer">
+            <EntityTypeMapping TypeName="DBModel.Packer">
               <MappingFragment StoreEntitySet="Packer">
                 <ScalarProperty Name="IdPacker" ColumnName="IdPacker" />
                 <ScalarProperty Name="NamePacker" ColumnName="NamePacker" />
@@ -1237,7 +1289,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Product">
-            <EntityTypeMapping TypeName="GorZdravModel.Product">
+            <EntityTypeMapping TypeName="DBModel.Product">
               <MappingFragment StoreEntitySet="Product">
                 <ScalarProperty Name="IdProduct" ColumnName="IdProduct" />
                 <ScalarProperty Name="NameProduct" ColumnName="NameProduct" />
@@ -1264,7 +1316,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Recipe">
-            <EntityTypeMapping TypeName="GorZdravModel.Recipe">
+            <EntityTypeMapping TypeName="DBModel.Recipe">
               <MappingFragment StoreEntitySet="Recipe">
                 <ScalarProperty Name="IdRecipe" ColumnName="IdRecipe" />
                 <ScalarProperty Name="NeedRecipe" ColumnName="NeedRecipe" />
@@ -1272,7 +1324,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Role">
-            <EntityTypeMapping TypeName="GorZdravModel.Role">
+            <EntityTypeMapping TypeName="DBModel.Role">
               <MappingFragment StoreEntitySet="Role">
                 <ScalarProperty Name="IdRole" ColumnName="IdRole" />
                 <ScalarProperty Name="NameRole" ColumnName="NameRole" />
@@ -1280,16 +1332,17 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Sell">
-            <EntityTypeMapping TypeName="GorZdravModel.Sell">
+            <EntityTypeMapping TypeName="DBModel.Sell">
               <MappingFragment StoreEntitySet="Sell">
                 <ScalarProperty Name="IdSell" ColumnName="IdSell" />
                 <ScalarProperty Name="IdProductSell" ColumnName="IdProductSell" />
+                <ScalarProperty Name="IdTypesell" ColumnName="IdTypesell" />
                 <ScalarProperty Name="QuantitySell" ColumnName="QuantitySell" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Street">
-            <EntityTypeMapping TypeName="GorZdravModel.Street">
+            <EntityTypeMapping TypeName="DBModel.Street">
               <MappingFragment StoreEntitySet="Street">
                 <ScalarProperty Name="IdStreet" ColumnName="IdStreet" />
                 <ScalarProperty Name="NameStreet" ColumnName="NameStreet" />
@@ -1297,7 +1350,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Suppliers">
-            <EntityTypeMapping TypeName="GorZdravModel.Suppliers">
+            <EntityTypeMapping TypeName="DBModel.Suppliers">
               <MappingFragment StoreEntitySet="Suppliers">
                 <ScalarProperty Name="IdSuppliers" ColumnName="IdSuppliers" />
                 <ScalarProperty Name="NameSuppliers" ColumnName="NameSuppliers" />
@@ -1305,7 +1358,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="GorZdravModel.sysdiagrams">
+            <EntityTypeMapping TypeName="DBModel.sysdiagrams">
               <MappingFragment StoreEntitySet="sysdiagrams">
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="principal_id" ColumnName="principal_id" />
@@ -1315,8 +1368,16 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="TypeSell">
+            <EntityTypeMapping TypeName="DBModel.TypeSell">
+              <MappingFragment StoreEntitySet="TypeSell">
+                <ScalarProperty Name="IdType" ColumnName="IdType" />
+                <ScalarProperty Name="NameType" ColumnName="NameType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="User">
-            <EntityTypeMapping TypeName="GorZdravModel.User">
+            <EntityTypeMapping TypeName="DBModel.User">
               <MappingFragment StoreEntitySet="User">
                 <ScalarProperty Name="IdUser" ColumnName="IdUser" />
                 <ScalarProperty Name="LoginUser" ColumnName="LoginUser" />

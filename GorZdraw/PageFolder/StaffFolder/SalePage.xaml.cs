@@ -29,6 +29,11 @@ namespace GorZdraw.PageFolder.StaffFolder
             ProductDG.ItemsSource = DBEntities.Getcontext().Product.ToList().
                 OrderBy(c => c.IdProduct);
         }
+        private void Ref()
+        {
+            ProductDG.ItemsSource = DBEntities.Getcontext().Product.ToList().
+                   OrderBy(c => c.IdProduct);
+        }
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)
         {
@@ -47,13 +52,21 @@ namespace GorZdraw.PageFolder.StaffFolder
                 Product product = ProductDG.SelectedItem as Product;
                 product.Quantity -= Convert.ToInt16(QuantityTb.Text);
                 DBEntities.Getcontext().SaveChanges();
+                AddSell();
                 Ref();
+                MBClass.InformationMB("Успешно");
             }
         }
-        private void Ref() 
+        private void AddSell()
         {
-            ProductDG.ItemsSource = DBEntities.Getcontext().Product.ToList().
-                   OrderBy(c => c.IdProduct);   
+            Product product = ProductDG.SelectedItem as Product;
+            DBEntities.Getcontext().Sell.Add(new Sell()
+            {
+                IdProductSell = product.IdProduct,
+                IdTypesell = 1,
+                QuantitySell = Convert.ToInt16(QuantityTb.Text)
+            });
+            DBEntities.Getcontext().SaveChanges();
         }
 
         private void MoreInfo_Click(object sender, RoutedEventArgs e)

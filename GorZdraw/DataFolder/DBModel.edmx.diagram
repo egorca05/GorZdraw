@@ -4,47 +4,49 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="3a99e516bfe4422aa59f5f34a4ca0123" Name="Diagram1">
-        <EntityTypeShape EntityType="GorZdravModel.Category" Width="1.5" PointX="8.25" PointY="2.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="GorZdravModel.City" Width="1.5" PointX="1.5" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="GorZdravModel.Country" Width="1.5" PointX="0.75" PointY="7.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="GorZdravModel.LegalAddressMAQC" Width="1.5" PointX="0.75" PointY="14.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="GorZdravModel.LegalAddressOAC" Width="1.5" PointX="3.75" PointY="11.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="GorZdravModel.LegalAddressPacker" Width="1.5" PointX="0.75" PointY="3.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="GorZdravModel.Manufacturer" Width="1.5" PointX="8.25" PointY="5.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="GorZdravModel.ManufacturerAndQualityControl" Width="1.5" PointX="3" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="GorZdravModel.Order" Width="1.5" PointX="12.75" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="GorZdravModel.OrganizationAcceptingClaims" Width="1.5" PointX="6" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="GorZdravModel.Packer" Width="1.5" PointX="3" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="GorZdravModel.Product" Width="1.5" PointX="10.5" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="GorZdravModel.Recipe" Width="1.5" PointX="8.25" PointY="9" IsExpanded="true" />
-        <EntityTypeShape EntityType="GorZdravModel.Role" Width="1.5" PointX="10.75" PointY="12.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="GorZdravModel.Sell" Width="1.5" PointX="12.75" PointY="9.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="GorZdravModel.Street" Width="1.5" PointX="1.5" PointY="11.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="GorZdravModel.Suppliers" Width="1.5" PointX="8.25" PointY="11.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="GorZdravModel.sysdiagrams" Width="1.5" PointX="12.75" PointY="2" IsExpanded="true" />
-        <EntityTypeShape EntityType="GorZdravModel.User" Width="1.5" PointX="13" PointY="12.125" IsExpanded="true" />
-        <AssociationConnector Association="GorZdravModel.FK_Product_Category" ManuallyRouted="false" />
-        <AssociationConnector Association="GorZdravModel.FK_LegalAddressMAQC_City" ManuallyRouted="false" />
-        <AssociationConnector Association="GorZdravModel.FK_LegalAddressPacker_City" ManuallyRouted="false" />
-        <AssociationConnector Association="GorZdravModel.FK_ManufacturerAndQualityControl_Country" ManuallyRouted="false" />
-        <AssociationConnector Association="GorZdravModel.FK_OrganizationAcceptingClaims_Country" ManuallyRouted="false" />
-        <AssociationConnector Association="GorZdravModel.FK_Packer_Country" ManuallyRouted="false" />
-        <AssociationConnector Association="GorZdravModel.FK_LegalAddressMAQC_Street" ManuallyRouted="false" />
-        <AssociationConnector Association="GorZdravModel.FK_ManufacturerAndQualityControl_LegalAddressMAQC" ManuallyRouted="false" />
-        <AssociationConnector Association="GorZdravModel.FK_OrganizationAcceptingClaims_LegalAddressOAC" ManuallyRouted="false" />
-        <AssociationConnector Association="GorZdravModel.FK_LegalAddressPacker_Street" ManuallyRouted="false" />
-        <AssociationConnector Association="GorZdravModel.FK_Packer_LegalAddressPacker" ManuallyRouted="false" />
-        <AssociationConnector Association="GorZdravModel.FK_Manufacturer_ManufacturerAndQualityControl" ManuallyRouted="false" />
-        <AssociationConnector Association="GorZdravModel.FK_Manufacturer_OrganizationAcceptingClaims" ManuallyRouted="false" />
-        <AssociationConnector Association="GorZdravModel.FK_Manufacturer_Packer" ManuallyRouted="false" />
-        <AssociationConnector Association="GorZdravModel.FK_Product_Manufacturer" ManuallyRouted="false" />
-        <AssociationConnector Association="GorZdravModel.FK_Order_Product" ManuallyRouted="false" />
-        <AssociationConnector Association="GorZdravModel.FK_Order_Suppliers" ManuallyRouted="false" />
-        <AssociationConnector Association="GorZdravModel.FK_Product_Recipe" ManuallyRouted="false" />
-        <AssociationConnector Association="GorZdravModel.FK_Product_Suppliers" ManuallyRouted="false" />
-        <AssociationConnector Association="GorZdravModel.FK_Sell_Product" ManuallyRouted="false" />
-        <AssociationConnector Association="GorZdravModel.FK_User_Role" ManuallyRouted="false" />
+      <Diagram DiagramId="2fa07b6ce2764611b05c80953291234c" Name="Diagram1">
+        <EntityTypeShape EntityType="DBModel.Category" Width="1.5" PointX="8.25" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.City" Width="1.5" PointX="1.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Country" Width="1.5" PointX="0.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.LegalAddressMAQC" Width="1.5" PointX="0.75" PointY="14.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.LegalAddressOAC" Width="1.5" PointX="3.75" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.LegalAddressPacker" Width="1.5" PointX="0.75" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Manufacturer" Width="1.5" PointX="8.25" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.ManufacturerAndQualityControl" Width="1.5" PointX="3" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Order" Width="1.5" PointX="12.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.OrganizationAcceptingClaims" Width="1.5" PointX="6" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Packer" Width="1.5" PointX="3" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Product" Width="1.5" PointX="10.5" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Recipe" Width="1.5" PointX="8.25" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Role" Width="1.5" PointX="10.75" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Sell" Width="1.5" PointX="12.75" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Street" Width="1.5" PointX="1.5" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Suppliers" Width="1.5" PointX="8.25" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.TypeSell" Width="1.5" PointX="10.5" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.User" Width="1.5" PointX="13" PointY="11.125" IsExpanded="true" />
+        <AssociationConnector Association="DBModel.FK_Product_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_LegalAddressMAQC_City" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_LegalAddressPacker_City" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_ManufacturerAndQualityControl_Country" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_OrganizationAcceptingClaims_Country" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_Packer_Country" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_LegalAddressMAQC_Street" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_ManufacturerAndQualityControl_LegalAddressMAQC" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_OrganizationAcceptingClaims_LegalAddressOAC" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_LegalAddressPacker_Street" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_Packer_LegalAddressPacker" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_Manufacturer_ManufacturerAndQualityControl" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_Manufacturer_OrganizationAcceptingClaims" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_Manufacturer_Packer" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_Product_Manufacturer" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_Order_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_Order_Suppliers" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_Product_Recipe" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_Product_Suppliers" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_Sell_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_User_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_Sell_TypeSell" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
