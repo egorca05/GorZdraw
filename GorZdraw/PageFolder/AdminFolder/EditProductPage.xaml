@@ -1,24 +1,28 @@
-﻿<Page x:Class="GorZdraw.PageFolder.StaffFolder.InfoProductPage"
+﻿<Page x:Class="GorZdraw.PageFolder.AdminFolder.EditProductPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:GorZdraw.PageFolder.AdminFolder"
       mc:Ignorable="d" 
-      d:DesignHeight="650" d:DesignWidth="1000"
-      Title="Создание заказа">
+      d:DesignHeight="800" d:DesignWidth="1050"
+      Title="Добавить препарат">
 
     <Grid>
         <Border
             CornerRadius="20"
-            Width="1000"
-            Height="650"
+            Width="1050"
+            Height="800"
             Background="{StaticResource DeepYellowGreen}">
             <Border.Effect>
                 <DropShadowEffect BlurRadius="50"/>
             </Border.Effect>
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="90"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
                     <RowDefinition/>
                     <RowDefinition/>
                     <RowDefinition/>
@@ -51,6 +55,10 @@
                        Style="{StaticResource NormalLabel}"/>
                 <Label Content="Лекарственная форма:" Grid.Row="7" 
                        Style="{StaticResource NormalLabel}"/>
+                <Label Content="Дата выпуска:" Grid.Row="8" 
+                       Style="{StaticResource NormalLabel}"/>
+                <Label Content="Срок годности:" Grid.Row="9" 
+                       Style="{StaticResource NormalLabel}"/>
 
                 <Label Content="Показания:" Grid.Row="0" 
                        Style="{StaticResource NormalLabel}"
@@ -67,7 +75,7 @@
                 <Label Content="Передозировка:" Grid.Row="4" 
                        Style="{StaticResource NormalLabel}"
                        Grid.Column="2"/>
-                <Label Content="Лекарственное взаимодействие:" Grid.Row="5" 
+                <Label Content="Взаимодействие:" Grid.Row="5" 
                        Style="{StaticResource NormalLabel}"
                        Grid.Column="2"/>
                 <Label Content="Особые указания:" Grid.Row="6" 
@@ -76,9 +84,18 @@
                 <Label Content="Условия хранения:" Grid.Row="7" 
                        Style="{StaticResource NormalLabel}"
                        Grid.Column="2"/>
+                <Label Content="Условия продажи:" Grid.Row="8" 
+                       Style="{StaticResource NormalLabel}"
+                       Grid.Column="2"/>
+                <Label Content="Количество:" Grid.Row="9" 
+                       Style="{StaticResource NormalLabel}"
+                       Grid.Column="2"/>
+                <Label Content="Цена:" Grid.Row="10" 
+                       Style="{StaticResource NormalLabel}"
+                       Grid.Column="0"/>
 
 
-                <TextBox x:Name="NameATb" Grid.Column="1"
+                <TextBox x:Name="NameTb" Grid.Column="1"
                           Grid.Row="1"
                          Text="{Binding NameProduct}"
                          Style="{StaticResource InfoTb}"/>
@@ -90,22 +107,35 @@
                           Grid.Row="3" 
                          Text="{Binding ReleaseForm}"
                          Style="{StaticResource InfoTb}"/>
-                <TextBox x:Name="СategoryTb" Grid.Column="1"
-                          Grid.Row="4" 
-                         Text="{Binding Category.NameСategory}"
-                         Style="{StaticResource InfoTb}"/>
-                <TextBox x:Name="ManufacturerTb" Grid.Column="1"
+                <ComboBox x:Name="СategoryCb" Grid.Column="1"
+                          Grid.Row="4"
+                          SelectedItem="{Binding Category}" 
+                          DisplayMemberPath="NameСategory"
+                          SelectedValuePath="IdСategory"/>
+                <ComboBox x:Name="ManufacturerCb" Grid.Column="1"
                           Grid.Row="5" 
-                         Text="{Binding Manufacturer.ManufacturerAndQualityControl.NameMAQC}"
-                         Style="{StaticResource InfoTb}"/>
-                <TextBox x:Name="SuppliersTb" Grid.Column="1"
+                          SelectedItem="{Binding ManufacturerAndQualityControl}" 
+                          DisplayMemberPath="NameMAQC"
+                          SelectedValuePath="IdManufacturerAndQualityControl"/>
+                <ComboBox x:Name="SuppliersCb" Grid.Column="1"
                           Grid.Row="6" 
-                         Text="{Binding Suppliers.NameSuppliers}"
-                         Style="{StaticResource InfoTb}"/>
+                         SelectedItem="{Binding Suppliers}" 
+                          DisplayMemberPath="NameSuppliers"
+                          SelectedValuePath="IdSuppliers"/>
                 <TextBox x:Name="DosageFormTb" Grid.Column="1"
                           Grid.Row="7" 
                          Text="{Binding DosageForm}"
                          Style="{StaticResource InfoTb}"/>
+                <DatePicker x:Name="ReleaseDateDp" Grid.Column="1"
+                          Grid.Row="8" />
+                <DatePicker x:Name="ExpirationDateDp" Grid.Column="1"
+                          Grid.Row="9" />
+                <TextBox x:Name="PriceTb" Grid.Column="1"
+                          Grid.Row="10" 
+                         Text="{Binding Price}"
+                         Style="{StaticResource InfoTb}"/>
+
+
 
                 <TextBox x:Name="IndicationsTb" Grid.Column="3"
                           Grid.Row="0" 
@@ -140,11 +170,25 @@
                           Grid.Row="7" 
                          Text="{Binding StorageConditions}"
                          Style="{StaticResource InfoTb}"/>
+                <ComboBox x:Name="RecipeCb" Grid.Column="3"
+                          Grid.Row="8" 
+                         SelectedItem="{Binding Recipe}" 
+                          DisplayMemberPath="NeedRecipe"
+                          SelectedValuePath="IdRecipe"/>
+                <TextBox x:Name="QuantityTb" Grid.Column="3"
+                          Grid.Row="9" 
+                         Text="{Binding Quantity}"
+                         Style="{StaticResource InfoTb}"/>
 
+                <Button x:Name="SaveBtn" Content="Сохранить"
+                        HorizontalAlignment="Left" Click="SaveBtn_Click"
+                        Grid.Row="10" Background="{DynamicResource Blue}"
+                        Grid.Column="3"/>
 
 
             </Grid>
 
         </Border>
+
     </Grid>
 </Page>

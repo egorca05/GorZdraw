@@ -18,15 +18,16 @@ namespace GorZdraw.DataFolder
         public Product()
         {
             this.Order = new HashSet<Order>();
+            this.Sell = new HashSet<Sell>();
         }
     
         public int IdProduct { get; set; }
         public string NameProduct { get; set; }
         public string Composition { get; set; }
-        public int IdСategory { get; set; }
+        public Nullable<int> IdСategory { get; set; }
         public string ReleaseForm { get; set; }
-        public int IdManufacturer { get; set; }
-        public int IdSuppliers { get; set; }
+        public Nullable<int> IdManufacturer { get; set; }
+        public Nullable<int> IdSuppliers { get; set; }
         public string DosageForm { get; set; }
         public string Indications { get; set; }
         public string Contraindications { get; set; }
@@ -36,11 +37,11 @@ namespace GorZdraw.DataFolder
         public string DrugInteraction { get; set; }
         public string SpecialInstructions { get; set; }
         public string StorageConditions { get; set; }
-        public System.DateTime ReleaseDate { get; set; }
-        public System.DateTime ExpirationDate { get; set; }
-        public int IdRecipe { get; set; }
-        public int Quantity { get; set; }
-        public decimal Price { get; set; }
+        public Nullable<System.DateTime> ReleaseDate { get; set; }
+        public Nullable<System.DateTime> ExpirationDate { get; set; }
+        public Nullable<int> IdRecipe { get; set; }
+        public Nullable<int> Quantity { get; set; }
+        public Nullable<decimal> Price { get; set; }
     
         public virtual Category Category { get; set; }
         public virtual Manufacturer Manufacturer { get; set; }
@@ -48,5 +49,7 @@ namespace GorZdraw.DataFolder
         public virtual ICollection<Order> Order { get; set; }
         public virtual Recipe Recipe { get; set; }
         public virtual Suppliers Suppliers { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Sell> Sell { get; set; }
     }
 }

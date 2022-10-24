@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GorZdraw.WindowFolder"
         mc:Ignorable="d"
-        Title="Администратор" Height="800" Width="1200"
+        Title="Администратор" Height="1000" Width="1300"
         WindowStyle="None"
         AllowsTransparency="True"
         WindowStartupLocation="CenterScreen"
@@ -20,7 +20,7 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="10"/>
                     <ColumnDefinition/>
-                    <ColumnDefinition Width="1000"/>
+                    <ColumnDefinition Width="1100"/>
                     <ColumnDefinition Width="10"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
@@ -30,11 +30,11 @@
                     <RowDefinition Height="10"/>
                 </Grid.RowDefinitions>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left"
-                            Grid.Row="1" Grid.Column="1">
+                            Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2">
                     <Image Height="100"
                            HorizontalAlignment="Left"
                            Source="/ResourcesFolder/ÍmageFolder/Black.png"/>
-                    <Label Content="{Binding ElementName=MainFrame, Path=Content.Title}"
+                    <Label Content="{Binding ElementName=AdminFrame, Path=Content.Title}"
                            HorizontalAlignment="Left"
                            Style="{DynamicResource LogoLabel}"/>
                 </StackPanel>
@@ -79,14 +79,15 @@
                             <RowDefinition/>
                             <RowDefinition/>
                             <RowDefinition/>
+                            <RowDefinition/>
                         </Grid.RowDefinitions>
 
                         <Button x:Name="ProductBtn" Content="Препараты"
                                 Click="ProductBtn_Click"
                                 Style="{DynamicResource MenuBtn}"/>
-                        <Button x:Name="СategoryBtn" Content="Категории"
+                        <Button x:Name="OrderBtn" Content="Заказы"
                                 Grid.Row="1" 
-                                Style="{DynamicResource MenuBtn}"/>
+                                Style="{DynamicResource MenuBtn}" Click="OrderBtn_Click"/>
                         <Button x:Name="ManufacturerBtn" 
                                 Content="Производители"
                                 Grid.Row="2"
@@ -98,6 +99,10 @@
                         <Button x:Name="StafffBtn" 
                                 Content="Сотрудники"
                                 Grid.Row="4"
+                                Style="{DynamicResource MenuBtn}"/>
+                        <Button x:Name="AdressBtn" 
+                                Content="Адреса"
+                                Grid.Row="5"
                                 Style="{DynamicResource MenuBtn}"/>
                     </Grid>
 

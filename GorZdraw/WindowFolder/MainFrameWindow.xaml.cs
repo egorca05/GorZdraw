@@ -23,7 +23,7 @@ namespace GorZdraw.WindowFolder
          public MainFrameWindow()
         {
             InitializeComponent();
-            MainFrame.Navigate(new PageFolder.AuthorizationPage());
+            MainFrame.Navigate(new PageFolder.MainMenu());
         }
 
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
@@ -46,7 +46,9 @@ namespace GorZdraw.WindowFolder
 
         private void LogOutIm_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            MainFrame.Navigate(new PageFolder.AuthorizationPage());
+            AuthorizationWindow authorizationWindow = new AuthorizationWindow();
+            authorizationWindow.Show();
+            this.Close();
         }
     }
 }

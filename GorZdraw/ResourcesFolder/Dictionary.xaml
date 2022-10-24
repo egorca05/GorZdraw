@@ -8,7 +8,7 @@
 
     <!--Единый-->
     <Style TargetType="Control" x:Key="BaseControl">
-        <Setter Property="FontFamily" Value="Garamond"/>
+        <Setter Property="FontFamily" Value="Roboto"/>
         <Setter Property="FontSize" Value="20"/>
         <Setter Property="Foreground" Value="White"/>
         <Setter Property="BorderBrush" Value="{StaticResource Blue}"/>
@@ -17,6 +17,7 @@
         <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="HorizontalContentAlignment" Value="Center"/>
         <Setter Property="Margin" Value="10"/>
+        <Setter Property="Padding" Value="10"/>
     </Style>
 
     <!--PasswodBox-->
@@ -67,7 +68,22 @@
         </Style.Resources>
     </Style>
 
-        <!--Button-->
+    <!--textbox-->
+    <Style TargetType="TextBox" x:Key="InfoTb"
+           BasedOn="{StaticResource BaseControl}">
+        <Setter Property="Padding" Value="5"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="FontSize" Value="15"/>
+        <Setter Property="VerticalScrollBarVisibility" Value="Auto"/>
+        <Style.Resources>
+            <Style TargetType="Border">
+                <Setter Property="CornerRadius" Value="10"/>
+            </Style>
+        </Style.Resources>
+    </Style>
+
+    <!--Button-->
     <Style TargetType="Button" BasedOn="{StaticResource BaseControl}">
         <Setter Property="Width" Value="200"/>
         <Setter Property="Margin" Value="15"/>
@@ -117,9 +133,10 @@
         <!--Дата грид-->
     <Style TargetType="DataGrid" BasedOn="{StaticResource BaseControl}">
         <Setter Property="HorizontalContentAlignment" Value="Left"/>
-        <Setter Property="Margin" Value="20"/>
+        <Setter Property="Margin" Value="10"/>
         <Setter Property="AlternatingRowBackground"
                 Value="{StaticResource MediumDarkGreen}"/>
+        <Setter Property="Padding" Value="0"/>
         <Setter Property="RowBackground" Value="{StaticResource SeaGreen}"/>
         <Style.Resources>
             <Style TargetType="Border">
@@ -157,10 +174,11 @@
         <Setter Property="Stretch" Value="Fill"/>
         <Setter Property="Margin" Value="10"/>
     </Style>
-    
+
+
     <!--Стиль для ComboBox-->
     <Style TargetType="ComboBox" BasedOn="{StaticResource BaseControl}">
-        
+        <Setter Property="Foreground" Value="Black"/>
     </Style>
 
     <!--Стиль для DatePicker-->

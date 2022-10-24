@@ -12,15 +12,12 @@ namespace GorZdraw.DataFolder
     using System;
     using System.Collections.Generic;
     
-    public partial class Order
+    public partial class Sell
     {
-        public int IdOrder { get; set; }
-        public int IdProduct { get; set; }
-        public System.DateTime DateOrder { get; set; }
-        public int QuantityOrder { get; set; }
-        public int IdSuppliers { get; set; }
+        public int IdSell { get; set; }
+        public int IdProductSell { get; set; }
+        public int QuantitySell { get; set; }
     
         public virtual Product Product { get; set; }
-        public virtual Suppliers Suppliers { get; set; }
     }
 }

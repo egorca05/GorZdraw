@@ -60,7 +60,21 @@ namespace GorZdraw.PageFolder.StaffFolder
         {
             Product product = ProductDG.SelectedItem as Product;
             VariableClass.IdProduct = product.IdProduct;
-            //new InfoProductPage(ProductDG.SelectedItem as Match).Navigate();
+            this.NavigationService.Navigate(new InfoProductPage(ProductDG.SelectedItem as Product));
+            Ref();
+        }
+
+        private void SearchTb_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            try
+            {
+                ProductDG.ItemsSource = DBEntities.Getcontext().Product.Where
+                    (u =>u.NameProduct.StartsWith(SearchTb.Text)).ToList();
+            }
+            catch (Exception ex)
+            {
+                MBClass.ErrorMB(ex);
+            }
         }
     }
 }

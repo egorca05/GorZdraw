@@ -20,14 +20,12 @@ namespace GorZdraw.DataFolder
             : base("name=DBEntities")
         {
         }
-
         public static DBEntities Getcontext()
         {
             if (context == null)
                 context = new DBEntities();
             return context;
         }
-    
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
@@ -47,6 +45,7 @@ namespace GorZdraw.DataFolder
         public virtual DbSet<Product> Product { get; set; }
         public virtual DbSet<Recipe> Recipe { get; set; }
         public virtual DbSet<Role> Role { get; set; }
+        public virtual DbSet<Sell> Sell { get; set; }
         public virtual DbSet<Street> Street { get; set; }
         public virtual DbSet<Suppliers> Suppliers { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }

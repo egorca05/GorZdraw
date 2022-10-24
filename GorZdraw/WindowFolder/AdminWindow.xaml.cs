@@ -35,12 +35,14 @@ namespace GorZdraw.WindowFolder
 
         private void LogOutIm_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            Application.Current.MainWindow.WindowState = WindowState.Minimized;
+            AuthorizationWindow authorizationWindow = new AuthorizationWindow();
+            authorizationWindow.Show();
+            this.Close();
         }
 
         private void RollUpIm_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            AdminFrame.Navigate(new PageFolder.AuthorizationPage());
+            //AdminFrame.Navigate(new PageFolder.AuthorizationPage());
         }
 
         private void CloseIm_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -50,7 +52,13 @@ namespace GorZdraw.WindowFolder
 
         private void ProductBtn_Click(object sender, RoutedEventArgs e)
         {
-            AdminFrame.Navigate(new MenuProductPage());
+            AdminFrame.Navigate(new ListProductPage());
+        }
+
+        private void OrderBtn_Click(object sender, RoutedEventArgs e)
+        {
+            AdminFrame.Navigate(new OrderPage());
+
         }
     }
 }
