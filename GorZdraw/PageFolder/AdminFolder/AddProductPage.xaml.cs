@@ -57,8 +57,8 @@ namespace GorZdraw.PageFolder.AdminFolder
                 IdManufacturer = Int32.Parse(ManufacturerCb.SelectedValue.ToString()) ,
                 IdSuppliers = Int32.Parse(SuppliersCb.SelectedValue.ToString()),
                 DosageForm = DosageFormTb.Text,
-                ReleaseDate = ReleaseDateDp.SelectedDate.Value.Date,
-                ExpirationDate = ExpirationDateDp.SelectedDate.Value.Date,
+                ReleaseDate = Convert.ToDateTime(ReleaseDateDp.Text),
+                ExpirationDate = Convert.ToDateTime(ExpirationDateDp.Text),
                 Price = Int32.Parse(PriceTb.Text.ToString()),
 
                 Indications =IndicationsTb.Text,
