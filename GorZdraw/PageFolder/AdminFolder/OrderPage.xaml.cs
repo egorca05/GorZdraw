@@ -57,15 +57,5 @@ namespace GorZdraw.PageFolder.AdminFolder
                 }
             }
         }
-
-        private void EditBtn_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void AddBtn_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }

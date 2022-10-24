@@ -69,11 +69,12 @@
                 <Border
             CornerRadius="20"
             Width="170"
-            Height="670"
+            Height="800"
             Background="{StaticResource DeepYellowGreen}"
                     Grid.Column="1" Grid.Row="2">
                     <Grid>
                         <Grid.RowDefinitions>
+                            <RowDefinition/>
                             <RowDefinition/>
                             <RowDefinition/>
                             <RowDefinition/>
@@ -91,18 +92,23 @@
                         <Button x:Name="ManufacturerBtn" 
                                 Content="Производители"
                                 Grid.Row="2"
-                                Style="{DynamicResource MenuBtn}"/>
+                                Style="{DynamicResource MenuBtn}"
+                                Click="ManufacturerBtn_Click"/>
                         <Button x:Name="SuppliersrBtn" 
                                 Content="Поставщики"
                                 Grid.Row="3"
                                 Style="{DynamicResource MenuBtn}"/>
+                        <Button x:Name="OrganizationAcceptingClaimsBtn" 
+                                Content="пр. претензии"
+                                Grid.Row="4"
+                                Style="{DynamicResource MenuBtn}"/>
                         <Button x:Name="StafffBtn" 
                                 Content="Сотрудники"
-                                Grid.Row="4"
+                                Grid.Row="5"
                                 Style="{DynamicResource MenuBtn}"/>
                         <Button x:Name="AdressBtn" 
                                 Content="Адреса"
-                                Grid.Row="5"
+                                Grid.Row="6"
                                 Style="{DynamicResource MenuBtn}"/>
                     </Grid>
 

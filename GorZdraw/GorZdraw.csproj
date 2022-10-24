@@ -148,6 +148,9 @@
     <Compile Include="PageFolder\AdminFolder\AddCategoryPage.xaml.cs">
       <DependentUpon>AddCategoryPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PageFolder\AdminFolder\AddMunafacturerPage.xaml.cs">
+      <DependentUpon>AddMunafacturerPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PageFolder\AdminFolder\AddProductPage.xaml.cs">
       <DependentUpon>AddProductPage.xaml</DependentUpon>
     </Compile>
@@ -159,6 +162,9 @@
     </Compile>
     <Compile Include="PageFolder\AdminFolder\EditProductPage.xaml.cs">
       <DependentUpon>EditProductPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageFolder\AdminFolder\ListMunafacturerPage.xaml.cs">
+      <DependentUpon>ListMunafacturerPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="PageFolder\AdminFolder\ListProductPage.xaml.cs">
       <DependentUpon>ListProductPage.xaml</DependentUpon>
@@ -230,6 +236,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PageFolder\AdminFolder\AddMunafacturerPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PageFolder\AdminFolder\AddProductPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -243,6 +253,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PageFolder\AdminFolder\EditProductPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageFolder\AdminFolder\ListMunafacturerPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
