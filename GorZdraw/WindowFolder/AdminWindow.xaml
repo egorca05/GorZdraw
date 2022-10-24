@@ -79,6 +79,7 @@
                             <RowDefinition/>
                             <RowDefinition/>
                             <RowDefinition/>
+                            <RowDefinition/>
                         </Grid.RowDefinitions>
 
                         <Button x:Name="ProductBtn" Content="Препараты"
@@ -86,7 +87,7 @@
                                 Style="{DynamicResource MenuBtn}"/>
                         <Button x:Name="OrderBtn" Content="Заказы"
                                 Grid.Row="1" 
-                                Style="{DynamicResource MenuBtn}"/>
+                                Style="{DynamicResource MenuBtn}" Click="OrderBtn_Click"/>
                         <Button x:Name="ManufacturerBtn" 
                                 Content="Производители"
                                 Grid.Row="2"
@@ -98,6 +99,10 @@
                         <Button x:Name="StafffBtn" 
                                 Content="Сотрудники"
                                 Grid.Row="4"
+                                Style="{DynamicResource MenuBtn}"/>
+                        <Button x:Name="AdressBtn" 
+                                Content="Адреса"
+                                Grid.Row="5"
                                 Style="{DynamicResource MenuBtn}"/>
                     </Grid>
 

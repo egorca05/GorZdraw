@@ -54,5 +54,11 @@ namespace GorZdraw.WindowFolder
         {
             AdminFrame.Navigate(new ListProductPage());
         }
+
+        private void OrderBtn_Click(object sender, RoutedEventArgs e)
+        {
+            AdminFrame.Navigate(new OrderPage());
+
+        }
     }
 }

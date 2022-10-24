@@ -36,5 +36,10 @@ namespace GorZdraw.PageFolder
             this.NavigationService.Navigate(new AddOrderPage());
 
         }
+
+        private void InBtn_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new InPage());
+        }
     }
 }

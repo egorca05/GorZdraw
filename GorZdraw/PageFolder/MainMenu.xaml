@@ -31,10 +31,13 @@
 
                 <Button x:Name="SellBtn" Content="Режим продажи" 
                         Click="SellBtn_Click" Grid.RowSpan="2" Height="100"
-                        Grid.Row="1"/>
-                <Button x:Name="OrderBtn" Content="Создать заказ" 
-                        Grid.Column="2" Grid.Row="1"
-                        Click="OrderBtn_Click" Grid.RowSpan="2" Height="100"/>
+                        Grid.Row="1" Background="{DynamicResource Blue}"/>
+                <StackPanel Grid.Column="2" Grid.Row="1" Grid.RowSpan="2">
+                    <Button x:Name="OrderBtn" Content="Создать заказ" 
+                        Click="OrderBtn_Click" Height="90"/>
+                    <Button x:Name="InBtn" Content="Поставка" 
+                        Click="InBtn_Click" Height="90"/>
+                </StackPanel>
                 <Image Source="/ResourcesFolder/ÍmageFolder/Staff.png" 
                        Grid.Column="1" Grid.Row="1" Grid.RowSpan="2"/>
             </Grid>

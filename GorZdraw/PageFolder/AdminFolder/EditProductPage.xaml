@@ -114,9 +114,9 @@
                           SelectedValuePath="IdСategory"/>
                 <ComboBox x:Name="ManufacturerCb" Grid.Column="1"
                           Grid.Row="5" 
-                          SelectedItem="{Binding Manufacturer}" 
-                          DisplayMemberPath="IdManufacturerAndQualityControl"
-                          SelectedValuePath="IdManufacturer"/>
+                          SelectedItem="{Binding ManufacturerAndQualityControl}" 
+                          DisplayMemberPath="NameMAQC"
+                          SelectedValuePath="IdManufacturerAndQualityControl"/>
                 <ComboBox x:Name="SuppliersCb" Grid.Column="1"
                           Grid.Row="6" 
                          SelectedItem="{Binding Suppliers}" 

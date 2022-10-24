@@ -22,7 +22,7 @@ namespace GorZdraw.DataFolder
     
         public int IdManufacturer { get; set; }
         public int IdManufacturerAndQualityControl { get; set; }
-        public int IdPacker { get; set; }
+        public Nullable<int> IdPacker { get; set; }
         public int IdOrganizationAcceptingClaims { get; set; }
     
         public virtual ManufacturerAndQualityControl ManufacturerAndQualityControl { get; set; }

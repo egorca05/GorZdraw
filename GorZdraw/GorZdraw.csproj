@@ -160,6 +160,9 @@
     <Compile Include="PageFolder\AdminFolder\ListProductPage.xaml.cs">
       <DependentUpon>ListProductPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PageFolder\AdminFolder\OrderPage.xaml.cs">
+      <DependentUpon>OrderPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PageFolder\MainMenu.xaml.cs">
       <DependentUpon>MainMenu.xaml</DependentUpon>
     </Compile>
@@ -168,6 +171,9 @@
     </Compile>
     <Compile Include="PageFolder\StaffFolder\InfoProductPage.xaml.cs">
       <DependentUpon>InfoProductPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageFolder\StaffFolder\InPage.xaml.cs">
+      <DependentUpon>InPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="PageFolder\StaffFolder\SalePage.xaml.cs">
       <DependentUpon>SalePage.xaml</DependentUpon>
@@ -241,6 +247,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PageFolder\AdminFolder\OrderPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PageFolder\MainMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -250,6 +260,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PageFolder\StaffFolder\InfoProductPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageFolder\StaffFolder\InPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
