@@ -145,6 +145,9 @@
     <Compile Include="DataFolder\User.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="PageFolder\AdminFolder\AddAcceptingClaimsPage.xaml.cs">
+      <DependentUpon>AddAcceptingClaimsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PageFolder\AdminFolder\AddCategoryPage.xaml.cs">
       <DependentUpon>AddCategoryPage.xaml</DependentUpon>
     </Compile>
@@ -171,6 +174,9 @@
     </Compile>
     <Compile Include="PageFolder\AdminFolder\EditSuppliersPage.xaml.cs">
       <DependentUpon>EditSuppliersPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageFolder\AdminFolder\ListAcceptingClaimsPage.xaml.cs">
+      <DependentUpon>ListAcceptingClaimsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="PageFolder\AdminFolder\ListMunafacturerPage.xaml.cs">
       <DependentUpon>ListMunafacturerPage.xaml</DependentUpon>
@@ -244,6 +250,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="PageFolder\AdminFolder\AddAcceptingClaimsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PageFolder\AdminFolder\AddCategoryPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -277,6 +287,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PageFolder\AdminFolder\EditSuppliersPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageFolder\AdminFolder\ListAcceptingClaimsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
