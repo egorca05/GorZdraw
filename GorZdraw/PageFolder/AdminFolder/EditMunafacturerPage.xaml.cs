@@ -18,13 +18,14 @@ using System.Windows.Shapes;
 namespace GorZdraw.PageFolder.AdminFolder
 {
     /// <summary>
-    /// Логика взаимодействия для AddMunafacturerPage.xaml
+    /// Логика взаимодействия для EditMunafacturerPage.xaml
     /// </summary>
-    public partial class AddMunafacturerPage : Page
+    public partial class EditMunafacturerPage : Page
     {
-        public AddMunafacturerPage()
+        public EditMunafacturerPage(Manufacturer Manufacturer)
         {
             InitializeComponent();
+            DataContext = Manufacturer;
             ManufacturerAndQualityControlCb.ItemsSource = DBEntities.Getcontext()
                 .ManufacturerAndQualityControl.ToList();
             PackerCb.ItemsSource = DBEntities.Getcontext()
@@ -40,21 +41,16 @@ namespace GorZdraw.PageFolder.AdminFolder
 
         private void SaveBtn_Click(object sender, RoutedEventArgs e)
         {
-            AddManufacturer();
-            MBClass.InformationMB("Информация о производителе успешно добавленна");
+                Manufacturer manufacturer = DBEntities.Getcontext().Manufacturer
+                 .FirstOrDefault(s => s.IdManufacturer == VariableClass.IdManufacturer);
+            manufacturer.IdManufacturerAndQualityControl = Int32.Parse(ManufacturerAndQualityControlCb.SelectedValue.ToString());
+            manufacturer.IdPacker = Int32.Parse(PackerCb.SelectedValue.ToString());
+            manufacturer.IdOrganizationAcceptingClaims = Int32.Parse(OrganizationAcceptingClaimsCb.SelectedValue.ToString());
+                DBEntities.Getcontext().SaveChanges();
+
+                MBClass.InformationMB("Успешно отредактирован производитель");
             NavigationService.Navigate(new ListMunafacturerPage());
-
-        }
-
-        private void AddManufacturer()
-        {
-            DBEntities.Getcontext().Manufacturer.Add(new Manufacturer()
-            {
-                IdManufacturerAndQualityControl = Int32.Parse(ManufacturerAndQualityControlCb.SelectedValue.ToString()),
-                IdPacker = Int32.Parse(PackerCb.SelectedValue.ToString()),
-                IdOrganizationAcceptingClaims = Int32.Parse(OrganizationAcceptingClaimsCb.SelectedValue.ToString())
-            });
-            DBEntities.Getcontext().SaveChanges();
+         
         }
     }
 }

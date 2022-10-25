@@ -10,5 +10,7 @@ namespace GorZdraw.ClassFolder
     {
         public static int IdProduct { get; set; }
         public static int IdCategory { get; set; }
+        public static int IdManufacturer { get; set; }
+        public static int IdSuppliers { get; set; }
     }
 }

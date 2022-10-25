@@ -13,14 +13,16 @@
         Background="{x:Null}">
     <Grid>
         <Border Style="{DynamicResource BaseBorder}"
-                Background="#CCCCCC"
                 Margin="0"
                 MouseDown="Border_MouseDown">
+            <Border.Background>
+                <ImageBrush ImageSource="/ResourcesFolder/ÍmageFolder/Fon.jpg"/>
+            </Border.Background>
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="10"/>
                     <ColumnDefinition/>
-                    <ColumnDefinition Width="1100"/>
+                    <ColumnDefinition Width="1050"/>
                     <ColumnDefinition Width="10"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
@@ -68,7 +70,7 @@
 
                 <Border
             CornerRadius="20"
-            Width="170"
+            Width="190"
             Height="800"
             Background="{StaticResource DeepYellowGreen}"
                     Grid.Column="1" Grid.Row="2">
@@ -97,9 +99,10 @@
                         <Button x:Name="SuppliersrBtn" 
                                 Content="Поставщики"
                                 Grid.Row="3"
-                                Style="{DynamicResource MenuBtn}"/>
+                                Style="{DynamicResource MenuBtn}" 
+                                Click="SuppliersrBtn_Click"/>
                         <Button x:Name="OrganizationAcceptingClaimsBtn" 
-                                Content="пр. претензии"
+                                Content="прин. претензии"
                                 Grid.Row="4"
                                 Style="{DynamicResource MenuBtn}"/>
                         <Button x:Name="StafffBtn" 

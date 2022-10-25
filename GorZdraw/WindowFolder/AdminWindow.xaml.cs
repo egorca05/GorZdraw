@@ -65,5 +65,11 @@ namespace GorZdraw.WindowFolder
         {
             AdminFrame.Navigate(new ListMunafacturerPage());
         }
+
+        private void SuppliersrBtn_Click(object sender, RoutedEventArgs e)
+        {
+            AdminFrame.Navigate(new ListSuppliersPage());
+
+        }
     }
 }

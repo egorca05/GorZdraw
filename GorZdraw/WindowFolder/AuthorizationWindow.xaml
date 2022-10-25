@@ -12,11 +12,13 @@
         ResizeMode="CanResizeWithGrip"
         Background="{x:Null}">
     <Grid>
-        <Border Style="{DynamicResource BaseBorder}"
-                Background="#CCCCCC"
+        <Border Style="{DynamicResource BaseBorder}"                
                 Margin="0"
                 MouseDown="Border_MouseDown">
-            <Grid>
+            <Border.Background>
+                <ImageBrush ImageSource="/ResourcesFolder/ÍmageFolder/Fon.jpg"/>
+            </Border.Background>
+                <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="10"/>
                     <ColumnDefinition/>

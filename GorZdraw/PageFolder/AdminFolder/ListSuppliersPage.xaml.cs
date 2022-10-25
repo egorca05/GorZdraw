@@ -18,26 +18,24 @@ using System.Windows.Shapes;
 namespace GorZdraw.PageFolder.AdminFolder
 {
     /// <summary>
-    /// Логика взаимодействия для ListMunafacturerPage.xaml
+    /// Логика взаимодействия для ListSuppliersPage.xaml
     /// </summary>
-    public partial class ListMunafacturerPage : Page
+    public partial class ListSuppliersPage : Page
     {
-        public ListMunafacturerPage()
+        public ListSuppliersPage()
         {
             InitializeComponent();
-            ManufacturerDG.ItemsSource = DBEntities.Getcontext().Manufacturer
-                .ToList().OrderBy(c => c.IdManufacturer);
+            SuppliersDG.ItemsSource = DBEntities.Getcontext().Suppliers
+                .ToList().OrderBy(x => x.IdSuppliers);
         }
-
         private void Ref()
         {
-            ManufacturerDG.ItemsSource = DBEntities.Getcontext().Manufacturer
-                            .ToList().OrderBy(c => c.IdManufacturer);
+            SuppliersDG.ItemsSource = DBEntities.Getcontext().Suppliers
+                .ToList().OrderBy(x => x.IdSuppliers);
         }
-
         private void DelBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (ManufacturerDG.SelectedItem == null)
+            if (SuppliersDG.SelectedItem == null)
             {
                 MBClass.ErrorMB("Выберите категорию для удаления");
             }
@@ -45,10 +43,10 @@ namespace GorZdraw.PageFolder.AdminFolder
             {
                 try
                 {
-                    Manufacturer manufacturer = ManufacturerDG.SelectedItem as Manufacturer;
-                    if (MBClass.QestionMB($"Удалить выбранную категорию?"))
+                    Suppliers suppliers = SuppliersDG.SelectedItem as Suppliers;
+                    if (MBClass.QestionMB($"Удалить выбранного поставщика?"))
                     {
-                        DBEntities.Getcontext().Manufacturer.Remove(manufacturer);
+                        DBEntities.Getcontext().Suppliers.Remove(suppliers);
                         DBEntities.Getcontext().SaveChanges();
                         Ref();
                     }
@@ -62,15 +60,15 @@ namespace GorZdraw.PageFolder.AdminFolder
 
         private void EditBtn_Click(object sender, RoutedEventArgs e)
         {
-            Manufacturer manufacturer = ManufacturerDG.SelectedItem as Manufacturer;
-            VariableClass.IdManufacturer = manufacturer.IdManufacturer;
-            this.NavigationService.Navigate(new EditMunafacturerPage(ManufacturerDG.SelectedItem as Manufacturer));
+            Suppliers suppliers = SuppliersDG.SelectedItem as Suppliers;
+            VariableClass.IdSuppliers = suppliers.IdSuppliers;
+            this.NavigationService.Navigate(new EditSuppliersPage(SuppliersDG.SelectedItem as Suppliers));
             Ref();
         }
 
         private void AddBtn_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new AddMunafacturerPage());
+            NavigationService.Navigate(new AddSuppliersPage());
             Ref();
         }
     }
