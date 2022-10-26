@@ -50,6 +50,7 @@ namespace GorZdraw.PageFolder.AdminFolder
 
         private void CityBtn_Click(object sender, RoutedEventArgs e)
         {
+            NavigationService.Navigate(new ListCityPage());
 
         }
 

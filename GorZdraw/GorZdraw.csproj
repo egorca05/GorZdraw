@@ -154,6 +154,9 @@
     <Compile Include="PageFolder\AdminFolder\AddCategoryPage.xaml.cs">
       <DependentUpon>AddCategoryPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PageFolder\AdminFolder\AddCityPage.xaml.cs">
+      <DependentUpon>AddCityPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PageFolder\AdminFolder\AddMunafacturerPage.xaml.cs">
       <DependentUpon>AddMunafacturerPage.xaml</DependentUpon>
     </Compile>
@@ -201,6 +204,9 @@
     </Compile>
     <Compile Include="PageFolder\AdminFolder\ListAdreesMAQCPage.xaml.cs">
       <DependentUpon>ListAdreesMAQCPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageFolder\AdminFolder\ListCityPage.xaml.cs">
+      <DependentUpon>ListCityPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="PageFolder\AdminFolder\ListCountryPage.xaml.cs">
       <DependentUpon>ListCountryPage.xaml</DependentUpon>
@@ -301,6 +307,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PageFolder\AdminFolder\AddCityPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PageFolder\AdminFolder\AddMunafacturerPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -362,6 +372,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PageFolder\AdminFolder\ListAdreesMAQCPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageFolder\AdminFolder\ListCityPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

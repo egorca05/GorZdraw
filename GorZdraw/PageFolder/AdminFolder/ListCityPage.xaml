@@ -1,0 +1,55 @@
+﻿<Page x:Class="GorZdraw.PageFolder.AdminFolder.ListCityPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:GorZdraw.PageFolder.AdminFolder"
+      mc:Ignorable="d" 
+      d:DesignHeight="650" d:DesignWidth="1000"
+      Title="Список городов">
+
+    <Grid>
+        <Border
+            CornerRadius="20"
+            Width="950"
+            Height="650"
+            Background="{StaticResource DeepYellowGreen}">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="50"/>
+            </Border.Effect>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="80"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="BackBtn" Content="Назад" HorizontalAlignment="Left"
+                        Click="BackBtn_Click"/>
+
+                <DataGrid x:Name="CityDG" AutoGenerateColumns="False" 
+                      IsReadOnly="True" Grid.Row="1">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="№" 
+                                            Binding="{Binding IdCity}" 
+                                            Width="50"/>
+                        <DataGridTextColumn Header="Название" 
+                                            Binding="{Binding NameCity}" 
+                                            Width="*"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+
+                <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Center"
+                            Grid.ColumnSpan="2">
+                    <Button x:Name="DelBtn" Content="Удалить" 
+                            Click="DelBtn_Click"/>
+                    <Button x:Name="AddBtn" Content="Создать"
+                            Click="AddBtn_Click"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</Page>
