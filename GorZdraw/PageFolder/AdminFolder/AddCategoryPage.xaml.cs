@@ -43,7 +43,7 @@ namespace GorZdraw.PageFolder.AdminFolder
             {
                 AddCategory();
                 MBClass.InformationMB("Категория добавленна");
-                NavigationService.GoBack();
+                NavigationService.Navigate(new CategoryPage());
             }
         }
         private void AddCategory()

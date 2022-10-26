@@ -89,5 +89,10 @@ namespace GorZdraw.WindowFolder
             AdminFrame.Navigate(new MenuAdressPage());
 
         }
+
+        private void PackerBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

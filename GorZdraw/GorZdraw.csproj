@@ -496,6 +496,9 @@
       <DependentUpon>DBModel.edmx</DependentUpon>
       <LastGenOutput>DBModel.cs</LastGenOutput>
     </Content>
+    <Resource Include="ResourcesFolder\ÍmageFolder\country.png" />
+    <Resource Include="ResourcesFolder\ÍmageFolder\kur.png" />
+    <Resource Include="ResourcesFolder\ÍmageFolder\warni.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

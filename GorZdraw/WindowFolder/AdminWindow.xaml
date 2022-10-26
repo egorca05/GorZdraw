@@ -83,7 +83,7 @@
                             <RowDefinition/>
                             <RowDefinition/>
                             <RowDefinition/>
-                            <RowDefinition/>
+
                         </Grid.RowDefinitions>
 
                         <Button x:Name="ProductBtn" Content="Препараты"
@@ -117,10 +117,6 @@
                                 Grid.Row="6"
                                 Style="{DynamicResource MenuBtn}"
                                 Click="AdressBtn_Click"/>
-                        <Button x:Name="PackerBtn" 
-                                Content="Упаковщик"
-                                Grid.Row="7"
-                                Style="{DynamicResource MenuBtn}"/>
                     </Grid>
 
                 </Border>

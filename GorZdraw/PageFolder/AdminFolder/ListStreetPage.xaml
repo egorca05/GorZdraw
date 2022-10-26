@@ -49,6 +49,7 @@
                     <Button x:Name="AddBtn" Content="Создать"
                             Click="AddBtn_Click"/>
                 </StackPanel>
+                <Image Source="/ResourcesFolder/ÍmageFolder/country.png" Grid.Column="1" Grid.Row="1" Style="{StaticResource PhotoImage}"/>
             </Grid>
         </Border>
     </Grid>

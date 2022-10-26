@@ -50,6 +50,9 @@
                     <Button x:Name="AddBtn" Content="Создать"
                             Click="AddBtn_Click"/>
                 </StackPanel>
+                
+                <Image Source="/ResourcesFolder/ÍmageFolder/kur.png" Grid.Column="1" Grid.RowSpan="2"/>
+
             </Grid>
 
         </Border>

@@ -34,7 +34,7 @@
                         <DataGridTextColumn Header="Производитель" 
                                             Binding="{Binding ManufacturerAndQualityControl.NameMAQC}" 
                                             Width="*"/>
-                        <DataGridTextColumn Header="Поставщик" 
+                        <DataGridTextColumn Header="Упаковщик" 
                                             Binding="{Binding Packer.NamePacker}" 
                                             Width="*"/>
                         <DataGridTextColumn Header="Орг. прин. претензии" 

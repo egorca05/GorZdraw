@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:GorZdraw.PageFolder.AdminFolder"
       mc:Ignorable="d" 
       d:DesignHeight="650" d:DesignWidth="1000"
-      Title="Список организаций принимающих претензии">
+      Title="Список орг. прин. претензии">
 
     <Grid>
         <Border
@@ -51,6 +51,10 @@
                     <Button x:Name="AddBtn" Content="Создать"
                             Click="AddBtn_Click"/>
                 </StackPanel>
+                
+                <Image Source="/ResourcesFolder/ÍmageFolder/warni.png" 
+                       Grid.Column="1" Grid.RowSpan="2" />
+
             </Grid>
 
         </Border>

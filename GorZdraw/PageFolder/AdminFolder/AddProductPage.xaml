@@ -5,15 +5,19 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:GorZdraw.PageFolder.AdminFolder"
       mc:Ignorable="d" 
-      d:DesignHeight="800" d:DesignWidth="1050"
+      d:DesignHeight="800" d:DesignWidth="1100"
       Title="Добавить препарат">
 
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="181*"/>
+            <RowDefinition Height="619*"/>
+        </Grid.RowDefinitions>
         <Border
             CornerRadius="20"
-            Width="1050"
+            Width="950"
             Height="800"
-            Background="{StaticResource DeepYellowGreen}">
+            Background="{StaticResource DeepYellowGreen}" Grid.RowSpan="2">
             <Border.Effect>
                 <DropShadowEffect BlurRadius="50"/>
             </Border.Effect>
@@ -134,8 +138,8 @@
                           Grid.Row="10" 
                          Text="{Binding Price}"
                          Style="{StaticResource InfoTb}"/>
-                
-                
+
+
 
                 <TextBox x:Name="IndicationsTb" Grid.Column="3"
                           Grid.Row="0" 
