@@ -33,30 +33,26 @@ namespace GorZdraw.PageFolder.AdminFolder
         private void PackerBtn_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new ListPackerPage());
-
         }
 
         private void OACBtn_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new ListOACPage());
-
         }
 
         private void CountryBtn_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new ListCountryPage());
-
         }
 
         private void CityBtn_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new ListCityPage());
-
         }
 
         private void StreetBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new ListStreetPage());
         }
     }
 }
