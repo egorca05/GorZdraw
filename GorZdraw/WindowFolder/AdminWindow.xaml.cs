@@ -77,5 +77,17 @@ namespace GorZdraw.WindowFolder
             AdminFrame.Navigate(new ListAcceptingClaimsPage());
 
         }
+
+        private void StafffBtn_Click(object sender, RoutedEventArgs e)
+        {
+            AdminFrame.Navigate(new ListUserPage());
+
+        }
+
+        private void AdressBtn_Click(object sender, RoutedEventArgs e)
+        {
+            AdminFrame.Navigate(new MenuAdressPage());
+
+        }
     }
 }

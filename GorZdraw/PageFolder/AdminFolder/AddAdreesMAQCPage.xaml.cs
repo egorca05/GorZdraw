@@ -18,17 +18,17 @@ using System.Windows.Shapes;
 namespace GorZdraw.PageFolder.AdminFolder
 {
     /// <summary>
-    /// Логика взаимодействия для AddAcceptingClaimsPage.xaml
+    /// Логика взаимодействия для AddAdreesMAQCPage.xaml
     /// </summary>
-    public partial class AddAcceptingClaimsPage : Page
+    public partial class AddAdreesMAQCPage : Page
     {
-        public AddAcceptingClaimsPage()
+        public AddAdreesMAQCPage()
         {
             InitializeComponent();
-            CountryCb.ItemsSource = DBEntities.Getcontext()
-                .Country.ToList();
-            LegalAddressOACCb.ItemsSource = DBEntities.Getcontext()
-                .LegalAddressOAC.ToList();
+            CityCb.ItemsSource = DBEntities.Getcontext()
+                .City.ToList();
+            StreetCb.ItemsSource = DBEntities.Getcontext()
+                .Street.ToList();
         }
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)
@@ -38,16 +38,17 @@ namespace GorZdraw.PageFolder.AdminFolder
 
         private void SaveBtn_Click(object sender, RoutedEventArgs e)
         {
-            DBEntities.Getcontext().OrganizationAcceptingClaims.Add(new OrganizationAcceptingClaims()
+            DBEntities.Getcontext().LegalAddressMAQC.Add(new LegalAddressMAQC()
             {
-                IdCountry = Int32.Parse(CountryCb.SelectedValue.ToString()),
-                IdLegalAddressOAC = Int32.Parse(LegalAddressOACCb.SelectedValue.ToString()),
-                NameOAC = NameOACTb.Text
+                IdCity = Int32.Parse(CityCb.SelectedValue.ToString()),
+                IdStreet = Int32.Parse(StreetCb.SelectedValue.ToString()),
+                HouseNumber = HouseNumberTb.Text,
+                Building = BuildingTb.Text,
+
             });
             DBEntities.Getcontext().SaveChanges();
-            MBClass.InformationMB("Организация создана");
-            NavigationService.Navigate(new ListAcceptingClaimsPage());
-
+            MBClass.InformationMB("Успешно");
+            NavigationService.Navigate(new ListAdreesMAQCPage());
         }
     }
 }

@@ -18,13 +18,14 @@ using System.Windows.Shapes;
 namespace GorZdraw.PageFolder.AdminFolder
 {
     /// <summary>
-    /// Логика взаимодействия для AddAcceptingClaimsPage.xaml
+    /// Логика взаимодействия для EditAcceptingClaimsPage.xaml
     /// </summary>
-    public partial class AddAcceptingClaimsPage : Page
+    public partial class EditAcceptingClaimsPage : Page
     {
-        public AddAcceptingClaimsPage()
+        public EditAcceptingClaimsPage(OrganizationAcceptingClaims OrganizationAcceptingClaims)
         {
             InitializeComponent();
+            DataContext = OrganizationAcceptingClaims;
             CountryCb.ItemsSource = DBEntities.Getcontext()
                 .Country.ToList();
             LegalAddressOACCb.ItemsSource = DBEntities.Getcontext()
@@ -38,16 +39,15 @@ namespace GorZdraw.PageFolder.AdminFolder
 
         private void SaveBtn_Click(object sender, RoutedEventArgs e)
         {
-            DBEntities.Getcontext().OrganizationAcceptingClaims.Add(new OrganizationAcceptingClaims()
-            {
-                IdCountry = Int32.Parse(CountryCb.SelectedValue.ToString()),
-                IdLegalAddressOAC = Int32.Parse(LegalAddressOACCb.SelectedValue.ToString()),
-                NameOAC = NameOACTb.Text
-            });
+            OrganizationAcceptingClaims organization = DBEntities.Getcontext().OrganizationAcceptingClaims
+                 .FirstOrDefault(s => s.IdOrganizationAcceptingClaims == VariableClass.IdOAC);
+            organization.IdCountry = Int32.Parse(CountryCb.SelectedValue.ToString());
+            organization.IdLegalAddressOAC = Int32.Parse(CountryCb.SelectedValue.ToString());
+            organization.NameOAC = NameOACTb.Text;
             DBEntities.Getcontext().SaveChanges();
-            MBClass.InformationMB("Организация создана");
-            NavigationService.Navigate(new ListAcceptingClaimsPage());
 
+            MBClass.InformationMB("Успешно отредактированна организация");
+            NavigationService.Navigate(new ListAcceptingClaimsPage());
         }
     }
 }

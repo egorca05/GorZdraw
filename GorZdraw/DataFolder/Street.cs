@@ -18,6 +18,7 @@ namespace GorZdraw.DataFolder
         public Street()
         {
             this.LegalAddressMAQC = new HashSet<LegalAddressMAQC>();
+            this.LegalAddressOAC = new HashSet<LegalAddressOAC>();
             this.LegalAddressPacker = new HashSet<LegalAddressPacker>();
         }
     
@@ -26,6 +27,8 @@ namespace GorZdraw.DataFolder
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<LegalAddressMAQC> LegalAddressMAQC { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<LegalAddressOAC> LegalAddressOAC { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<LegalAddressPacker> LegalAddressPacker { get; set; }
     }

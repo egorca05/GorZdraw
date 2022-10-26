@@ -1,4 +1,4 @@
-﻿<Page x:Class="GorZdraw.PageFolder.AdminFolder.EditMunafacturerPage"
+﻿<Page x:Class="GorZdraw.PageFolder.AdminFolder.EditAdreesMAQCPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:GorZdraw.PageFolder.AdminFolder"
       mc:Ignorable="d" 
       d:DesignHeight="650" d:DesignWidth="1000"
-      Title="Создание производителя">
+      Title="Редактирование юр адреса производителя">
 
     <Grid>
         <Border
@@ -24,6 +24,7 @@
                     <RowDefinition/>
                     <RowDefinition/>
                     <RowDefinition/>
+                    <RowDefinition/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
@@ -34,33 +35,37 @@
                 <Button x:Name="BackBtn" Content="Назад"
                         HorizontalAlignment="Left" Click="BackBtn_Click"/>
 
-                <Label Content="Производитель лек.:" Grid.Row="1" 
+                <Label Content="Город:" Grid.Row="1" 
                        Style="{StaticResource NormalLabel}"/>
-                <Label Content="Упаковщик:" Grid.Row="2" 
+                <Label Content="Улица:" Grid.Row="2" 
                        Style="{StaticResource NormalLabel}"/>
-                <Label Content="Орг. прин. прет:" Grid.Row="3" 
+                <Label Content="Номер дома:" Grid.Row="3" 
+                       Style="{StaticResource NormalLabel}"/>
+                <Label Content="Строение:" Grid.Row="4" 
                        Style="{StaticResource NormalLabel}"/>
 
-                <ComboBox x:Name="ManufacturerAndQualityControlCb" Grid.Column="1"
+                <ComboBox x:Name="CityCb" Grid.Column="1"
                           Grid.Row="1" 
-                         SelectedItem="{Binding ManufacturerAndQualityControl}" 
-                          DisplayMemberPath="NameMAQC"
-                          SelectedValuePath="IdManufacturerAndQualityControl"/>
-                <ComboBox x:Name="PackerCb" Grid.Column="1"
+                         SelectedItem="{Binding City}" 
+                          DisplayMemberPath="NameCity"
+                          SelectedValuePath="IdCity"/>
+                <ComboBox x:Name="StreetCb" Grid.Column="1"
                           Grid.Row="2" 
-                         SelectedItem="{Binding Packer}" 
-                          DisplayMemberPath="NamePacker"
-                          SelectedValuePath="IdPacker"/>
-                <ComboBox x:Name="OrganizationAcceptingClaimsCb" Grid.Column="1"
-                          Grid.Row="3" 
-                         SelectedItem="{Binding OrganizationAcceptingClaims}" 
-                          DisplayMemberPath="NameOAC"
-                          SelectedValuePath="IdOrganizationAcceptingClaims"/>
+                         SelectedItem="{Binding Street}" 
+                          DisplayMemberPath="NameStreet"
+                          SelectedValuePath="IdStreet"/>
+                <TextBox x:Name="HouseNumberTb" Grid.Column="1"
+                          Grid.Row="3"
+                         Text="{Binding HouseNumber}"/>
+
+                <TextBox x:Name="BuildingTb" Grid.Column="1"
+                          Grid.Row="4"
+                         Text="{Binding Building}"/>
 
                 <Button x:Name="SaveBtn" Content="Сохранить"
                         HorizontalAlignment="Center" Click="SaveBtn_Click"
                         Background="{DynamicResource Blue}"
-                        Grid.Row="4" Grid.Column="1"/>
+                        Grid.Row="5" Grid.Column="1"/>
 
                 <Image Source="/ResourcesFolder/ÍmageFolder/man.png" Grid.Column="2" Grid.RowSpan="7"
                        Margin="30"/>

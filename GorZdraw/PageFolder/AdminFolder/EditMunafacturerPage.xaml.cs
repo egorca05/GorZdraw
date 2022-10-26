@@ -41,16 +41,15 @@ namespace GorZdraw.PageFolder.AdminFolder
 
         private void SaveBtn_Click(object sender, RoutedEventArgs e)
         {
-                Manufacturer manufacturer = DBEntities.Getcontext().Manufacturer
+            Manufacturer manufacturer = DBEntities.Getcontext().Manufacturer
                  .FirstOrDefault(s => s.IdManufacturer == VariableClass.IdManufacturer);
             manufacturer.IdManufacturerAndQualityControl = Int32.Parse(ManufacturerAndQualityControlCb.SelectedValue.ToString());
             manufacturer.IdPacker = Int32.Parse(PackerCb.SelectedValue.ToString());
             manufacturer.IdOrganizationAcceptingClaims = Int32.Parse(OrganizationAcceptingClaimsCb.SelectedValue.ToString());
-                DBEntities.Getcontext().SaveChanges();
+            DBEntities.Getcontext().SaveChanges();
 
-                MBClass.InformationMB("Успешно отредактирован производитель");
+            MBClass.InformationMB("Успешно");
             NavigationService.Navigate(new ListMunafacturerPage());
-         
         }
     }
 }

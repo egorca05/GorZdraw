@@ -26,6 +26,8 @@ namespace GorZdraw.DataFolder
         public string HouseNumber { get; set; }
         public string Building { get; set; }
     
+        public virtual City City { get; set; }
+        public virtual Street Street { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrganizationAcceptingClaims> OrganizationAcceptingClaims { get; set; }
     }

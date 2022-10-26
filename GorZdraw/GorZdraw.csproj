@@ -148,6 +148,9 @@
     <Compile Include="PageFolder\AdminFolder\AddAcceptingClaimsPage.xaml.cs">
       <DependentUpon>AddAcceptingClaimsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PageFolder\AdminFolder\AddAdreesMAQCPage.xaml.cs">
+      <DependentUpon>AddAdreesMAQCPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PageFolder\AdminFolder\AddCategoryPage.xaml.cs">
       <DependentUpon>AddCategoryPage.xaml</DependentUpon>
     </Compile>
@@ -163,6 +166,12 @@
     <Compile Include="PageFolder\AdminFolder\CategoryPage.xaml.cs">
       <DependentUpon>CategoryPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PageFolder\AdminFolder\EditAcceptingClaimsPage.xaml.cs">
+      <DependentUpon>EditAcceptingClaimsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageFolder\AdminFolder\EditAdreesMAQCPage.xaml.cs">
+      <DependentUpon>EditAdreesMAQCPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PageFolder\AdminFolder\EditCategoryPage.xaml.cs">
       <DependentUpon>EditCategoryPage.xaml</DependentUpon>
     </Compile>
@@ -175,8 +184,14 @@
     <Compile Include="PageFolder\AdminFolder\EditSuppliersPage.xaml.cs">
       <DependentUpon>EditSuppliersPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PageFolder\AdminFolder\EditUserPasPage.xaml.cs">
+      <DependentUpon>EditUserPasPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PageFolder\AdminFolder\ListAcceptingClaimsPage.xaml.cs">
       <DependentUpon>ListAcceptingClaimsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageFolder\AdminFolder\ListAdreesMAQCPage.xaml.cs">
+      <DependentUpon>ListAdreesMAQCPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="PageFolder\AdminFolder\ListMunafacturerPage.xaml.cs">
       <DependentUpon>ListMunafacturerPage.xaml</DependentUpon>
@@ -186,6 +201,12 @@
     </Compile>
     <Compile Include="PageFolder\AdminFolder\ListSuppliersPage.xaml.cs">
       <DependentUpon>ListSuppliersPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageFolder\AdminFolder\ListUserPage.xaml.cs">
+      <DependentUpon>ListUserPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageFolder\AdminFolder\MenuAdressPage.xaml.cs">
+      <DependentUpon>MenuAdressPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="PageFolder\AdminFolder\OrderPage.xaml.cs">
       <DependentUpon>OrderPage.xaml</DependentUpon>
@@ -254,6 +275,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PageFolder\AdminFolder\AddAdreesMAQCPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PageFolder\AdminFolder\AddCategoryPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -274,6 +299,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PageFolder\AdminFolder\EditAcceptingClaimsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageFolder\AdminFolder\EditAdreesMAQCPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PageFolder\AdminFolder\EditCategoryPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -290,7 +323,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PageFolder\AdminFolder\EditUserPasPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PageFolder\AdminFolder\ListAcceptingClaimsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageFolder\AdminFolder\ListAdreesMAQCPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -303,6 +344,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PageFolder\AdminFolder\ListSuppliersPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageFolder\AdminFolder\ListUserPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageFolder\AdminFolder\MenuAdressPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -364,6 +413,9 @@
     <Resource Include="ResourcesFolder\ÍmageFolder\Staff.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="ResourcesFolder\ÍmageFolder\Fon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="DataFolder\DBModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>DBModel.edmx</DependentUpon>
@@ -374,7 +426,6 @@
       <DependentUpon>DBModel.edmx</DependentUpon>
       <LastGenOutput>DBModel.cs</LastGenOutput>
     </Content>
-    <Resource Include="ResourcesFolder\ÍmageFolder\Fon.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

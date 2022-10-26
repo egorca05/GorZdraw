@@ -110,11 +110,13 @@
                         <Button x:Name="StafffBtn" 
                                 Content="Сотрудники"
                                 Grid.Row="5"
-                                Style="{DynamicResource MenuBtn}"/>
+                                Style="{DynamicResource MenuBtn}"
+                                Click="StafffBtn_Click"/>
                         <Button x:Name="AdressBtn" 
                                 Content="Адреса"
                                 Grid.Row="6"
-                                Style="{DynamicResource MenuBtn}"/>
+                                Style="{DynamicResource MenuBtn}"
+                                Click="AdressBtn_Click"/>
                         <Button x:Name="PackerBtn" 
                                 Content="Упаковщик"
                                 Grid.Row="7"

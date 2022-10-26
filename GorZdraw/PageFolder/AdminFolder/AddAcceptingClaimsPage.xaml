@@ -41,11 +41,8 @@
                 <Label Content="Юр. адресс (№дома):" Grid.Row="3" 
                        Style="{StaticResource NormalLabel}"/>
 
-                <ComboBox x:Name="ManufacturerAndQualityControlCb" Grid.Column="1"
-                          Grid.Row="1" 
-                         SelectedItem="{Binding ManufacturerAndQualityControl}" 
-                          DisplayMemberPath="NameMAQC"
-                          SelectedValuePath="IdManufacturerAndQualityControl"/>
+                <TextBox x:Name="NameOACTb" Grid.Column="1"
+                          Grid.Row="1" />
                 <ComboBox x:Name="CountryCb" Grid.Column="1"
                           Grid.Row="2" 
                          SelectedItem="{Binding Country}" 

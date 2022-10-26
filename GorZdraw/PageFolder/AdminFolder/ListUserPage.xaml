@@ -1,4 +1,4 @@
-﻿<Page x:Class="GorZdraw.PageFolder.AdminFolder.ListAcceptingClaimsPage"
+﻿<Page x:Class="GorZdraw.PageFolder.AdminFolder.ListUserPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:GorZdraw.PageFolder.AdminFolder"
       mc:Ignorable="d" 
       d:DesignHeight="650" d:DesignWidth="1000"
-      Title="Список организаций принимающих претензии">
+      Title="Пользователи">
 
     <Grid>
         <Border
@@ -23,33 +23,29 @@
                     <RowDefinition/>
                     <RowDefinition Height="80"/>
                 </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
 
-                    <DataGrid x:Name="OACDG" AutoGenerateColumns="False" 
+
+                <DataGrid x:Name="UserDG" AutoGenerateColumns="False" 
                       IsReadOnly="True" Grid.Row="0" Grid.RowSpan="2">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="№" 
-                                            Binding="{Binding IdOrganizationAcceptingClaims}" 
+                                            Binding="{Binding IdUser}" 
                                             Width="50"/>
-                        <DataGridTextColumn Header="Название" 
-                                            Binding="{Binding NameOAC}" 
+                        <DataGridTextColumn Header="Логин" 
+                                            Binding="{Binding LoginUser}" 
                                             Width="*"/>
-                        <DataGridTextColumn Header="Страна" 
-                                            Binding="{Binding Country.NameCountry}" 
+                        <DataGridTextColumn Header="Пароль" 
+                                            Binding="{Binding PasswordUser}" 
+                                            Width="*"/>
+                        <DataGridTextColumn Header="Должность" 
+                                            Binding="{Binding Role.NameRole}" 
                                             Width="*"/>
                     </DataGrid.Columns>
                 </DataGrid>
 
-                <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Center"
-                            Grid.ColumnSpan="2">
-                    <Button x:Name="DelBtn" Content="Удалить" 
-                            Click="DelBtn_Click"
-                            />
-                    <Button x:Name="AddBtn" Content="Создать"
-                            Click="AddBtn_Click"/>
+                <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Center">
+                    <Button x:Name="EdirBtn" Content="Изменить пароль" 
+                            Click="EdirBtn_Click"/>
                 </StackPanel>
             </Grid>
 

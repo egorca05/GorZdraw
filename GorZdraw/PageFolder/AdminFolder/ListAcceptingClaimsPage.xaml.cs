@@ -62,17 +62,11 @@ namespace GorZdraw.PageFolder.AdminFolder
             }
         }
 
-        private void EditBtn_Click(object sender, RoutedEventArgs e)
-        {
-            OrganizationAcceptingClaims organization = OACDG.SelectedItem as OrganizationAcceptingClaims;
-            VariableClass.IdOAC = organization.IdOrganizationAcceptingClaims;
-            this.NavigationService.Navigate(new EditMunafacturerPage(OACDG.SelectedItem as OrganizationAcceptingClaims));
-            Ref();
-        }
 
         private void AddBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new AddAcceptingClaimsPage());
+            Ref();
         }
     }
 }

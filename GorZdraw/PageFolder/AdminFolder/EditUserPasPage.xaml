@@ -1,4 +1,4 @@
-﻿<Page x:Class="GorZdraw.PageFolder.AdminFolder.EditMunafacturerPage"
+﻿<Page x:Class="GorZdraw.PageFolder.AdminFolder.EditUserPasPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -34,28 +34,18 @@
                 <Button x:Name="BackBtn" Content="Назад"
                         HorizontalAlignment="Left" Click="BackBtn_Click"/>
 
-                <Label Content="Производитель лек.:" Grid.Row="1" 
-                       Style="{StaticResource NormalLabel}"/>
-                <Label Content="Упаковщик:" Grid.Row="2" 
-                       Style="{StaticResource NormalLabel}"/>
-                <Label Content="Орг. прин. прет:" Grid.Row="3" 
+                <Label Content="Логин:" Grid.Row="1" 
+                       Style="{StaticResource NormalLabel}"
+                       />
+                <Label Content="Пароль:" Grid.Row="2" 
                        Style="{StaticResource NormalLabel}"/>
 
-                <ComboBox x:Name="ManufacturerAndQualityControlCb" Grid.Column="1"
-                          Grid.Row="1" 
-                         SelectedItem="{Binding ManufacturerAndQualityControl}" 
-                          DisplayMemberPath="NameMAQC"
-                          SelectedValuePath="IdManufacturerAndQualityControl"/>
-                <ComboBox x:Name="PackerCb" Grid.Column="1"
+                <TextBox x:Name="LoginTb" Grid.Column="1"
+                          Grid.Row="1" IsEnabled="False"
+                         Text="{Binding LoginUser}"/>
+                <TextBox x:Name="PasswordTb" Grid.Column="1"
                           Grid.Row="2" 
-                         SelectedItem="{Binding Packer}" 
-                          DisplayMemberPath="NamePacker"
-                          SelectedValuePath="IdPacker"/>
-                <ComboBox x:Name="OrganizationAcceptingClaimsCb" Grid.Column="1"
-                          Grid.Row="3" 
-                         SelectedItem="{Binding OrganizationAcceptingClaims}" 
-                          DisplayMemberPath="NameOAC"
-                          SelectedValuePath="IdOrganizationAcceptingClaims"/>
+                         Text="{Binding PasswordUser}"/>
 
                 <Button x:Name="SaveBtn" Content="Сохранить"
                         HorizontalAlignment="Center" Click="SaveBtn_Click"
