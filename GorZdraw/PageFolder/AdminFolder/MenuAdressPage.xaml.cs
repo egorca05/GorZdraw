@@ -32,6 +32,7 @@ namespace GorZdraw.PageFolder.AdminFolder
 
         private void PackerBtn_Click(object sender, RoutedEventArgs e)
         {
+            NavigationService.Navigate(new ListPackerPage());
 
         }
 

@@ -1,12 +1,12 @@
-﻿<Page x:Class="GorZdraw.PageFolder.AdminFolder.OrderPage"
+﻿<Page x:Class="GorZdraw.PageFolder.AdminFolder.ListPackerPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:GorZdraw.PageFolder.AdminFolder"
       mc:Ignorable="d" 
-     d:DesignHeight="650" d:DesignWidth="1000"
-      Title="Список заказов">
+      d:DesignHeight="650" d:DesignWidth="1000"
+      Title="Упаковщики">
 
     <Grid>
         <Border
@@ -23,25 +23,26 @@
                     <RowDefinition/>
                     <RowDefinition Height="80"/>
                 </Grid.RowDefinitions>
+                <Button x:Name="BackBtn" Content="Назад" HorizontalAlignment="Left"
+                        Click="BackBtn_Click"/>
 
-
-                <DataGrid x:Name="OrderDG" AutoGenerateColumns="False" 
+                <DataGrid x:Name="AdressParcerDG" AutoGenerateColumns="False" 
                       IsReadOnly="True" Grid.Row="1">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="№" 
-                                            Binding="{Binding IdOrder}" 
+                                            Binding="{Binding IdLegalAddressPacker}" 
                                             Width="50"/>
-                        <DataGridTextColumn Header="Препарат" 
-                                            Binding="{Binding Product.NameProduct}" 
+                        <DataGridTextColumn Header="Город" 
+                                            Binding="{Binding City.NameCity}" 
                                             Width="*"/>
-                        <DataGridTextColumn Header="Дата заказа" 
-                                            Binding="{Binding DateOrder}" 
+                        <DataGridTextColumn Header="Улица" 
+                                            Binding="{Binding Street.NameStreet}" 
                                             Width="*"/>
-                        <DataGridTextColumn Header="Количество" 
-                                            Binding="{Binding QuantityOrder}" 
+                        <DataGridTextColumn Header="Номер дома" 
+                                            Binding="{Binding HouseNumber}" 
                                             Width="*"/>
-                        <DataGridTextColumn Header="Поставщик" 
-                                            Binding="{Binding Suppliers.NameSuppliers}" 
+                        <DataGridTextColumn Header="Строение" 
+                                            Binding="{Binding Building}" 
                                             Width="*"/>
                     </DataGrid.Columns>
                 </DataGrid>
@@ -49,6 +50,10 @@
                 <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Center">
                     <Button x:Name="DelBtn" Content="Удалить" 
                             Click="DelBtn_Click"/>
+                    <Button x:Name="EditBtn" Content="Редактировать"
+                            Click="EditBtn_Click"/>
+                    <Button x:Name="AddBtn" Content="Создать"
+                            Click="AddBtn_Click"/>
                 </StackPanel>
             </Grid>
 

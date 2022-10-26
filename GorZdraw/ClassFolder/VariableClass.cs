@@ -15,6 +15,7 @@ namespace GorZdraw.ClassFolder
         public static int IdOAC { get; set; }
         public static int IdUser { get; set; }
         public static int IdAddresMAQC { get; set; }
+        public static int IdAddresParcer { get; set; }
 
     }
 }
