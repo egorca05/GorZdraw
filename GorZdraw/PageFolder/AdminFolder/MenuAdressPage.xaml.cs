@@ -38,6 +38,7 @@ namespace GorZdraw.PageFolder.AdminFolder
 
         private void OACBtn_Click(object sender, RoutedEventArgs e)
         {
+            NavigationService.Navigate(new ListOACPage());
 
         }
 

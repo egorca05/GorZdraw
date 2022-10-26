@@ -202,6 +202,9 @@
     <Compile Include="PageFolder\AdminFolder\ListMunafacturerPage.xaml.cs">
       <DependentUpon>ListMunafacturerPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PageFolder\AdminFolder\ListOACPage.xaml.cs">
+      <DependentUpon>ListOACPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PageFolder\AdminFolder\ListPackerPage.xaml.cs">
       <DependentUpon>ListPackerPage.xaml</DependentUpon>
     </Compile>
@@ -353,6 +356,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PageFolder\AdminFolder\ListMunafacturerPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageFolder\AdminFolder\ListOACPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
