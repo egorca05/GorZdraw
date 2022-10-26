@@ -169,6 +169,9 @@
     <Compile Include="PageFolder\AdminFolder\CategoryPage.xaml.cs">
       <DependentUpon>CategoryPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PageFolder\AdminFolder\CountryPage.xaml.cs">
+      <DependentUpon>CountryPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PageFolder\AdminFolder\EditAcceptingClaimsPage.xaml.cs">
       <DependentUpon>EditAcceptingClaimsPage.xaml</DependentUpon>
     </Compile>
@@ -198,6 +201,9 @@
     </Compile>
     <Compile Include="PageFolder\AdminFolder\ListAdreesMAQCPage.xaml.cs">
       <DependentUpon>ListAdreesMAQCPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageFolder\AdminFolder\ListCountryPage.xaml.cs">
+      <DependentUpon>ListCountryPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="PageFolder\AdminFolder\ListMunafacturerPage.xaml.cs">
       <DependentUpon>ListMunafacturerPage.xaml</DependentUpon>
@@ -315,6 +321,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PageFolder\AdminFolder\CountryPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PageFolder\AdminFolder\EditAcceptingClaimsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -352,6 +362,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PageFolder\AdminFolder\ListAdreesMAQCPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageFolder\AdminFolder\ListCountryPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

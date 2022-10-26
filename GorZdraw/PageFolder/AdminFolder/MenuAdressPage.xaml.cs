@@ -44,6 +44,7 @@ namespace GorZdraw.PageFolder.AdminFolder
 
         private void CountryBtn_Click(object sender, RoutedEventArgs e)
         {
+            NavigationService.Navigate(new ListCountryPage());
 
         }
 
