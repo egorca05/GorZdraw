@@ -97,6 +97,8 @@
                                 Click="StafffBtn_Click"/>
                     </Grid>
                 </Border>
+                <Image Source="/ResourcesFolder/ÍmageFolder/mun.png" Grid.Column="1" Grid.Row="2" VerticalAlignment="Bottom"/>
+
             </Grid>
         </Border>
     </Grid>

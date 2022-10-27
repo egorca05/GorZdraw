@@ -531,6 +531,8 @@
       <DependentUpon>DBModel.edmx</DependentUpon>
       <LastGenOutput>DBModel.cs</LastGenOutput>
     </Content>
+    <Resource Include="ResourcesFolder\ÍmageFolder\mun.png" />
+    <Resource Include="ResourcesFolder\ÍmageFolder\der.png" />
     <Resource Include="ResourcesFolder\ÍmageFolder\country.png" />
     <Resource Include="ResourcesFolder\ÍmageFolder\kur.png" />
     <Resource Include="ResourcesFolder\ÍmageFolder\warni.png" />

@@ -45,6 +45,7 @@
                                             Width="110"/>
                     </DataGrid.Columns>
                 </DataGrid>
+                <Image Source="/ResourcesFolder/ÍmageFolder/der.png" Grid.Column="1" Grid.RowSpan="3"/>
             </Grid>
         </Border>
     </Grid>
