@@ -1,0 +1,51 @@
+﻿<Page x:Class="GorZdraw.PageFolder.DirectorFolder.HistoryPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:GorZdraw.PageFolder.DirectorFolder"
+      mc:Ignorable="d" 
+      d:DesignHeight="650" d:DesignWidth="1000"
+      Title="История движения">
+
+    <Grid>
+        <Border
+            CornerRadius="20"
+            Width="950"
+            Height="650"
+            Background="{StaticResource DeepYellowGreen}">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="50"/>
+            </Border.Effect>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="80"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="600"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                    <DataGrid x:Name="SellDG" AutoGenerateColumns="False" 
+                      IsReadOnly="True" Grid.Row="0" Grid.RowSpan="3">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="№" 
+                                            Binding="{Binding IdSell}" 
+                                            Width="50"/>
+                        <DataGridTextColumn Header="Препарат" 
+                                            Binding="{Binding Product.NameProduct}" 
+                                            Width="*"/>
+                        <DataGridTextColumn Header="Тип" 
+                                            Binding="{Binding TypeSell.NameType}" 
+                                            Width="*"/>
+                        <DataGridTextColumn Header="Количество" 
+                                            Binding="{Binding QuantitySell}" 
+                                            Width="110"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </Border>
+    </Grid>
+</Page>

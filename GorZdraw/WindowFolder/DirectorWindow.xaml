@@ -1,0 +1,103 @@
+﻿<Window x:Class="GorZdraw.WindowFolder.DirectorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GorZdraw.WindowFolder"
+        mc:Ignorable="d"
+        Title="Администратор" Height="1000" Width="1300"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="CanResizeWithGrip"
+        Background="{x:Null}">
+    <Grid>
+        <Border Style="{DynamicResource BaseBorder}"
+                Margin="0"
+                MouseDown="Border_MouseDown">
+            <Border.Background>
+                <ImageBrush ImageSource="/ResourcesFolder/ÍmageFolder/Fon.jpg"/>
+            </Border.Background>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="1050"/>
+                    <ColumnDefinition Width="10"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="10"/>
+                </Grid.RowDefinitions>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left"
+                            Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2">
+                    <Image Height="100"
+                           HorizontalAlignment="Left"
+                           Source="/ResourcesFolder/ÍmageFolder/Black.png"/>
+                    <Label Content="{Binding ElementName=AdminFrame, Path=Content.Title}"
+                           HorizontalAlignment="Left"
+                           Style="{DynamicResource LogoLabel}"/>
+                </StackPanel>
+
+                <Label Content="ГОРЗДРАВ"
+                           HorizontalAlignment="Center" Grid.Column="1"
+                       Grid.Row="1" Style="{StaticResource LogoLabel}"
+                       FontSize="50" Grid.ColumnSpan="2"/>
+
+                <StackPanel Grid.Column="2" Grid.Row="1" Height="60"
+                            HorizontalAlignment="Right" Margin="10"
+                            Orientation="Horizontal">
+                    <Image Height="30" x:Name="LogOutIm"
+                           HorizontalAlignment="Right"
+                           Source="/ResourcesFolder/ÍmageFolder/LogOut.png"
+                           MouseLeftButtonDown="LogOutIm_MouseLeftButtonDown"
+                           Style="{StaticResource MenuImg}"/>
+                    <Image Height="30" x:Name="RollUpIm"
+                           HorizontalAlignment="Right"
+                           Source="/ResourcesFolder/ÍmageFolder/RollUp.png"
+                           MouseLeftButtonDown="RollUpIm_MouseLeftButtonDown"
+                           Style="{StaticResource MenuImg}"/>
+                    <Image Height="30" x:Name="CloseIm"
+                           HorizontalAlignment="Right"
+                           Source="/ResourcesFolder/ÍmageFolder/Exit.png"
+                           MouseLeftButtonDown="CloseIm_MouseLeftButtonDown"
+                           Style="{StaticResource MenuImg}"/>
+                </StackPanel>
+                <Frame Grid.Row="2" Grid.Column="2" x:Name="DirectorFrame" 
+                       Margin="10" NavigationUIVisibility="Hidden"/>
+
+                <Border
+            CornerRadius="20"
+            Width="190"
+            Height="400"
+            Background="{StaticResource DeepYellowGreen}"
+                    Grid.Column="1" Grid.Row="2"
+                    VerticalAlignment="Top"
+                    Margin="20">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+
+                        </Grid.RowDefinitions>
+
+                        <Button x:Name="HistoryBtn" Content="История"
+                                Click="HistoryBtn_Click"
+                                Style="{DynamicResource MenuBtn}"/>
+                        <Button x:Name="OrderBtn" Content="Заказы"
+                                Grid.Row="1" 
+                                Style="{DynamicResource MenuBtn}" Click="OrderBtn_Click"/>
+                        <Button x:Name="StafffBtn" 
+                                Content="Сотрудники"
+                                Grid.Row="2"
+                                Style="{DynamicResource MenuBtn}"
+                                Click="StafffBtn_Click"/>
+                    </Grid>
+                </Border>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

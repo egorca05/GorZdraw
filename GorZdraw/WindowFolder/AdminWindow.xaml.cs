@@ -42,7 +42,8 @@ namespace GorZdraw.WindowFolder
 
         private void RollUpIm_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            //AdminFrame.Navigate(new PageFolder.AuthorizationPage());
+            Application.Current.MainWindow.WindowState = WindowState.Minimized;
+
         }
 
         private void CloseIm_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -90,9 +91,5 @@ namespace GorZdraw.WindowFolder
 
         }
 
-        private void PackerBtn_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }

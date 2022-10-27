@@ -72,6 +72,11 @@ namespace GorZdraw.WindowFolder
                                 adminWindow.Show();
                                 this.Close();
                                 break;
+                            case 1:
+                                DirectorWindow directorWindow = new DirectorWindow();
+                                directorWindow.Show();
+                                this.Close();
+                                break;
                         }
                     }
                 }
