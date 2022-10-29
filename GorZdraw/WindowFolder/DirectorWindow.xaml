@@ -36,7 +36,7 @@
                     <Image Height="100"
                            HorizontalAlignment="Left"
                            Source="/ResourcesFolder/ÍmageFolder/Black.png"/>
-                    <Label Content="{Binding ElementName=AdminFrame, Path=Content.Title}"
+                    <Label Content="{Binding ElementName=DirectorFrame, Path=Content.Title}"
                            HorizontalAlignment="Left"
                            Style="{DynamicResource LogoLabel}"/>
                 </StackPanel>
