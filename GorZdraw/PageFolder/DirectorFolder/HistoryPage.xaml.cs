@@ -1,7 +1,9 @@
-﻿using GorZdraw.DataFolder;
+﻿using GorZdraw.ClassFolder;
+using GorZdraw.DataFolder;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -26,6 +28,12 @@ namespace GorZdraw.PageFolder.DirectorFolder
             InitializeComponent();
             SellDG.ItemsSource = DBEntities.Getcontext().Sell.ToList().OrderBy
                 (x => x.IdSell);
+        }
+
+        private void ExportBtn_Click(object sender, RoutedEventArgs e)
+        {
+            ExelClass.ToExcelFile(SellDG, "История движения препаратов");
+
         }
     }
 }

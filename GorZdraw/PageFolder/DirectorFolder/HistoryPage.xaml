@@ -45,7 +45,9 @@
                                             Width="110"/>
                     </DataGrid.Columns>
                 </DataGrid>
-                <Image Source="/ResourcesFolder/ÍmageFolder/der.png" Grid.Column="1" Grid.RowSpan="3"/>
+                <Image Source="/ResourcesFolder/ÍmageFolder/der.png" Grid.Column="1" Grid.RowSpan="2"/>
+                <Button x:Name="ExportBtn" Grid.Column="2" Grid.Row="2"
+                        Content="Экспорт Excel" Click="ExportBtn_Click"/>
             </Grid>
         </Border>
     </Grid>
