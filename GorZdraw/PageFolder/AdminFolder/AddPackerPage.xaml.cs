@@ -49,7 +49,7 @@ namespace GorZdraw.PageFolder.AdminFolder
             });
             DBEntities.Getcontext().SaveChanges();
             MBClass.InformationMB("Успешно");
-            NavigationService.Navigate(new ListAdreesMAQCPage());
+            NavigationService.Navigate(new ListPackerPage());
         }
     }
 }

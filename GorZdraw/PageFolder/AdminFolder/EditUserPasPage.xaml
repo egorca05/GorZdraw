@@ -44,8 +44,7 @@
                           Grid.Row="1" IsEnabled="False"
                          Text="{Binding LoginUser}"/>
                 <TextBox x:Name="PasswordTb" Grid.Column="1"
-                          Grid.Row="2" 
-                         Text="{Binding PasswordUser}"/>
+                          Grid.Row="2" />
 
                 <Button x:Name="SaveBtn" Content="Сохранить"
                         HorizontalAlignment="Center" Click="SaveBtn_Click"

@@ -152,6 +152,7 @@
         <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="HorizontalContentAlignment" Value="Center"/>
         <Setter Property="Padding" Value="10"/>
+        
     </Style>
 
     <!--Стиль для доп информации-->
@@ -183,6 +184,11 @@
     <!--Стиль для DatePicker-->
     <Style TargetType="DatePicker" BasedOn="{StaticResource BaseControl}">
         <Setter Property="Foreground" Value="Black"/>
+        <Style.Resources>
+            <Style TargetType="Border">
+                <Setter Property="CornerRadius" Value="7"/>
+            </Style>
+        </Style.Resources>
     </Style>
 
 </ResourceDictionary>

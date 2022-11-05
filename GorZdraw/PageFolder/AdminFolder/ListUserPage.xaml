@@ -34,9 +34,6 @@
                         <DataGridTextColumn Header="Логин" 
                                             Binding="{Binding LoginUser}" 
                                             Width="*"/>
-                        <DataGridTextColumn Header="Пароль" 
-                                            Binding="{Binding PasswordUser}" 
-                                            Width="*"/>
                         <DataGridTextColumn Header="Должность" 
                                             Binding="{Binding Role.NameRole}" 
                                             Width="*"/>
