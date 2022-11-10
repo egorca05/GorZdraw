@@ -45,6 +45,7 @@
       <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1001\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
+    <Reference Include="PresentationFramework.Aero2" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
@@ -518,9 +519,6 @@
     <Resource Include="ResourcesFolder\ÍmageFolder\Staff.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="ResourcesFolder\ÍmageFolder\Fon.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="DataFolder\DBModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>DBModel.edmx</DependentUpon>
@@ -531,6 +529,8 @@
       <DependentUpon>DBModel.edmx</DependentUpon>
       <LastGenOutput>DBModel.cs</LastGenOutput>
     </Content>
+    <Resource Include="ResourcesFolder\ÍmageFolder\Fon.jpg" />
+    <Resource Include="ResourcesFolder\ÍmageFolder\FonSmall.jpg" />
     <Resource Include="ResourcesFolder\ÍmageFolder\Back.png" />
     <Resource Include="ResourcesFolder\ÍmageFolder\icstaff.png" />
     <Resource Include="ResourcesFolder\ÍmageFolder\adress.png" />

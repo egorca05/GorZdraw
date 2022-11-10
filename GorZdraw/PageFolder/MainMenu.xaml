@@ -13,11 +13,10 @@
             CornerRadius="20"
             Width="800"
             Height="250"
-            Background="{StaticResource DeepYellowGreen}">
-            <Border.Effect>
-                <DropShadowEffect BlurRadius="50"/>
-            </Border.Effect>
-                <Grid>
+            Background="{x:Null}"
+                BorderBrush="{StaticResource Border}"
+                BorderThickness="3">
+            <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                     <ColumnDefinition/>

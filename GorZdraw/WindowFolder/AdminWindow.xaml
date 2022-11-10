@@ -9,7 +9,7 @@
         WindowStyle="None"
         AllowsTransparency="True"
         WindowStartupLocation="CenterScreen"
-        ResizeMode="CanResizeWithGrip"
+        ResizeMode="NoResize"
         Background="{x:Null}">
     <Grid>
         <Border Style="{DynamicResource BaseBorder}"
@@ -31,14 +31,15 @@
                     <RowDefinition/>
                     <RowDefinition Height="10"/>
                 </Grid.RowDefinitions>
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"
-                            Grid.Row="1" Grid.Column="1" Width="88">
-                    <Image Height="80"
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left"
+                            Grid.Row="1" Grid.Column="1">
+                    <Image Height="63"
+                           HorizontalAlignment="Right"
                            Source="/ResourcesFolder/ÍmageFolder/Black.png"
-                           />
-                    <!--<Label Content="{Binding ElementName=AdminFrame, Path=Content.Title}"
+                           Margin="15,0,-10,0"/>
+                    <Label Content="ГОРЗДРАВ"
                            HorizontalAlignment="Left"
-                           Style="{DynamicResource LogoLabel}"/>-->
+                           Style="{DynamicResource LogoLabelImg}"/>
                 </StackPanel>
 
                 <Label Content="{Binding ElementName=AdminFrame, Path=Content.Title}"
@@ -82,7 +83,8 @@
                             <RowDefinition/>
                             <RowDefinition/>
                             <RowDefinition/>
-
+                            <RowDefinition/>
+                            <RowDefinition/>
                         </Grid.RowDefinitions>
 
                         <Button x:Name="ProductBtn"
@@ -90,7 +92,7 @@
                                 Style="{DynamicResource MenuBtn}"
                                 HorizontalAlignment="Left">
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-                                <Image Source="/ResourcesFolder/ÍmageFolder/tabs.png" Width="50"/>
+                                <Image Source="/ResourcesFolder/ÍmageFolder/tabs.png" Width="30"/>
                                 <Label Content="Препараты" Style="{StaticResource NormalLabel}"/>
                             </StackPanel>
                         </Button>
@@ -99,7 +101,7 @@
                                 Style="{DynamicResource MenuBtn}" Click="OrderBtn_Click"
                                 HorizontalAlignment="Left">
                             <StackPanel Orientation="Horizontal">
-                                <Image Source="/ResourcesFolder/ÍmageFolder/order.png" Width="50" />
+                                <Image Source="/ResourcesFolder/ÍmageFolder/order.png" Width="30" />
                                 <Label Content="Заказы" Style="{StaticResource NormalLabel}"/>
                             </StackPanel>
                         </Button>
@@ -109,7 +111,7 @@
                                 Click="ManufacturerBtn_Click" 
                                 HorizontalAlignment="Left">
                             <StackPanel Orientation="Horizontal">
-                                <Image Source="/ResourcesFolder/ÍmageFolder/munfac.png" Width="50" />
+                                <Image Source="/ResourcesFolder/ÍmageFolder/munfac.png" Width="30" />
                                 <Label Content="Производители" Style="{StaticResource NormalLabel}"/>
                             </StackPanel>
                         </Button>
@@ -119,7 +121,7 @@
                                 Click="SuppliersrBtn_Click"
                                  HorizontalAlignment="Left">
                             <StackPanel Orientation="Horizontal">
-                                <Image Source="/ResourcesFolder/ÍmageFolder/express.png" Width="50" />
+                                <Image Source="/ResourcesFolder/ÍmageFolder/express.png" Width="30" />
                                 <Label Content="Поставщики" Style="{StaticResource NormalLabel}"/>
                             </StackPanel>
                         </Button>
@@ -129,8 +131,8 @@
                                 Click="OrganizationAcceptingClaimsBtn_Click"
                                 HorizontalAlignment="Left">
                             <StackPanel Orientation="Horizontal">
-                                <Image Source="/ResourcesFolder/ÍmageFolder/orgwarning.png" Width="50" />
-                                <Label Content="Прин. претензии" Style="{StaticResource NormalLabel}"/>
+                                <Image Source="/ResourcesFolder/ÍmageFolder/orgwarning.png" Width="23" />
+                                <Label Content="Претензии" Style="{StaticResource NormalLabel}"/>
                             </StackPanel>
                         </Button>
                         <Button x:Name="StafffBtn" 
@@ -139,7 +141,7 @@
                                 Click="StafffBtn_Click"
                                 HorizontalAlignment="Left">
                             <StackPanel Orientation="Horizontal">
-                                <Image Source="/ResourcesFolder/ÍmageFolder/icstaff.png" Width="50" />
+                                <Image Source="/ResourcesFolder/ÍmageFolder/icstaff.png" Width="25" />
                                 <Label Content="Сотрудники" Style="{StaticResource NormalLabel}"/>
                             </StackPanel>
                         </Button>
@@ -149,7 +151,7 @@
                                 Click="AdressBtn_Click"
                                 HorizontalAlignment="Left">
                             <StackPanel Orientation="Horizontal">
-                                <Image Source="/ResourcesFolder/ÍmageFolder/icstaff.png" Width="50"/>
+                                <Image Source="/ResourcesFolder/ÍmageFolder/adress.png" Width="30"/>
                                 <Label Content="Адреса" Style="{StaticResource NormalLabel}"/>
                             </StackPanel>
                         </Button>

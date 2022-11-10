@@ -9,7 +9,7 @@
         WindowStyle="None"
         AllowsTransparency="True"
         WindowStartupLocation="CenterScreen"
-        ResizeMode="CanResizeWithGrip"
+        ResizeMode="NoResize"
         Background="{x:Null}">
     <Grid>
         <Border Style="{DynamicResource BaseBorder}"
@@ -33,15 +33,16 @@
                 </Grid.RowDefinitions>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left"
                             Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2">
-                    <Image Height="100"
+                    <Image Height="63"
+                           HorizontalAlignment="Right"
+                           Source="/ResourcesFolder/ÍmageFolder/Black.png"
+                           Margin="15,0,-10,0"/>
+                    <Label Content="ГОРЗДРАВ"
                            HorizontalAlignment="Left"
-                           Source="/ResourcesFolder/ÍmageFolder/Black.png"/>
-                    <Label Content="{Binding ElementName=DirectorFrame, Path=Content.Title}"
-                           HorizontalAlignment="Left"
-                           Style="{DynamicResource LogoLabel}"/>
+                           Style="{DynamicResource LogoLabelImg}"/>
                 </StackPanel>
 
-                <Label Content="ГОРЗДРАВ"
+                <Label Content="{Binding ElementName=DirectorFrame, Path=Content.Title}"
                            HorizontalAlignment="Center" Grid.Column="1"
                        Grid.Row="1" Style="{StaticResource LogoLabel}"
                        FontSize="50" Grid.ColumnSpan="2"/>

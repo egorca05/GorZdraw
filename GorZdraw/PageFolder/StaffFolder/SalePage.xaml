@@ -5,18 +5,15 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:GorZdraw.PageFolder.StaffFolder"
       mc:Ignorable="d" 
-      d:DesignHeight="650" d:DesignWidth="1150"
+      d:DesignHeight="670" d:DesignWidth="1150"
       Title="Режим продажи">
 
     <Grid>
         <Border
+            Style="{StaticResource BaseBorder}"
             CornerRadius="20"
             Width="1100"
-            Height="650"
-            Background="{StaticResource DeepYellowGreen}">
-            <Border.Effect>
-                <DropShadowEffect BlurRadius="50"/>
-            </Border.Effect>
+            Height="650">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="80"/>
@@ -24,8 +21,14 @@
                     <RowDefinition Height="80"/>
                 </Grid.RowDefinitions>
 
-                <Button x:Name="BackBtn" Content="Назад"
-                        HorizontalAlignment="Left" Click="BackBtn_Click"/>
+                <Button x:Name="BackBtn"
+                        HorizontalAlignment="Left" Click="BackBtn_Click"
+                        Style="{DynamicResource BackBtn}">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/ResourcesFolder/ÍmageFolder/Back.png" Width="20" />
+                        <Label Content="Назад" Style="{StaticResource BackLabel}"/>
+                    </StackPanel>
+                </Button>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                         <Image Source="/ResourcesFolder/ÍmageFolder/Search.png" Height="40"/>
                         <TextBox x:Name="SearchTb" Width="300" TextChanged="SearchTb_TextChanged"/>

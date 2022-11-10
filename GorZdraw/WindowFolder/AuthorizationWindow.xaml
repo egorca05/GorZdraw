@@ -9,14 +9,14 @@
         WindowStyle="None"
         AllowsTransparency="True"
         WindowStartupLocation="CenterScreen"
-        ResizeMode="CanResizeWithGrip"
+        ResizeMode="NoResize"
         Background="{x:Null}">
     <Grid>
         <Border Style="{DynamicResource BaseBorder}"                
                 Margin="0"
                 MouseDown="Border_MouseDown">
             <Border.Background>
-                <ImageBrush ImageSource="/ResourcesFolder/ÍmageFolder/Fon.jpg"/>
+                <ImageBrush ImageSource="/ResourcesFolder/ÍmageFolder/FonSmall.jpg"/>
             </Border.Background>
                 <Grid>
                 <Grid.ColumnDefinitions>
@@ -32,15 +32,16 @@
                 </Grid.RowDefinitions>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left"
                             Grid.Row="1" Grid.Column="1">
-                    <Image Height="100"
+                    <Image Height="63"
+                           HorizontalAlignment="Right"
+                           Source="/ResourcesFolder/ÍmageFolder/Black.png"
+                           Margin="15,0,-10,0"/>
+                    <Label Content="ГОРЗДРАВ"
                            HorizontalAlignment="Left"
-                           Source="/ResourcesFolder/ÍmageFolder/Black.png"/>
-                    <Label Content="Авторизация"
-                           HorizontalAlignment="Left"
-                           Style="{DynamicResource LogoLabel}"/>
+                           Style="{DynamicResource LogoLabelImg}"/>
                 </StackPanel>
 
-                <Label Content="ГОРЗДРАВ"
+                <Label Content="Авторизация"
                            HorizontalAlignment="Center" Grid.Column="1"
                        Grid.Row="1" Style="{StaticResource LogoLabel}"
                        FontSize="50"/>
@@ -64,11 +65,10 @@
                 Height="250"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
-                Background="{DynamicResource DeepYellowGreen}"
+                Background="{x:Null}"
+                BorderBrush="{StaticResource Border}"
+                BorderThickness="3"
                         Grid.Column="1" Grid.Row="2">
-                    <Border.Effect>
-                        <DropShadowEffect BlurRadius="50"/>
-                    </Border.Effect>
                     <Grid VerticalAlignment="Center">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="70"/>

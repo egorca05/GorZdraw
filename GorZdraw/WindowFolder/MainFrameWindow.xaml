@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GorZdraw.WindowFolder"
         mc:Ignorable="d"
-        Title="Начальное окно" Height="800" Width="1200"
+        Title="Начальное окно" Height="820" Width="1200"
         WindowStyle="None"
         AllowsTransparency="True"
         WindowStartupLocation="CenterScreen"
-        ResizeMode="CanResizeWithGrip"
+        ResizeMode="NoResize"
         Background="{x:Null}">
     <Grid>
         <Border Style="{DynamicResource BaseBorder}"
@@ -32,15 +32,16 @@
                 </Grid.RowDefinitions>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left"
                             Grid.Row="1" Grid.Column="1">
-                    <Image Height="100"
+                    <Image Height="63"
+                           HorizontalAlignment="Right"
+                           Source="/ResourcesFolder/ÍmageFolder/Black.png"
+                           Margin="15,0,-10,0"/>
+                    <Label Content="ГОРЗДРАВ"
                            HorizontalAlignment="Left"
-                           Source="/ResourcesFolder/ÍmageFolder/Black.png"/>
-                    <Label Content="{Binding ElementName=MainFrame, Path=Content.Title}"
-                           HorizontalAlignment="Left"
-                           Style="{DynamicResource LogoLabel}"/>
+                           Style="{DynamicResource LogoLabelImg}"/>
                 </StackPanel>
 
-                <Label Content="ГОРЗДРАВ"
+                <Label Content="{Binding ElementName=MainFrame, Path=Content.Title}"
                            HorizontalAlignment="Center" Grid.Column="1"
                        Grid.Row="1" Style="{StaticResource LogoLabel}"
                        FontSize="50"/>

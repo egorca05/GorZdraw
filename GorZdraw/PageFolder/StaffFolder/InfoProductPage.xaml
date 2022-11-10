@@ -4,7 +4,7 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       mc:Ignorable="d" 
-      d:DesignHeight="650" d:DesignWidth="1000"
+      d:DesignHeight="670" d:DesignWidth="1020"
       Title="Информация">
 
     <Grid>
@@ -12,13 +12,10 @@
             CornerRadius="20"
             Width="1000"
             Height="650"
-            Background="{StaticResource DeepYellowGreen}">
-            <Border.Effect>
-                <DropShadowEffect BlurRadius="50"/>
-            </Border.Effect>
+            Style="{StaticResource BaseBorder}">
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="90"/>
+                    <RowDefinition/>
                     <RowDefinition/>
                     <RowDefinition/>
                     <RowDefinition/>
@@ -34,22 +31,28 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
 
-                <Button x:Name="BackBtn" Content="Назад"
-                        HorizontalAlignment="Left" Click="BackBtn_Click"/>
+                <Button x:Name="BackBtn"
+                        HorizontalAlignment="Left" Click="BackBtn_Click" Grid.Row="7"
+                        Style="{DynamicResource BackBtn}">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/ResourcesFolder/ÍmageFolder/Back.png" Width="20" />
+                        <Label Content="Назад" Style="{StaticResource BackLabel}"/>
+                    </StackPanel>
+                </Button>
 
-                <Label Content="Название:" Grid.Row="1" 
+                <Label Content="Название:" Grid.Row="0" 
                        Style="{StaticResource NormalLabel}"/>
-                <Label Content="Состав:" Grid.Row="2" 
+                <Label Content="Состав:" Grid.Row="1" 
                        Style="{StaticResource NormalLabel}"/>
-                <Label Content="Описание:" Grid.Row="3" 
+                <Label Content="Описание:" Grid.Row="2" 
                        Style="{StaticResource NormalLabel}"/>
-                <Label Content="Группа:" Grid.Row="4" 
+                <Label Content="Группа:" Grid.Row="3" 
                        Style="{StaticResource NormalLabel}"/>
-                <Label Content="Производитель:" Grid.Row="5" 
+                <Label Content="Производитель:" Grid.Row="4" 
                        Style="{StaticResource NormalLabel}"/>
-                <Label Content="Поставщик:" Grid.Row="6" 
+                <Label Content="Поставщик:" Grid.Row="5" 
                        Style="{StaticResource NormalLabel}"/>
-                <Label Content="Лекарственная форма:" Grid.Row="7" 
+                <Label Content="Лекарственная форма:" Grid.Row="6" 
                        Style="{StaticResource NormalLabel}"/>
 
                 <Label Content="Показания:" Grid.Row="0" 
@@ -79,31 +82,31 @@
 
 
                 <TextBox x:Name="NameATb" Grid.Column="1"
-                          Grid.Row="1"
+                          Grid.Row="0"
                          Text="{Binding NameProduct}"
                          Style="{StaticResource InfoTb}"/>
                 <TextBox x:Name="CompositionTb" Grid.Column="1"
-                          Grid.Row="2" 
+                          Grid.Row="1" 
                          Text="{Binding Composition}"
                          Style="{StaticResource InfoTb}"/>
                 <TextBox x:Name="ReleaseFormTb" Grid.Column="1"
-                          Grid.Row="3" 
+                          Grid.Row="2" 
                          Text="{Binding ReleaseForm}"
                          Style="{StaticResource InfoTb}"/>
                 <TextBox x:Name="СategoryTb" Grid.Column="1"
-                          Grid.Row="4" 
+                          Grid.Row="3" 
                          Text="{Binding Category.NameСategory}"
                          Style="{StaticResource InfoTb}"/>
                 <TextBox x:Name="ManufacturerTb" Grid.Column="1"
-                          Grid.Row="5" 
+                          Grid.Row="4" 
                          Text="{Binding Manufacturer.ManufacturerAndQualityControl.NameMAQC}"
                          Style="{StaticResource InfoTb}"/>
                 <TextBox x:Name="SuppliersTb" Grid.Column="1"
-                          Grid.Row="6" 
+                          Grid.Row="5" 
                          Text="{Binding Suppliers.NameSuppliers}"
                          Style="{StaticResource InfoTb}"/>
                 <TextBox x:Name="DosageFormTb" Grid.Column="1"
-                          Grid.Row="7" 
+                          Grid.Row="6" 
                          Text="{Binding DosageForm}"
                          Style="{StaticResource InfoTb}"/>
 
