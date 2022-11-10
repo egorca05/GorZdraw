@@ -22,33 +22,33 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="10"/>
                     <ColumnDefinition/>
-                    <ColumnDefinition Width="1050"/>
+                    <ColumnDefinition Width="1007"/>
                     <ColumnDefinition Width="10"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="20"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition/>
                     <RowDefinition Height="10"/>
                 </Grid.RowDefinitions>
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left"
-                            Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2">
-                    <Image Height="100"
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"
+                            Grid.Row="1" Grid.Column="1" Width="88">
+                    <Image Height="80"
+                           Source="/ResourcesFolder/ÍmageFolder/Black.png"
+                           />
+                    <!--<Label Content="{Binding ElementName=AdminFrame, Path=Content.Title}"
                            HorizontalAlignment="Left"
-                           Source="/ResourcesFolder/ÍmageFolder/Black.png"/>
-                    <Label Content="{Binding ElementName=AdminFrame, Path=Content.Title}"
-                           HorizontalAlignment="Left"
-                           Style="{DynamicResource LogoLabel}"/>
+                           Style="{DynamicResource LogoLabel}"/>-->
                 </StackPanel>
 
-                <Label Content="ГОРЗДРАВ"
-                           HorizontalAlignment="Center" Grid.Column="1"
+                <Label Content="{Binding ElementName=AdminFrame, Path=Content.Title}"
+                           HorizontalAlignment="Center" Grid.Column="2"
                        Grid.Row="1" Style="{StaticResource LogoLabel}"
-                       FontSize="50" Grid.ColumnSpan="2"/>
+                       FontSize="50"/>
 
-                <StackPanel Grid.Column="2" Grid.Row="1" Height="60"
-                            HorizontalAlignment="Right" Margin="10"
-                            Orientation="Horizontal">
+                <StackPanel Grid.Column="2" Grid.Row="1"
+                            HorizontalAlignment="Right"
+                            Orientation="Horizontal" Grid.ColumnSpan="2" Width="150">
                     <Image Height="30" x:Name="LogOutIm"
                            HorizontalAlignment="Right"
                            Source="/ResourcesFolder/ÍmageFolder/LogOut.png"
@@ -66,14 +66,13 @@
                            Style="{StaticResource MenuImg}"/>
                 </StackPanel>
                 <Frame Grid.Row="2" Grid.Column="2" x:Name="AdminFrame" 
-                       Margin="10" NavigationUIVisibility="Hidden"/>
+                       Margin="10,10,10,10" NavigationUIVisibility="Hidden"/>
 
                 <Border
             CornerRadius="20"
-            Width="190"
-            Height="800"
             Background="{StaticResource DeepYellowGreen}"
-                    Grid.Column="1" Grid.Row="2">
+                    Grid.Column="1" Grid.Row="2" Margin="10,20,10,10"
+                    >
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition/>
@@ -86,37 +85,74 @@
 
                         </Grid.RowDefinitions>
 
-                        <Button x:Name="ProductBtn" Content="Препараты"
+                        <Button x:Name="ProductBtn"
                                 Click="ProductBtn_Click"
-                                Style="{DynamicResource MenuBtn}"/>
-                        <Button x:Name="OrderBtn" Content="Заказы"
+                                Style="{DynamicResource MenuBtn}"
+                                HorizontalAlignment="Left">
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                <Image Source="/ResourcesFolder/ÍmageFolder/tabs.png" Width="50"/>
+                                <Label Content="Препараты" Style="{StaticResource NormalLabel}"/>
+                            </StackPanel>
+                        </Button>
+                        <Button x:Name="OrderBtn"
                                 Grid.Row="1" 
-                                Style="{DynamicResource MenuBtn}" Click="OrderBtn_Click"/>
+                                Style="{DynamicResource MenuBtn}" Click="OrderBtn_Click"
+                                HorizontalAlignment="Left">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="/ResourcesFolder/ÍmageFolder/order.png" Width="50" />
+                                <Label Content="Заказы" Style="{StaticResource NormalLabel}"/>
+                            </StackPanel>
+                        </Button>
                         <Button x:Name="ManufacturerBtn" 
-                                Content="Производители"
                                 Grid.Row="2"
                                 Style="{DynamicResource MenuBtn}"
-                                Click="ManufacturerBtn_Click"/>
+                                Click="ManufacturerBtn_Click" 
+                                HorizontalAlignment="Left">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="/ResourcesFolder/ÍmageFolder/munfac.png" Width="50" />
+                                <Label Content="Производители" Style="{StaticResource NormalLabel}"/>
+                            </StackPanel>
+                        </Button>
                         <Button x:Name="SuppliersrBtn" 
-                                Content="Поставщики"
                                 Grid.Row="3"
                                 Style="{DynamicResource MenuBtn}" 
-                                Click="SuppliersrBtn_Click"/>
+                                Click="SuppliersrBtn_Click"
+                                 HorizontalAlignment="Left">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="/ResourcesFolder/ÍmageFolder/express.png" Width="50" />
+                                <Label Content="Поставщики" Style="{StaticResource NormalLabel}"/>
+                            </StackPanel>
+                        </Button>
                         <Button x:Name="OrganizationAcceptingClaimsBtn" 
-                                Content="прин. претензии"
                                 Grid.Row="4"
                                 Style="{DynamicResource MenuBtn}"
-                                Click="OrganizationAcceptingClaimsBtn_Click"/>
+                                Click="OrganizationAcceptingClaimsBtn_Click"
+                                HorizontalAlignment="Left">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="/ResourcesFolder/ÍmageFolder/orgwarning.png" Width="50" />
+                                <Label Content="Прин. претензии" Style="{StaticResource NormalLabel}"/>
+                            </StackPanel>
+                        </Button>
                         <Button x:Name="StafffBtn" 
-                                Content="Сотрудники"
                                 Grid.Row="5"
                                 Style="{DynamicResource MenuBtn}"
-                                Click="StafffBtn_Click"/>
+                                Click="StafffBtn_Click"
+                                HorizontalAlignment="Left">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="/ResourcesFolder/ÍmageFolder/icstaff.png" Width="50" />
+                                <Label Content="Сотрудники" Style="{StaticResource NormalLabel}"/>
+                            </StackPanel>
+                        </Button>
                         <Button x:Name="AdressBtn" 
-                                Content="Адреса"
                                 Grid.Row="6"
                                 Style="{DynamicResource MenuBtn}"
-                                Click="AdressBtn_Click"/>
+                                Click="AdressBtn_Click"
+                                HorizontalAlignment="Left">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="/ResourcesFolder/ÍmageFolder/icstaff.png" Width="50"/>
+                                <Label Content="Адреса" Style="{StaticResource NormalLabel}"/>
+                            </StackPanel>
+                        </Button>
                     </Grid>
 
                 </Border>

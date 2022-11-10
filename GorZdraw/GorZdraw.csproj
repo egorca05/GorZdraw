@@ -510,11 +510,6 @@
     <Resource Include="ResourcesFolder\ÍmageFolder\Black.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="ResourcesFolder\ÍmageFolder\Exit.png" />
-    <Resource Include="ResourcesFolder\ÍmageFolder\LogOut.png" />
-    <Resource Include="ResourcesFolder\ÍmageFolder\RollUp.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
@@ -536,6 +531,17 @@
       <DependentUpon>DBModel.edmx</DependentUpon>
       <LastGenOutput>DBModel.cs</LastGenOutput>
     </Content>
+    <Resource Include="ResourcesFolder\ÍmageFolder\Back.png" />
+    <Resource Include="ResourcesFolder\ÍmageFolder\icstaff.png" />
+    <Resource Include="ResourcesFolder\ÍmageFolder\adress.png" />
+    <Resource Include="ResourcesFolder\ÍmageFolder\express.png" />
+    <Resource Include="ResourcesFolder\ÍmageFolder\munfac.png" />
+    <Resource Include="ResourcesFolder\ÍmageFolder\order.png" />
+    <Resource Include="ResourcesFolder\ÍmageFolder\orgwarning.png" />
+    <Resource Include="ResourcesFolder\ÍmageFolder\tabs.png" />
+    <Resource Include="ResourcesFolder\ÍmageFolder\Exit.png" />
+    <Resource Include="ResourcesFolder\ÍmageFolder\LogOut.png" />
+    <Resource Include="ResourcesFolder\ÍmageFolder\RollUp.png" />
     <Resource Include="ResourcesFolder\ÍmageFolder\mun.png" />
     <Resource Include="ResourcesFolder\ÍmageFolder\der.png" />
     <Resource Include="ResourcesFolder\ÍmageFolder\country.png" />

@@ -1,17 +1,15 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <SolidColorBrush x:Key="MediumDarkGreen" Color="#43977D"/>
-    <SolidColorBrush x:Key="YellowGreen" Color="#c7e194"/>
-    <SolidColorBrush x:Key="Blue" Color="#2E5FB7"/>
+    <SolidColorBrush x:Key="MediumDarkGreen" Color="#C8E4E8"/>
+    <SolidColorBrush x:Key="Blue" Color="#02CECE"/>
     <SolidColorBrush x:Key="SeaGreen" Color="#6dac76"/>
-    <SolidColorBrush x:Key="DeepYellowGreen" Color="#5D9EA6"/>
+    <SolidColorBrush x:Key="DeepYellowGreen" Color="#06167B"/>
 
     <!--Единый-->
     <Style TargetType="Control" x:Key="BaseControl">
         <Setter Property="FontFamily" Value="Roboto"/>
         <Setter Property="FontSize" Value="20"/>
         <Setter Property="Foreground" Value="White"/>
-        <Setter Property="BorderBrush" Value="{StaticResource Blue}"/>
         <Setter Property="Background" 
                 Value="{StaticResource MediumDarkGreen}"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
@@ -23,6 +21,7 @@
     <!--PasswodBox-->
     <Style TargetType="PasswordBox"
            BasedOn="{StaticResource BaseControl}">
+        <Setter Property="Foreground" Value="Black"/>
         <Setter Property="HorizontalContentAlignment" Value="Left"/>
         <Style.Resources>
             <Style TargetType="Border">
@@ -33,8 +32,7 @@
 
     <!--Border-->
     <Style TargetType="Border" x:Key="BaseBorder">
-        <Setter Property="BorderBrush" Value="{StaticResource Blue}"/>
-        <Setter Property="Margin" Value="20"/>
+        <Setter Property="Margin" Value="10"/>
         <Setter Property="Background" 
                 Value="{StaticResource MediumDarkGreen}"/>
         <Setter Property="CornerRadius" Value="20"/>
@@ -45,8 +43,7 @@
            BasedOn="{StaticResource BaseControl}">
         <Setter Property="BorderBrush" Value="{x:Null}"/>
         <Setter Property="FontSize" Value="22"/>
-        <Setter Property="Background" Value="{x:Null}"/>
-        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="Foreground" Value="{StaticResource DeepYellowGreen}"/>
     </Style>
 
     <!--Label основной текст-->
@@ -60,6 +57,7 @@
     <!--textbox-->
     <Style TargetType="TextBox"
            BasedOn="{StaticResource BaseControl}">
+        <Setter Property="Foreground" Value="Black"/>
         <Setter Property="HorizontalContentAlignment" Value="Left"/>
         <Style.Resources>
             <Style TargetType="Border">
@@ -71,6 +69,7 @@
     <!--textbox-->
     <Style TargetType="TextBox" x:Key="InfoTb"
            BasedOn="{StaticResource BaseControl}">
+        <Setter Property="Foreground" Value="Black"/>
         <Setter Property="Padding" Value="5"/>
         <Setter Property="HorizontalContentAlignment" Value="Left"/>
         <Setter Property="TextWrapping" Value="Wrap"/>
@@ -87,12 +86,13 @@
     <Style TargetType="Button" BasedOn="{StaticResource BaseControl}">
         <Setter Property="Width" Value="200"/>
         <Setter Property="Margin" Value="15"/>
+        <Setter Property="Foreground" Value="Black"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
                     <Border Name="border" BorderThickness="1"
-                            BorderBrush="{StaticResource Blue}"
-                            Background="{TemplateBinding Background}"
+                            BorderBrush="{x:Null}"
+                            Background="#02CECE"
                             CornerRadius="20">
                         <ContentPresenter HorizontalAlignment="Center"
                                           VerticalAlignment="Center"/>
@@ -113,8 +113,8 @@
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
                     <Border Name="border" BorderThickness="1"
-                            BorderBrush="{StaticResource Blue}"
-                            Background="{TemplateBinding Background}"
+                            BorderBrush="{x:Null}"
+                            Background="{x:Null}"
                             CornerRadius="20">
                         <ContentPresenter HorizontalAlignment="Center"
                                           VerticalAlignment="Center"/>
@@ -133,10 +133,9 @@
     <Style TargetType="DataGrid" BasedOn="{StaticResource BaseControl}">
         <Setter Property="HorizontalContentAlignment" Value="Left"/>
         <Setter Property="Margin" Value="10"/>
-        <Setter Property="AlternatingRowBackground"
-                Value="{StaticResource MediumDarkGreen}"/>
         <Setter Property="Padding" Value="0"/>
-        <Setter Property="RowBackground" Value="{StaticResource SeaGreen}"/>
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="RowBackground" Value="{StaticResource MediumDarkGreen}"/>
         <Style.Resources>
             <Style TargetType="Border">
                 <Setter Property="CornerRadius" Value="7"/>

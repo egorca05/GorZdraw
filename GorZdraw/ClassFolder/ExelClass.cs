@@ -6,7 +6,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
-using Microsoft.Win32;
 using Excel = Microsoft.Office.Interop.Excel;
 
 namespace GorZdraw.ClassFolder

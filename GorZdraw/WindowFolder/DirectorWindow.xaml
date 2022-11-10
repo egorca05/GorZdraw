@@ -70,12 +70,11 @@
 
                 <Border
             CornerRadius="20"
-            Width="190"
             Height="400"
             Background="{StaticResource DeepYellowGreen}"
                     Grid.Column="1" Grid.Row="2"
                     VerticalAlignment="Top"
-                    Margin="20">
+                    Margin="10,20,10,0">
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition/>
@@ -87,14 +86,25 @@
                         <Button x:Name="HistoryBtn" Content="История"
                                 Click="HistoryBtn_Click"
                                 Style="{DynamicResource MenuBtn}"/>
-                        <Button x:Name="OrderBtn" Content="Заказы"
+                        <Button x:Name="OrderBtn"
                                 Grid.Row="1" 
-                                Style="{DynamicResource MenuBtn}" Click="OrderBtn_Click"/>
+                                Style="{DynamicResource MenuBtn}" Click="OrderBtn_Click"
+                                HorizontalAlignment="Left">
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                <Image Source="/ResourcesFolder/ÍmageFolder/order.png" Width="50"/>
+                                <Label Content="Заказы" Style="{StaticResource NormalLabel}"/>
+                            </StackPanel>
+                        </Button>
                         <Button x:Name="StafffBtn" 
-                                Content="Сотрудники"
                                 Grid.Row="2"
                                 Style="{DynamicResource MenuBtn}"
-                                Click="StafffBtn_Click"/>
+                                Click="StafffBtn_Click"
+                                HorizontalAlignment="Left">
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                <Image Source="/ResourcesFolder/ÍmageFolder/icstaff.png" Width="50"/>
+                                <Label Content="Сотрудники" Style="{StaticResource NormalLabel}"/>
+                            </StackPanel>
+                        </Button>
                     </Grid>
                 </Border>
                 <Image Source="/ResourcesFolder/ÍmageFolder/mun.png" Grid.Column="1" Grid.Row="2" VerticalAlignment="Bottom"/>
