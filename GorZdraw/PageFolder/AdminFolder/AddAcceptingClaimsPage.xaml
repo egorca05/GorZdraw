@@ -13,10 +13,7 @@
             CornerRadius="20"
             Width="700"
             Height="450"
-            Background="{StaticResource DeepYellowGreen}">
-            <Border.Effect>
-                <DropShadowEffect BlurRadius="50"/>
-            </Border.Effect>
+            Style="{StaticResource BaseBorder}">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="90"/>
@@ -33,9 +30,11 @@
 
                 <Button x:Name="BackBtn"
                         HorizontalAlignment="Left" Click="BackBtn_Click" Grid.Row="4" 
-                        Style="{StaticResource MenuBtn}">
-                    <Image Source="/ResourcesFolder/ÍmageFolder/Back.png" />
-
+                        Style="{DynamicResource BackBtn}">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/ResourcesFolder/ÍmageFolder/Back.png" Width="20" />
+                        <Label Content="Назад" Style="{StaticResource BackLabel}"/>
+                    </StackPanel>
                 </Button>
 
                 <Label Content="Название:" Grid.Row="0" 

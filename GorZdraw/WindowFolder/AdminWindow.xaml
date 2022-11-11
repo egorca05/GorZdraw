@@ -43,18 +43,13 @@
                 </StackPanel>
 
                 <Label Content="{Binding ElementName=AdminFrame, Path=Content.Title}"
-                           HorizontalAlignment="Center" Grid.Column="2"
+                           HorizontalAlignment="Left" Grid.Column="2"
                        Grid.Row="1" Style="{StaticResource LogoLabel}"
                        FontSize="50"/>
 
                 <StackPanel Grid.Column="2" Grid.Row="1"
-                            HorizontalAlignment="Right"
-                            Orientation="Horizontal" Grid.ColumnSpan="2" Width="150">
-                    <Image Height="30" x:Name="LogOutIm"
-                           HorizontalAlignment="Right"
-                           Source="/ResourcesFolder/ÍmageFolder/LogOut.png"
-                           MouseLeftButtonDown="LogOutIm_MouseLeftButtonDown"
-                           Style="{StaticResource MenuImg}"/>
+                            HorizontalAlignment="Right"                          
+                            Orientation="Horizontal" Grid.ColumnSpan="2">
                     <Image Height="30" x:Name="RollUpIm"
                            HorizontalAlignment="Right"
                            Source="/ResourcesFolder/ÍmageFolder/RollUp.png"
@@ -155,6 +150,16 @@
                                 <Label Content="Адреса" Style="{StaticResource NormalLabel}"/>
                             </StackPanel>
                         </Button>
+                        <Button x:Name="ExitBtn"
+                        HorizontalAlignment="Center" Click="ExitBtn_Click" 
+                                Grid.Row="8"
+                        Style="{DynamicResource BackBtn}">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="/ResourcesFolder/ÍmageFolder/Back.png" Width="20" />
+                                <Label Content="Выйти" Style="{StaticResource BackLabel}"
+                                       FontSize="19"/>
+                            </StackPanel>
+                            </Button>
                     </Grid>
 
                 </Border>

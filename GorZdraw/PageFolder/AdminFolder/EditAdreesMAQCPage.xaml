@@ -13,13 +13,10 @@
             CornerRadius="20"
             Width="700"
             Height="450"
-            Background="{StaticResource DeepYellowGreen}">
-            <Border.Effect>
-                <DropShadowEffect BlurRadius="50"/>
-            </Border.Effect>
+            Style="{StaticResource BaseBorder}">
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="90"/>
+                    <RowDefinition/>
                     <RowDefinition/>
                     <RowDefinition/>
                     <RowDefinition/>
@@ -32,8 +29,15 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
 
-                <Button x:Name="BackBtn" Content="Назад"
-                        HorizontalAlignment="Left" Click="BackBtn_Click"/>
+                <Button x:Name="BackBtn"
+                        HorizontalAlignment="Left" Click="BackBtn_Click"
+                        Style="{DynamicResource BackBtn}"
+                        Grid.Row="5">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/ResourcesFolder/ÍmageFolder/Back.png" Width="20" />
+                        <Label Content="Назад" Style="{StaticResource BackLabel}"/>
+                    </StackPanel>
+                </Button>
 
                 <Label Content="Город:" Grid.Row="1" 
                        Style="{StaticResource NormalLabel}"/>
