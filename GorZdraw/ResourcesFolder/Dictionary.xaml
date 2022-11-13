@@ -217,7 +217,8 @@
 
     <!--Стиль для DatePicker-->
     <Style TargetType="DatePicker" BasedOn="{StaticResource BaseControl}">
-        <Setter Property="Foreground" Value="{StaticResource Pole}"/>
+        <Setter Property="Foreground" Value="{StaticResource text}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource Border}"/>
         <Style.Resources>
             <Style TargetType="Border">
                 <Setter Property="CornerRadius" Value="7"/>
