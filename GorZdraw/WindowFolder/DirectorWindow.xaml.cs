@@ -46,14 +46,6 @@ namespace GorZdraw.WindowFolder
 
         }
 
-
-        private void LogOutIm_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            AuthorizationWindow authorizationWindow = new AuthorizationWindow();
-            authorizationWindow.Show();
-            this.Close();
-        }
-
         private void RollUpIm_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             Application.Current.MainWindow.WindowState = WindowState.Minimized;
@@ -67,6 +59,13 @@ namespace GorZdraw.WindowFolder
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
         {
 
+        }
+
+        private void ExitBtn_Click(object sender, RoutedEventArgs e)
+        {
+            AuthorizationWindow authorizationWindow = new AuthorizationWindow();
+            authorizationWindow.Show();
+            this.Close();
         }
     }
 }

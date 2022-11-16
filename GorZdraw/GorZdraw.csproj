@@ -529,6 +529,7 @@
       <DependentUpon>DBModel.edmx</DependentUpon>
       <LastGenOutput>DBModel.cs</LastGenOutput>
     </Content>
+    <Resource Include="ResourcesFolder\ÍmageFolder\icons8-coin_in_hand 1.png" />
     <Resource Include="ResourcesFolder\ÍmageFolder\Fon.jpg" />
     <Resource Include="ResourcesFolder\ÍmageFolder\FonSmall.jpg" />
     <Resource Include="ResourcesFolder\ÍmageFolder\Back.png" />

@@ -50,11 +50,6 @@
                 <StackPanel Grid.Column="2" Grid.Row="1" Height="60"
                             HorizontalAlignment="Right" Margin="10"
                             Orientation="Horizontal">
-                    <Image Height="30" x:Name="LogOutIm"
-                           HorizontalAlignment="Right"
-                           Source="/ResourcesFolder/ÍmageFolder/LogOut.png"
-                           MouseLeftButtonDown="LogOutIm_MouseLeftButtonDown"
-                           Style="{StaticResource MenuImg}"/>
                     <Image Height="30" x:Name="RollUpIm"
                            HorizontalAlignment="Right"
                            Source="/ResourcesFolder/ÍmageFolder/RollUp.png"
@@ -71,7 +66,7 @@
 
                 <Border
             CornerRadius="20"
-            Height="400"
+            Height="500"
             Background="{StaticResource DeepYellowGreen}"
                     Grid.Column="1" Grid.Row="2"
                     VerticalAlignment="Top"
@@ -81,18 +76,26 @@
                             <RowDefinition/>
                             <RowDefinition/>
                             <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
 
                         </Grid.RowDefinitions>
 
-                        <Button x:Name="HistoryBtn" Content="История"
+                        <Button x:Name="HistoryBtn"
                                 Click="HistoryBtn_Click"
-                                Style="{DynamicResource MenuBtn}"/>
+                                Style="{DynamicResource MenuBtn}"
+                                HorizontalAlignment="Left">
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                <Image Source="/ResourcesFolder/ÍmageFolder/icons8-coin_in_hand 1.png" Width="30"/>
+                                <Label Content="Заказы" Style="{StaticResource NormalLabel}"/>
+                            </StackPanel>
+                        </Button>
                         <Button x:Name="OrderBtn"
                                 Grid.Row="1" 
                                 Style="{DynamicResource MenuBtn}" Click="OrderBtn_Click"
                                 HorizontalAlignment="Left">
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-                                <Image Source="/ResourcesFolder/ÍmageFolder/order.png" Width="50"/>
+                                <Image Source="/ResourcesFolder/ÍmageFolder/order.png" Width="30"/>
                                 <Label Content="Заказы" Style="{StaticResource NormalLabel}"/>
                             </StackPanel>
                         </Button>
@@ -102,8 +105,18 @@
                                 Click="StafffBtn_Click"
                                 HorizontalAlignment="Left">
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-                                <Image Source="/ResourcesFolder/ÍmageFolder/icstaff.png" Width="50"/>
+                                <Image Source="/ResourcesFolder/ÍmageFolder/icstaff.png" Width="30"/>
                                 <Label Content="Сотрудники" Style="{StaticResource NormalLabel}"/>
+                            </StackPanel>
+                        </Button>
+                        <Button x:Name="ExitBtn"
+                        HorizontalAlignment="Center" Click="ExitBtn_Click" 
+                                Grid.Row="8"
+                        Style="{DynamicResource BackBtn}">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="/ResourcesFolder/ÍmageFolder/Back.png" Width="20" />
+                                <Label Content="Выйти" Style="{StaticResource BackLabel}"
+                                       FontSize="19"/>
                             </StackPanel>
                         </Button>
                     </Grid>
